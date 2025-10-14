@@ -1,0 +1,146 @@
+Day 1 - Assignments
+Pseudo Code 
+
+
+1 - Check whether a number is even or odd
+
+Start
+Input number
+If number mod 2 = 0
+	print "Even"
+Else
+	print "Odd"
+End
+
+2 - Find the largest of three numbers
+
+Start
+Input number1,number2,number3
+If number1 > number2 and number1 > number2
+	print "number1 is largest"
+Else number2 > number3
+	print "number2 is largest"
+Else 
+	print "number3 is largest"
+End
+
+
+3 - Display the multiplication table for any number
+
+Start
+Input number
+For i from 1 to number do
+	print "number * i = number*1"
+End
+
+4 - Calculate the sum of first N natural numbers
+
+Start
+Input number
+Sum = 0
+For i from 1 to number do
+	Sum = Sum + i
+print Sum
+End
+
+5 - Find the factorial of a number
+
+Start
+Input number
+Fact = 1
+For i from 1 to number do
+	Fact = Fact * i
+print Fact
+End
+
+
+6 - Calculate the average and grade of 5 subject marks
+
+Start
+Input mark1,mark2,mark3,mark4,mark5
+Sum=mark1+mark2+mark3+mark4+mark5
+Average=Sum/5
+Print Average
+If Average > = 90 then
+	print "a grade"
+Else if Average > = 80 then
+	print "b grade"
+Else if Average > = 70 then
+	print "c grade"
+Else if Average > = 60 then
+	print "d grade"
+Else if Average > = 80 then
+	print "e grade"
+Else
+	print "f grade"
+
+
+7 - Find the largest and smallest element in an array
+
+Start
+Input array
+largest = array[0]
+smallest = array [0]
+For i from 1 to End off array do
+	if array[i] > largest then
+		largest = array[i]
+	else if array[i] < smallest
+		smallest = array[i]
+print largest , smallest
+End
+
+8 - Count how many even and odd numbers are in a list
+
+Start
+Input List 
+EvenCount = 0
+OddCount = 0
+For i from 0 to End of list
+	if list[i] mod 2 = 0 then
+		EvenCount = EvenCount + 1
+	else 
+		OddCount = OddCount + 1
+print EvenCount, OddCount
+End
+
+9 - Generate a pattern like a pyramid or triangle
+
+*
+* *
+* * *
+* * * *
+
+Start
+Input number
+For i from 1 to number do
+	For j from 1 to i do
+		print "*"
+	print "\n" 
+End
+
+10 - Find the second largest number in a list
+
+Start
+Input list
+Largest = list [0]
+SecondLargest = list [0]
+For i from 1 to End of list do
+	if list[i] > Largest
+		SecondLargest = Largest
+		Largest = list[i]
+print SecondLargest
+Stop
+
+11 - Find the sum of diagonal elements in a 2D matrix
+
+Start
+input 2Darray
+Sum = 0
+For i from 0 to numberOfRows-1 do
+	For j from 0 to numberOfClumns do
+		if i=j then 
+			Sum = Sum + 2Darray[i][j]
+print Sum
+Stop
+			
+
