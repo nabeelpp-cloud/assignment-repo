@@ -63,3 +63,18 @@ ALTER TABLE employee ADD CONSTRAINT unique_key UNIQUE (email)
 Drop table employee
 ALTER TABLE employee DROP COLUMN email
 
+--12-Can you change the value of an auto-incrementing ID for an existing record? What happens if you do?
+--	No, If a column specified auto increment that is IDENTITY then we can't change the value of the column
+
+--13-What should you do if you want to start an auto-increment field from a specific number (e.g., 10) instead of 1?
+-- Specify the starting point in identity is defined when creating the table
+-- Eg:- CREATE TABLE employee2 (
+--			employee_id INT NOT NULL PRIMARY KEY IDENTITY(10,1),  <----here 10 is the staring point of the id
+--			first_name VARCHAR(25),
+--			last_name VARCHAR(25),
+--			department VARCHAR(25),
+--			salary DECIMAL(10,2)
+--		);
+
+--14-What is the effect of having both a NOT NULL and a DEFAULT constraint on the same column?
+--	If the column is not null and if no value inserted the defaul value will be stored.
