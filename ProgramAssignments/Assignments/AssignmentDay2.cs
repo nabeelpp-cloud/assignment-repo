@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignments
 {
-    internal class AssignmentDay2
+    public class AssignmentDay2()
     {
 
-        public static void Main(string[] args)
+        public void AssDay2()
         {
             //First20Numbers();
             //OddLessThan50();

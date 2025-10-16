@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\Assignments.csproj",
+      "projectUniqueName": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\Assignments.csproj",
       "projectName": "Assignments",
-      "projectPath": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\Assignments.csproj",
+      "projectPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\Assignments.csproj",
       "packagesPath": "C:\\Users\\nabeel.p\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\obj\\",
+      "outputPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages",

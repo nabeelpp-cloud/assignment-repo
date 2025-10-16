@@ -19,7 +19,7 @@ INSERT INTO employee (first_name, last_name, department, salary) VALUES
 --3-SELECT: Shows different ways to query data:
 --	Select all columns and rows
 --	Select specific columns
---	Select with a WHERE clause to filter results\
+--	Select with a WHERE clause to filter results
 
 SELECT * FROM employee;
 SELECT first_name,last_name FROM employee;

@@ -1,13 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\",
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\study\\assignments\\assignments\\assignmentday2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\day3sub\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\day3sub\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\assignmentday3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\assignmentday3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\day3sub\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\day3sub\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\assignmentday2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\assignmentday2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\study\\assignments\\assignments\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\day3sub\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\day3sub\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\assignments\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86630D58-3775-4326-B0B4-6486B48725CB}|Assignments\\Assignments.csproj|solutionrelative:assignments\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,29 +42,80 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\BankAccount.cs",
+              "RelativeDocumentMoniker": "Assignments\\day3sub\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\BankAccount.cs",
+              "RelativeToolTip": "Assignments\\day3sub\\BankAccount.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T05:54:05.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\Employee.cs",
+              "RelativeDocumentMoniker": "Assignments\\day3sub\\Employee.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\Employee.cs",
+              "RelativeToolTip": "Assignments\\day3sub\\Employee.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T05:47:33.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\Student.cs",
+              "RelativeDocumentMoniker": "Assignments\\day3sub\\Student.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\day3sub\\Student.cs",
+              "RelativeToolTip": "Assignments\\day3sub\\Student.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T05:37:15.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssignmentDay3.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\AssignmentDay3.cs",
+              "RelativeDocumentMoniker": "Assignments\\AssignmentDay3.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\AssignmentDay3.cs",
+              "RelativeToolTip": "Assignments\\AssignmentDay3.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T05:23:17.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AssignmentDay2.cs",
-              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\AssignmentDay2.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\AssignmentDay2.cs",
               "RelativeDocumentMoniker": "Assignments\\AssignmentDay2.cs",
-              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\AssignmentDay2.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\AssignmentDay2.cs",
               "RelativeToolTip": "Assignments\\AssignmentDay2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T04:08:28.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\Program.cs",
               "RelativeDocumentMoniker": "Assignments\\Program.cs",
-              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Study\\Assignments\\Assignments\\Program.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\Assignments\\Program.cs",
               "RelativeToolTip": "Assignments\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:02:34.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T04:02:34.844Z"
             }
           ]
         }
