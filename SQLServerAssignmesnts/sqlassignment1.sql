@@ -58,13 +58,25 @@ ALTER TABLE employee ADD CONSTRAINT check_salary CHECK(salary>=0)
 
 ALTER TABLE employee ADD email VARCHAR(25);
 
+UPDATE employee SET email='zayn@malik.com' where employee_id=1
+UPDATE employee SET email='dua@lipa.com' where employee_id=2
+UPDATE employee SET email='billie@eilish.com' where employee_id=3
+UPDATE employee SET email='arjisth@singh.com' where employee_id=4
+UPDATE employee SET email='sarah@brown.com' where employee_id=5
+
 ALTER TABLE employee ADD CONSTRAINT unique_key UNIQUE (email) 
 
 Drop table employee
 ALTER TABLE employee DROP COLUMN email
 
 --12-Can you change the value of an auto-incrementing ID for an existing record? What happens if you do?
---	No, If a column specified auto increment that is IDENTITY then we can't change the value of the column
+--	No, If a column specified auto increment that is IDENTITY then we can't change the value of the column directly
+--	But have a methode to turn on insert in the IDENTITY column using IDENTITY_INSERT
+--	Eg:- SET IDENTITY_INSERT employee ON
+--		 INSERT INTO employee (emp_id,emp_name) values(26,'Nabeel)
+--		 SET IDENTITY_INSERT employee OFF
+--	Also we can adjust the seed to where want the next seed using DBCC CHECKIDET ('employee',RESEED, 26)
+
 
 --13-What should you do if you want to start an auto-increment field from a specific number (e.g., 10) instead of 1?
 -- Specify the starting point in identity is defined when creating the table
