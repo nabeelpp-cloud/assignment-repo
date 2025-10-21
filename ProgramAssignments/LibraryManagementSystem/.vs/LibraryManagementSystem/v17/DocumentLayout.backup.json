@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\transactions\\returntransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\transactions\\returntransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\transactions\\borrowtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\transactions\\borrowtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{161D94EC-0F7B-48DE-A8DB-AB7D822B0CCE}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{161D94EC-0F7B-48DE-A8DB-AB7D822B0CCE}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\magazine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\magazine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReturnTransaction.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\ReturnTransaction.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Transactions\\ReturnTransaction.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\ReturnTransaction.cs",
+              "RelativeToolTip": "LibrarySystem\\Transactions\\ReturnTransaction.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:04:31.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BorrowTransaction.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\BorrowTransaction.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Transactions\\BorrowTransaction.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\BorrowTransaction.cs",
+              "RelativeToolTip": "LibrarySystem\\Transactions\\BorrowTransaction.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:04:14.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Librarian.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Librarian.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Members\\Librarian.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Librarian.cs",
+              "RelativeToolTip": "LibrarySystem\\Members\\Librarian.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:03:39.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Member.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Member.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Members\\Member.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Member.cs",
+              "RelativeToolTip": "LibrarySystem\\Members\\Member.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:03:22.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Journal.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Books\\Journal.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
+              "RelativeToolTip": "LibrarySystem\\Books\\Journal.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:01:47.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Magazine.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Magazine.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Books\\Magazine.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Magazine.cs",
+              "RelativeToolTip": "LibrarySystem\\Books\\Magazine.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwBsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:01:26.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Book.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Books\\Book.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Book.cs",
+              "RelativeToolTip": "LibrarySystem\\Books\\Book.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:00:57.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Class1.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Class1.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Class1.cs",
+              "RelativeToolTip": "LibrarySystem\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:00:17.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibraryManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibraryManagementSystem\\Program.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAADQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:59:30.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
