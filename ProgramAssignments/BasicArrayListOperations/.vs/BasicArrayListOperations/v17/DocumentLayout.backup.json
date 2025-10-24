@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{291AC92F-F195-48AB-97A5-F619A563DC72}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{291AC92F-F195-48AB-97A5-F619A563DC72}|EmployeeManagementSystem\\EmployeeManagementSystem.csproj|solutionrelative:employeemanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\arraylistwithmixeddatatypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\arraylistwithmixeddatatypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\linqwithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\linqwithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\listofcustomobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\listofcustomobjects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\usinggenericswithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\usinggenericswithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\basicarraylistoperations\\basicarraylistoperations\\basicarraylistoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD293F16-0982-4C9C-ACEF-9D2AF1EDE194}|BasicArrayListOperations\\BasicArrayListOperations.csproj|solutionrelative:basicarraylistoperations\\basicarraylistoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\EmployeeManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\EmployeeManagementSystem\\Program.cs*",
+              "RelativeToolTip": "EmployeeManagementSystem\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T11:38:56.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LINQWithList.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\LINQWithList.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\LINQWithList.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\LINQWithList.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\LINQWithList.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowB8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T11:12:02.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListOfCustomObjects.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\ListOfCustomObjects.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\ListOfCustomObjects.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\ListOfCustomObjects.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\ListOfCustomObjects.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:25:33.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsingGenericsWithList.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\UsingGenericsWithList.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\UsingGenericsWithList.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\UsingGenericsWithList.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\UsingGenericsWithList.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:18:41.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArrayListWithMixedDataTypes.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\ArrayListWithMixedDataTypes.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\ArrayListWithMixedDataTypes.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\ArrayListWithMixedDataTypes.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\ArrayListWithMixedDataTypes.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:13:06.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BasicArrayListOperation.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\BasicArrayListOperation.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\BasicArrayListOperation.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\BasicArrayListOperation.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\BasicArrayListOperation.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:08:53.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\Program.cs",
+              "RelativeDocumentMoniker": "BasicArrayListOperations\\Program.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\BasicArrayListOperations\\BasicArrayListOperations\\Program.cs",
+              "RelativeToolTip": "BasicArrayListOperations\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T09:48:57.983Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
