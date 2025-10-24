@@ -163,7 +163,10 @@ SELECT * FROM string_split('apple,banana,cherry',',')
 
 --36. From a 'Skills' table with a 'SkillList' column containing comma-separated skills, write a query to create a row for each individual skill.
 
-SELECT value as skills FROM Skills CROSS APPLY  string_split(SkillList,',') 
+
+SELECT DISTINCT(value)
+FROM Skills
+    CROSS APPLY STRING_SPLIT(SkillList, ',');
 
 --Date and Time Functions
 
@@ -324,3 +327,7 @@ SELECT DATEFROMPARTS(2023,12,25) AS ChristmasDay
 --70. Write a query to convert separate year, month, and day columns from a 'Dates' table into a single DATE column.
 
 SELECT DATEFROMPARTS(year,month,day) AS DATE FROM Dates
+
+
+
+
