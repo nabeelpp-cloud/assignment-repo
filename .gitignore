@@ -1,3 +1,7 @@
+# Build folders
+bin/
+obj/
+
 # Visual Studio
 .vs/
 *.suo
@@ -5,11 +9,8 @@
 *.userosscache
 *.sln.docstates
 
-# Build results
-bin/
-obj/
-Debug/
-Release/
+# Rider
+.idea/
 
 # NuGet
 *.nupkg
@@ -17,14 +18,5 @@ Release/
 *.nuget.props
 *.nuget.targets
 
-# Database and cache files
-*.mdf
-*.ldf
-*.db
-*.db-shm
-*.db-wal
-*.v2
-*.vsidx
-
-# Docker volumes
-docker/sqldata/data/
+# Others
+*.cache
