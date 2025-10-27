@@ -1,0 +1,12 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibrarySystemSolution\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll

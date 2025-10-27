@@ -1,0 +1,12 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\bin\Debug\net8.0\LibrarySystem.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\bin\Debug\net8.0\LibrarySystem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\bin\Debug\net8.0\LibrarySystem.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\refint\LibrarySystem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\LibrarySystem.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\LibraryManagementSystem\LibrarySystem\obj\Debug\net8.0\ref\LibrarySystem.dll
