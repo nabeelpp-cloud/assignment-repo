@@ -1,0 +1,15 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\bin\Debug\net8.0\BasicArrayListOperations.exe
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\bin\Debug\net8.0\BasicArrayListOperations.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\bin\Debug\net8.0\BasicArrayListOperations.runtimeconfig.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\bin\Debug\net8.0\BasicArrayListOperations.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\bin\Debug\net8.0\BasicArrayListOperations.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\refint\BasicArrayListOperations.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\BasicArrayListOperations.genruntimeconfig.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BasicArrayListOperations\BasicArrayListOperations\obj\Debug\net8.0\ref\BasicArrayListOperations.dll

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TemperatureConverterSystem/1.0.0": {
+        "dependencies": {
+          "TemperatureConverter": "1.0.0"
+        },
+        "runtime": {
+          "TemperatureConverterSystem.dll": {}
+        }
+      },
+      "TemperatureConverter/1.0.0": {
+        "runtime": {
+          "TemperatureConverter.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TemperatureConverterSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TemperatureConverter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
