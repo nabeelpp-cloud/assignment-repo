@@ -1,0 +1,12 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\bin\Debug\net8.0\TemperatureConverter.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\bin\Debug\net8.0\TemperatureConverter.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\bin\Debug\net8.0\TemperatureConverter.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\refint\TemperatureConverter.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\TemperatureConverter.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\TemperatureConverterSystem\TemperatureConverter\obj\Debug\net8.0\ref\TemperatureConverter.dll
