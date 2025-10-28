@@ -1,11 +1,12 @@
 --1-CREATE TABLE: Creates an Employees table with columns for EmployeeID, FirstName, LastName, Department, and Salary.
 
 CREATE TABLE employee (
-	employee_id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-	first_name VARCHAR(25),
-	last_name VARCHAR(25),
-	department VARCHAR(25),
-	salary DECIMAL(10,2)
+    employee_id INT NOT NULL PRIMARY KEY IDENTITY(1,1),  
+    first_name VARCHAR(25) NOT NULL,                   
+    last_name VARCHAR(25) NOT NULL,                   
+    department VARCHAR(25) NOT NULL CHECK (department IN ('HR', 'Finance', 'IT', 'Sales', 'Marketing', 'Admin')), 
+    salary DECIMAL(10,2) NOT NULL CHECK (salary >= 0),                            
+    CONSTRAINT DF_department_default DEFAULT 'HR' FOR department
 );
 
 --2-INSERT: Adds three employee records to the table.
@@ -56,20 +57,28 @@ ALTER TABLE employee ADD CONSTRAINT check_salary CHECK(salary>=0)
 --11-How would you add a UNIQUE constraint to the Employees table to ensure that no two employees can have the same email address
 --Write an ALTER TABLE statement to add an "Email" column to the Employees table with a UNIQUE constraint that allows NULL values
 
-ALTER TABLE employee ADD email VARCHAR(25);
 
-ALTER TABLE employee ADD CONSTRAINT unique_key UNIQUE (email) 
+ALTER TABLE employee
+ADD Email VARCHAR(100) NULL UNIQUE;
 
 Drop table employee
 ALTER TABLE employee DROP COLUMN email
 
 --12-Can you change the value of an auto-incrementing ID for an existing record? What happens if you do?
---	No, If a column specified auto increment that is IDENTITY then we can't change the value of the column
+--	Normally, you cannot change the value of an auto-increment (IDENTITY) column.
+--	If you force it using SET IDENTITY_INSERT, it may cause key conflicts or sequence issues, so it should be avoided.
+SET IDENTITY_INSERT employee ON;
+
+UPDATE employee
+SET employee_id = 10
+WHERE employee_id = 1;
+
+SET IDENTITY_INSERT employee OFF;
 
 --13-What should you do if you want to start an auto-increment field from a specific number (e.g., 10) instead of 1?
 -- Specify the starting point in identity is defined when creating the table
 -- Eg:- CREATE TABLE employee2 (
---			employee_id INT NOT NULL PRIMARY KEY IDENTITY(10,1),  <----here 10 is the staring point of the id
+--			employee_id INT NOT NULL PRIMARY KEY IDENTITY(10,1),  
 --			first_name VARCHAR(25),
 --			last_name VARCHAR(25),
 --			department VARCHAR(25),
