@@ -1,14 +1,18 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using System.Data;
 
 namespace HotelBookingSystem.Services
 {
     public interface IEmployeeService
     {
-        string CreateEmployee(Employee employee);
-        string UpdateEmployee(int id, int? hotelId, string? fullName, string? role, string? email);
-        string RemoveEmployee(int id);
-        Employee GetEmployee(int id);
-        List<Employee> GetAllEmployees();
+        public Task<string> CreateEmployee(Employee employee);
+        public Task<string> UpdateEmployee(int id, EmployeeDto employeeDto);
+        public Task<string> RemoveEmployee(int id);
+        public Task<Employee> GetEmployee(int id);
+        public Task<List<Employee>> GetAllEmployees();
     }
 
     public class EmployeeService : IEmployeeService
@@ -20,45 +24,56 @@ namespace HotelBookingSystem.Services
             _context = context;
         }
 
-        public string CreateEmployee(Employee employee)
+        public async Task<string> CreateEmployee(Employee employee)
         {
-            _context.Employees.Add(employee);
-            int result = _context.SaveChanges();
+            await _context.Employees.AddAsync(employee);
+            int result =await _context.SaveChangesAsync();
             return result > 0 ? "Employee added successfully" : "Error adding employee";
         }
 
-        public string UpdateEmployee(int id, int? hotelId, string? fullName, string? role, string? email)
+        public async Task<string> UpdateEmployee(int id, EmployeeDto employeeDto)
         {
-            var employee = _context.Employees.FirstOrDefault(e => e.Id == id);
-            if (employee == null) return "Employee not found";
+            var exsistingEmployee = await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
+            if (exsistingEmployee == null)
+                return "Employee not found";
 
-            if (hotelId.HasValue) employee.HotelId = hotelId.Value;
-            if (!string.IsNullOrEmpty(fullName)) employee.FullName = fullName;
-            if (!string.IsNullOrEmpty(role)) employee.Role = role;
-            if (!string.IsNullOrEmpty(email)) employee.Email = email;
+            if (employeeDto.HotelId!=0 && employeeDto.HotelId!= exsistingEmployee.HotelId)
+                exsistingEmployee.HotelId = employeeDto.HotelId;
 
-            int result = _context.SaveChanges();
+            if (!string.IsNullOrWhiteSpace(employeeDto.FullName))
+                exsistingEmployee.FullName = employeeDto.FullName;
+
+            if (!string.IsNullOrWhiteSpace(employeeDto.Role))
+                exsistingEmployee.Role = employeeDto.Role;
+
+            if (!string.IsNullOrWhiteSpace(employeeDto.Email))
+                exsistingEmployee.Email = employeeDto.Email;
+
+            int result = await _context.SaveChangesAsync();
             return result > 0 ? "Employee updated successfully" : "Error updating employee";
         }
 
-        public string RemoveEmployee(int id)
+
+
+        public async Task<string> RemoveEmployee(int id)
         {
-            var employee = _context.Employees.FirstOrDefault(e => e.Id == id);
+            var employee =await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
             if (employee == null) return "Employee not found";
 
             _context.Employees.Remove(employee);
-            int result = _context.SaveChanges();
+            int result =await _context.SaveChangesAsync();
             return result > 0 ? "Employee deleted successfully" : "Error deleting employee";
         }
 
-        public Employee GetEmployee(int id)
+        public async Task<Employee> GetEmployee(int id)
         {
-            return _context.Employees.FirstOrDefault(e => e.Id == id);
+            var employee=await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
+            return employee;
         }
 
-        public List<Employee> GetAllEmployees()
+        public async Task<List<Employee>> GetAllEmployees()
         {
-            return _context.Employees.ToList();
+            return await _context.Employees.ToListAsync();
         }
     }
 }

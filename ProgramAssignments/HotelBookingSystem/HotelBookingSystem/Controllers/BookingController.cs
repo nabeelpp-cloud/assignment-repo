@@ -1,4 +1,5 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
 using HotelBookingSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,15 +16,15 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add([FromQuery] int customerId, [FromQuery] int roomId, [FromQuery] DateTime checkInDate, [FromQuery] DateTime checkOutDate, [FromQuery] decimal totalAmount)
+        public IActionResult Add(BookingDto bookingDto)
         {
             Booking booking = new Booking
             {
-                CustomerId = customerId,
-                RoomId = roomId,
-                CheckInDate = checkInDate,
-                CheckOutDate = checkOutDate,
-                TotalAmount = totalAmount
+                CustomerId = bookingDto.CustomerId,
+                RoomId = bookingDto.RoomId,
+                CheckInDate = bookingDto.CheckInDate,
+                CheckOutDate = bookingDto.CheckOutDate,
+                TotalAmount = bookingDto.TotalAmount
             };
 
             var result = _bookingService.CreateBooking(booking);
@@ -34,17 +35,10 @@ namespace HotelBookingSystem.Controllers
             return Ok(result);
         }
 
-        [HttpPatch("update")]
-        public IActionResult Update(
-                    [FromQuery] int id,
-                    [FromQuery] int? customerId,
-                    [FromQuery] int? roomId,
-                    [FromQuery] DateTime? checkInDate,
-                    [FromQuery] DateTime? checkOutDate,
-                    [FromQuery] decimal? totalAmount)
+        [HttpPatch("{id}")]
+        public IActionResult Update(int id,BookingDto bookingDto)
         {
-            // Call the service to perform the update
-            string response = _bookingService.UpdateBooking(id, customerId, roomId, checkInDate, checkOutDate, totalAmount);
+            string response = _bookingService.UpdateBooking(id,bookingDto);
 
             if (response == "Not Found")
                 return NotFound("Booking not found");

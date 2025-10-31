@@ -1,14 +1,16 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Services
 {
     public interface ICustomerService
     {
-        public string AddCustomer(Customer customer);
-        public string UpdateCustomer(int id, string? fullName, string? email, string? phoneNumber, string? idProofNumber);
-        public string DeleteCustomer(int id);
-        public List<Customer> GetCustomers();
-        public Customer GetCustomerByCustomerId(int customerId);
+        public Task<string> AddCustomer(Customer customer);
+        public Task<string> UpdateCustomer(int id, CustomerDto customerDto);
+        public Task<string> DeleteCustomer(int id);
+        public Task<List<Customer>> GetCustomers();
+        public Task<Customer> GetCustomerById(int Id);
     }
     public class CustomerService : ICustomerService
     {
@@ -17,56 +19,60 @@ namespace HotelBookingSystem.Services
         {
             _context = context;
         }
-        public string AddCustomer(Customer customer)
+        public async Task<string> AddCustomer(Customer customer)
         {
-            _context.Customers.Add(customer);
-            var resp= _context.SaveChanges();
+            await _context.Customers.AddAsync(customer);
+            var resp=await  _context.SaveChangesAsync();
             if (resp > 0)
                 return "Customer added Succesfully";
             return "Error adding customer";
         }
 
-        public string DeleteCustomer(int id)
+        public async Task<string> DeleteCustomer(int id)
         {
-            var cust=_context.Customers.FirstOrDefault(x => x.Id == id);
+            var cust=await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
             if (cust == null)
                 return "Customer NotFound";
             _context.Customers.Remove(cust);
-            var resp=_context.SaveChanges();
+            var resp=await _context.SaveChangesAsync();
             if (resp > 0)
                 return "Customer removed Succesfully";
             return "Error removing customer";
         }
 
-        public Customer GetCustomerByCustomerId(int id)
+        public async Task<Customer> GetCustomerById(int id)
         {
-            var cust = _context.Customers.FirstOrDefault(x => x.Id == id);
+            var cust =await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
             return cust;
         }
 
-        public List<Customer> GetCustomers()
+        public async Task<List<Customer>> GetCustomers()
         {
-            var cust = _context.Customers.ToList();
+            var cust =await _context.Customers.ToListAsync();
             return cust;
         }
 
-        public string UpdateCustomer(int id,string? fullName, string? email, string? phoneNumber, string? idProofNumber)
+        public async Task<string> UpdateCustomer(int id, CustomerDto customerDto)
         {
-            var cust = _context.Customers.FirstOrDefault(x => x.Id == id);
-            if (cust == null)
-                return "Customer NotFound";
-            if (fullName != null)
-                cust.FullName = fullName;
-            if(email != null) 
-                cust.Email = email;
-            if(phoneNumber!=null) 
-                cust.PhoneNumber = phoneNumber;
-            if(idProofNumber != null)
-                cust.IdProofNumber = idProofNumber;
-            var resp = _context.SaveChanges();
-            if (resp > 0)
-                return "Customer updated Succesfully";
-            return "Error updating customer";
+            var existingCustomer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
+            if (existingCustomer == null)
+                return "Customer Not Found";
+
+            if (!string.IsNullOrWhiteSpace(customerDto.FullName))
+                existingCustomer.FullName = customerDto.FullName;
+
+            if (!string.IsNullOrWhiteSpace(customerDto.Email))
+                existingCustomer.Email = customerDto.Email;
+
+            if (!string.IsNullOrWhiteSpace(customerDto.PhoneNumber))
+                existingCustomer.PhoneNumber = customerDto.PhoneNumber;
+
+            if (!string.IsNullOrWhiteSpace(customerDto.IdProofNumber))
+                existingCustomer.IdProofNumber = customerDto.IdProofNumber;
+
+            var rowsAffected = await _context.SaveChangesAsync();
+            return rowsAffected > 0 ? "Customer updated successfully" : "Error updating customer";
         }
+
     }
 }
