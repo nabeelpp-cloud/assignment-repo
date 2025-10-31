@@ -1,0 +1,6 @@
+@GrandHayath.HotelBooking.API_HostAddress = http://localhost:5015
+
+GET {{GrandHayath.HotelBooking.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
