@@ -2,7 +2,6 @@
 USE BookMyShow
 
 
---Users
 CREATE TABLE Users(
 	UserId INT PRIMARY KEY IDENTITY(1,1),
 	Name VARCHAR(25) NOT NULL,
@@ -10,31 +9,19 @@ CREATE TABLE Users(
 	Phone VARCHAR(25) NOT NULL UNIQUE
 );
 
---⦁	UserId
---⦁	Name
---⦁	Email
---⦁	Phone
 
-
---MovieLanguage
 CREATE TABLE MovieLanguage(
 	MovieLanguageId INT IDENTITY(1,1) PRIMARY KEY,
 	LanguageName VARCHAR(25) NOT NULL UNIQUE
 );
 
---⦁	MovieLanguageId
---⦁	LanguageName
 
---MovieJoner
 CREATE TABLE MovieJoner(
 	MovieJonerId INT IDENTITY(1,1) PRIMARY KEY,
 	JonerName VARCHAR(25) NOT NULL UNIQUE
 );
 
---⦁	MovieJonerId
---⦁	JonerName
 
---Movies
 CREATE TABLE Movies(
 	MovieId INT IDENTITY(1,1) PRIMARY KEY,
 	MovieName VARCHAR(25) NOT NULL,
@@ -46,25 +33,24 @@ ALTER TABLE Movies
 	ADD CONSTRAINT FK_Movies_MovieLanguage FOREIGN KEY (MovieLanguageId) REFERENCES MovieLanguage(MovieLanguageId)
 ;
 
---⦁	MovieId
---⦁	MovieName
---⦁	MovieJonerId
---⦁	MovieLanguageId
-
---Theater
-CREATE TABLE Theater(
-	TheaterId INT PRIMARY KEY IDENTITY(1,1),
-	TheaterName VARCHAR(25) UNIQUE NOT NULL,
-	City VARCHAR(25) NOT NULL,
-	Address VARCHAR(225) NOT NULL
+CREATE TABLE Location (
+    LocationId INT IDENTITY(1,1) PRIMARY KEY,
+    CityName VARCHAR(50) NOT NULL,
+    State VARCHAR(50),
+    Country VARCHAR(50)
 );
 
---⦁	TheaterId
---⦁	TheaterName
---⦁	City
---⦁	Address
 
---Screen
+CREATE TABLE Theater (
+    TheaterId INT IDENTITY(1,1) PRIMARY KEY,
+    TheaterName VARCHAR(50) UNIQUE NOT NULL,
+    LocationId INT NOT NULL,
+    Address VARCHAR(225) NOT NULL,
+    CONSTRAINT FK_Theater_Location FOREIGN KEY (LocationId) REFERENCES Location(LocationId)
+);
+
+
+
 CREATE TABLE Screen(
 	ScreenId INT IDENTITY(1,1) PRIMARY KEY,
 	ScreenName VARCHAR(25) NOT NULL,
@@ -73,12 +59,7 @@ CREATE TABLE Screen(
 	CONSTRAINT FK_Screen_Theater  FOREIGN KEY (TheaterId) REFERENCES Theater(TheaterId)
 );
 
---⦁	ScreenId
---⦁	ScreenName
---⦁	TheaterId
---⦁	TotalSeats
 
---Show
 CREATE TABLE Show(
 	ShowId INT IDENTITY(1,1) PRIMARY KEY,
 	MovieId INT,
@@ -90,25 +71,16 @@ CREATE TABLE Show(
 	CONSTRAINT FK_Show_Screen  FOREIGN KEY (ScreenId) REFERENCES Screen(ScreenId)
 );
 
---⦁	ShowId
---⦁	MovieId
---⦁	ScreenId
---⦁	ShowDate
---⦁	ShowTime
---⦁	Price
 
---SeatCategories
+
+
 CREATE TABLE SeatCategories (
 	SeatCategoryId INT IDENTITY(1,1) PRIMARY KEY,
 	CategoryName VARCHAR(25) NOT NULL,
 	PriceMultiplier DECIMAL(4,2) NOT NULL
 );
 
---⦁	SeatCategoryId
---⦁	CategoryName
---⦁	PriceMultiplier
 
---Seat
 CREATE TABLE Seat(
 	SeatId INT IDENTITY(1,1) PRIMARY KEY,
 	ScreenId INT NOT NULL,
@@ -118,14 +90,8 @@ CREATE TABLE Seat(
 );
 ALTER TABLE Seat ADD CONSTRAINT FK_Seat_Screen FOREIGN KEY (ScreenId) REFERENCES Screen(ScreenId)
 
---⦁	SeatId
---⦁	ScreenId
---⦁	SeatNumber
---⦁	SeatCategoryId
 
 
-
---Booking
 CREATE TABLE Booking ( 
 	BookingId INT IDENTITY(1,1) PRIMARY KEY,
 	UserId INT NOT NULL,
@@ -137,28 +103,17 @@ CREATE TABLE Booking (
 	CONSTRAINT FK_Booking_Show FOREIGN KEY (ShowId) REFERENCES Show(ShowId)
 );
 
---⦁	BookingId
---⦁	UserId
---⦁	ShowId
---⦁	BookingDate
---⦁	TotalAmount
---⦁	PaymentStatus
 
---BookedSeat
+
 CREATE TABLE BookedSeat(
 	BookedSeatId INT IDENTITY(1,1) PRIMARY KEY,
 	BookingId INT NOT NULL,
 	SeatId INT NOT NULL,
 	CONSTRAINT FK_BookedSeat_Booking FOREIGN KEY (BookingId) REFERENCES Booking(BookingId),
-	CONSTRAINT FK_BookedSeat_Seat FOREIGN KEY (SeatId) REFERENCES Seat(SeatId),
+	CONSTRAINT FK_BookedSeat_Seat FOREIGN KEY (SeatId) REFERENCES Seat(SeatId)
 );
 
---⦁	BookedSeatId
---⦁	BookingId
---⦁	SeatId
 
-
---INSERT
 
 
 INSERT INTO Users (Name, Email, Phone) VALUES
@@ -187,12 +142,18 @@ INSERT INTO Movies (MovieName, MovieJonerId, MovieLanguageId) VALUES
 ('Love Today', 3, 3),
 ('Dude', 1, 4);
 
+INSERT INTO Location (CityName, State, Country) VALUES
+('Trivandrum', 'Kerala', 'India'),
+('Kannur', 'Kerala', 'India'),
+('Kochi', 'Kerala', 'India');
 
-INSERT INTO Theater (TheaterName, City, Address) VALUES
-('PVR Cinemas', 'Trivandrum', 'LuLu Mall TVM'),
-('SAVITHA Film City', 'Kannur', 'Caltex Road , Kannur'),
-('Cinepolis', 'Kannur', 'Secure Center, Thazhechovva'),
-('Carnival Cinemas', 'Kochi', 'Kerala');
+
+INSERT INTO Theater (TheaterName, LocationId, Address) VALUES
+('PVR Cinemas', 1, 'LuLu Mall TVM'),
+('SAVITHA Film City', 2, 'Caltex Road, Kannur'),
+('Cinepolis', 2, 'Secure Center, Thazhechovva'),
+('Carnival Cinemas', 3, 'Kerala');
+
 
 
 INSERT INTO Screen (ScreenName, TheaterId, TotalSeats) VALUES
@@ -233,8 +194,8 @@ INSERT INTO Booking (UserId, ShowId, BookingDate, TotalAmount, PaymentStatus) VA
 
 
 INSERT INTO BookedSeat (BookingId, SeatId) VALUES
-(4, 1),
-(4, 2),
-(5, 4),
-(5, 6);
+(1, 1),
+(2, 2),
+(1, 4),
+(2, 6);
 
