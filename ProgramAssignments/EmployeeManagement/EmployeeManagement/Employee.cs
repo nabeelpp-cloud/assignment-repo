@@ -1,47 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement
 {
     public class Employee
     {
-        private static string _id;
-        public static int counter;
-        public string Name;
-        public double Salary;
-        public EmployeeType EmpType;
-        public enum EmployeeType
+        private const int StartId = 1000;
+        private static int _counter = StartId;
+        private readonly string _id;
+        public static string IdPrefix { get; set; } = "Emp";
+        public string Name { get; set; }
+        public double Salary { get; set; }
+        public string EmployeeType { get; set; }
+
+        public Employee(string name, double salary, string employeeType)
         {
-            Permanent,
-            Contract
-        }
-        static Employee()
-        {
-            counter = 1000;  
-        }
-        public Employee(string name, double salary, EmployeeType employeeType) 
-        {
-            _id = "Emp" + counter;
-            counter++;
+            _id = $"{IdPrefix}{ _counter}";
+            _counter++;
             Name = name;
             Salary = salary;
-            EmpType=employeeType;
+            EmployeeType = employeeType;
         }
 
         public static int EmployeeCount()
         {
-            return counter-1000;
+            return _counter - StartId;
+
         }
+
         public static string NextEmployeeId()
         {
-            return "Emp"+counter;
+            return  $"{IdPrefix}{_counter}";
         }
+
         public void DisplayDetails()
         {
-            Console.WriteLine($"{_id}\t\t{Name}\t{Salary}\t\t{EmpType}");
+            Console.WriteLine($"{_id}\t{Name}\t{Salary}\t{EmployeeType}");
         }
     }
 }
