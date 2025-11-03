@@ -20,3 +20,8 @@ obj/
 
 # Others
 *.cache
+
+# Ignore Docker SQL data files
+Assignment1/docker/sqldata/data/
+*.mdf
+*.ldf
