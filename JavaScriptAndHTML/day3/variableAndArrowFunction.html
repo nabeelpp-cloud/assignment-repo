@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="variableAndArrowFunction.css">
+</head>
+<body>
+    <div>
+        <h1>30-10-2025 JavaScript Assignments: Variables &amp; Arrow Functions</h1>  
+        <br><br>
+        <div>
+            <h3>1 - Output Prediction + Explanation</h3>
+            <h4 style="padding: 20px;">
+                var num = 10;<br>
+                function test() {<br>
+                var num = 20;<br>
+                if (true) {<br>
+                let num = 30;<br>
+                console.log(&quot;Inside if:&quot;, num);<br>
+                }<br>
+                console.log(&quot;Inside function:&quot;, num);<br>
+                }<br>
+                test();<br>
+                console.log(&quot;Outside:&quot;, num);<br>
+            </h4>
+            <button id="predictOutput" >Predict Output</button>
+            <div id="output" style="display: none;">
+                <p>
+                    <b>
+                        Inside if: 30<br>
+                        Inside function: 20<br>
+                        Outside: 10<br>
+                    </b>
+
+                </p>
+                <p><b>Explanation</b> : initially num is 10
+                    when the function called the num declared again with 20 
+                    but  inside the if block num become 30  and it will log to console
+                    after the if block again we log but there the var num is scoped with value 20 so that will logged
+                    outside the function the num value is 10. so output will be 10.
+                    </p>
+            </div>
+        </div>
+        <div>
+            <h3>Hoisting Behavior (var vs let vs const)</h3>
+            <div>
+                <p>
+                    In JavaScript, variable declarations are hoisted (moved to the top of their scope) before execution, 
+                    but the initializations are not hoisted.<br>
+                    <strong>var</strong> variables are hoisted and automatically initialized with <code>undefined</code>.<br>
+                    However, <strong>let</strong> and <strong>const</strong> variables are only hoisted by declaration 
+                    and are not initialized, which causes a <em>ReferenceError</em> if accessed before their declaration.
+                </p>
+                <pre>
+                    console.log(a);
+                    console.log(b);
+                    console.log(c);
+                    var a = 5;
+                    let b = 10;
+                    const c = 15;
+                </pre>
+                <p>In this example first output is undefined and then show error because of using the varible v declared using let</p>                
+            </div>
+            <div>
+                <h3>Reassignment &amp; Re-declaration Rules</h3>
+                <div id="codeDisplay">
+                </div>
+                    <script>
+                        
+                        const code=`
+var a=10;
+let b=20;
+const c=30;
+console.log(a)
+console.log(b)
+console.log(c)
+var a=40; // we can reassign and redclare a var variable
+//let b=50;   can't redeclare a let variable 
+b=50;  // but we can reassign it
+//c=60;  can't reassign or redeclare a const variable
+console.log(a);
+console.log(b)
+                        `;
+                        document.getElementById("codeDisplay").innerHTML = "<pre><code>" + code + "</code></pre>";
+                        console.log("Reassignment & Re-declaration Rules");
+                        eval(code);
+                    </script>
+            </div>
+        </div>
+        <script src="variableAndArrowFunction.js"></script>
+    </div>
+    <div>
+        <h3>Convert Normal Functions to Arrow Functions</h3>
+        <div>
+            <h4>Normal Function</h4>
+            <pre>
+                function multiply(a, b) {
+                    return a * b;
+                }
+                function greet(name) {
+                    return "Hello " + name;
+                }
+            </pre>
+            <h4>Arrow Function</h4>
+            <pre>
+                const multiply=(a,b)=>a*b;
+                const greet=(name)=> "Hello "+name
+            </pre>
+        </div>
+    </div>
+    <div>
+        <h3>Arrow Function + Array Methods</h3>
+        <script>
+            console.log("Arrow Function + Array Methods");
+            const numbers = [2, 5, 8, 11, 14];
+            const doubleNumbers = numbers.map(number=>number*2)
+            const evenNumbers = numbers.filter(number => number % 2 == 0)
+            const totalSum = numbers.reduce((i,currentvalue)=>
+            {  
+                return i+currentvalue
+                
+            },0);
+            console.log("Numbers array : "+numbers)
+            console.log("Doubled array : "+doubleNumbers)
+            console.log("Even numbers : " +evenNumbers)
+            console.log("Total sum : " +totalSum)
+        </script>
+    </div>
+</body>
+</html>
