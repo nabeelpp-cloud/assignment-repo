@@ -22,4 +22,8 @@
     <ProjectReference Include="..\GrandHayath.HotelBooking.Infrastructure\GrandHayath.HotelBooking.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Employee\" />
+  </ItemGroup>
+
 </Project>
