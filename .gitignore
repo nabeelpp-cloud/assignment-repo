@@ -1,27 +1,70 @@
-# Build folders
+############################
+# Build & IDE folders
+############################
 bin/
 obj/
-
-# Visual Studio
 .vs/
-*.suo
+.idea/
 *.user
+*.suo
 *.userosscache
 *.sln.docstates
+*.cache
 
-# Rider
-.idea/
-
+############################
 # NuGet
+############################
 *.nupkg
 *.snupkg
 *.nuget.props
 *.nuget.targets
+packages/
 
-# Others
-*.cache
+############################
+# Logs & Temp files
+############################
+*.log
+logs/
+*.tmp
+*.temp
 
-# Ignore Docker SQL data files
+############################
+# Environment & Secrets
+############################
+.env
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+############################
+# Publish & Output
+############################
+/publish/
+/out/
+/dist/
+/build/
+
+############################
+# Docker SQL Data Files
+############################
 Assignment1/docker/sqldata/data/
 *.mdf
 *.ldf
+*.ndf
+
+############################
+# Docker
+############################
+**/docker-compose.override.yml
+**/docker-compose.debug.yml
+**/Dockerfile.development
+**/Dockerfile.local
+
+############################
+# Other Common Items
+############################
+Thumbs.db
+Desktop.ini
+*.bak
+*.old
+*.orig
