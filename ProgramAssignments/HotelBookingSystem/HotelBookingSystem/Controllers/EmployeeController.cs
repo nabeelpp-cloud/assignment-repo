@@ -1,4 +1,5 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
 using HotelBookingSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,20 +17,17 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromQuery] int hotelId,
-                                 [FromQuery] string fullName,
-                                 [FromQuery] string role,
-                                 [FromQuery] string email)
+        public async Task<IActionResult> Add(EmployeeDto employeeDto)
         {
             Employee employee = new Employee
             {
-                HotelId = hotelId,
-                FullName = fullName,
-                Role = role,
-                Email = email
+                HotelId = employeeDto.HotelId,
+                FullName = employeeDto.FullName,
+                Role = employeeDto.Role,
+                Email = employeeDto.Email
             };
 
-            var result = _employeeService.CreateEmployee(employee);
+            var result =await _employeeService.CreateEmployee(employee);
 
             if (result.Contains("Error"))
                 return BadRequest(result);
@@ -37,14 +35,10 @@ namespace HotelBookingSystem.Controllers
             return Ok(result);
         }
 
-        [HttpPatch]
-        public IActionResult Update([FromQuery] int id,
-                                    [FromQuery] int? hotelId,
-                                    [FromQuery] string? fullName,
-                                    [FromQuery] string? role,
-                                    [FromQuery] string? email)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Update( int id,EmployeeDto employeeDto)
         {
-            var result = _employeeService.UpdateEmployee(id, hotelId, fullName, role, email);
+            var result =await _employeeService.UpdateEmployee(id, employeeDto);
 
             if (result.Contains("not found", StringComparison.OrdinalIgnoreCase))
                 return NotFound(result);
@@ -56,9 +50,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var employee = _employeeService.GetEmployee(id);
+            var employee =await _employeeService.GetEmployee(id);
             if (employee == null)
                 return NotFound("Employee not found");
 
@@ -66,9 +60,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var result = _employeeService.RemoveEmployee(id);
+            var result =await _employeeService.RemoveEmployee(id);
 
             if (result.Contains("not found", StringComparison.OrdinalIgnoreCase))
                 return NotFound(result);
@@ -80,9 +74,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var employees = _employeeService.GetAllEmployees();
+            var employees =await _employeeService.GetAllEmployees();
 
             if (employees == null || !employees.Any())
                 return NotFound("No employees found");

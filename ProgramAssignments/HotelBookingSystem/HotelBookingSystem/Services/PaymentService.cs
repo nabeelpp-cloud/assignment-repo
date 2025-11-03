@@ -1,14 +1,16 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Services
 {
     public interface IPaymentService
     {
-        string CreatePayment(Payment payment);
-        string UpdatePayment(int id, int? bookingId, DateTime? paymentDate, decimal? amount, PaymentMethod? method, PaymentStatus? status);
-        string RemovePayment(int id);
-        Payment GetPayment(int id);
-        List<Payment> GetAllPayments();
+        public Task<string> CreatePayment(Payment payment);
+        public Task<string> UpdatePayment(int id, PaymentDto paymentDto);
+        public Task<string> RemovePayment(int id);
+        public Task<Payment> GetPayment(int id);
+        public Task<List<Payment>> GetAllPayments();
     }
 
     public class PaymentService : IPaymentService
@@ -20,10 +22,10 @@ namespace HotelBookingSystem.Services
             _context = hotelManagementDbContext;
         }
 
-        public string CreatePayment(Payment payment)
+        public async Task<string> CreatePayment(Payment payment)
         {
             _context.Payments.Add(payment);
-            int result = _context.SaveChanges();
+            int result = await _context.SaveChangesAsync();
 
             if (result > 0)
                 return "Payment created successfully";
@@ -31,42 +33,43 @@ namespace HotelBookingSystem.Services
             return "Error creating payment";
         }
 
-        public string UpdatePayment(int id, int? bookingId, DateTime? paymentDate, decimal? amount, PaymentMethod? method, PaymentStatus? status)
+        public async Task<string> UpdatePayment(int id, PaymentDto paymentDto)
         {
-            var payment = _context.Payments.FirstOrDefault(p => p.Id == id);
+            var payment = await _context.Payments.FirstOrDefaultAsync(p => p.Id == id);
             if (payment == null)
                 return "Payment not found";
 
-            if (bookingId.HasValue)
-                payment.BookingId = bookingId.Value;
+            if (paymentDto.BookingId != 0 && paymentDto.BookingId != payment.BookingId)
+                payment.BookingId = paymentDto.BookingId;
 
-            if (paymentDate.HasValue)
-                payment.PaymentDate = paymentDate.Value;
+            if (paymentDto.PaymentDate != default && paymentDto.PaymentDate != payment.PaymentDate)
+                payment.PaymentDate = paymentDto.PaymentDate;
 
-            if (amount.HasValue)
-                payment.Amount = amount.Value;
+            if (paymentDto.Amount > 0 && paymentDto.Amount != payment.Amount)
+                payment.Amount = paymentDto.Amount;
 
-            if (method.HasValue)
-                payment.Method = method.Value;
+            if (paymentDto.Method.HasValue && paymentDto.Method.Value != payment.Method)
+                payment.Method = paymentDto.Method.Value;
 
-            if (status.HasValue)
-                payment.Status = status.Value;
+            
+            if (paymentDto.Method.HasValue && !paymentDto.Method.Value.Equals(payment.Method))
+                payment.Status = paymentDto.Status;
 
-            int result = _context.SaveChanges();
+            int result = await _context.SaveChangesAsync();
             if (result > 0)
                 return "Payment updated successfully";
 
             return "Error updating payment";
         }
 
-        public string RemovePayment(int id)
+        public async Task<string> RemovePayment(int id)
         {
-            var payment = _context.Payments.FirstOrDefault(p => p.Id == id);
+            var payment = await _context.Payments.FirstOrDefaultAsync(p => p.Id == id);
             if (payment == null)
                 return "Payment not found";
 
             _context.Payments.Remove(payment);
-            int result = _context.SaveChanges();
+            int result = await _context.SaveChangesAsync();
 
             if (result > 0)
                 return "Payment deleted successfully";
@@ -74,14 +77,14 @@ namespace HotelBookingSystem.Services
             return "Error deleting payment";
         }
 
-        public Payment GetPayment(int id)
+        public async Task<Payment> GetPayment(int id)
         {
-            return _context.Payments.FirstOrDefault(p => p.Id == id);
+            return await _context.Payments.FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public List<Payment> GetAllPayments()
+        public async Task<List<Payment>> GetAllPayments()
         {
-            return _context.Payments.ToList();
+            return await _context.Payments.ToListAsync();
         }
     }
 }
