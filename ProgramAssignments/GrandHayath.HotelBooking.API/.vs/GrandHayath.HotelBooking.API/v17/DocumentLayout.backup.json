@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{395FFBC2-53BC-4C30-85BD-86992FD2A26C}|GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.api\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{395FFBC2-53BC-4C30-85BD-86992FD2A26C}|GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API.csproj|solutionrelative:grandhayath.hotelbooking.api\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\roomtypes\\query\\getroomtypewithcapacityquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\roomtypes\\query\\getroomtypewithcapacityquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\dtos\\roomtypewithcapacitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\dtos\\roomtypewithcapacitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\roomtypes\\command\\deleteroomtypecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\roomtypes\\command\\deleteroomtypecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API\\Controllers\\RoomTypeController.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.API\\Controllers\\RoomTypeController.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API\\Controllers\\RoomTypeController.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.API\\Controllers\\RoomTypeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwDIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T10:00:37.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoomTypeWithCapacityDto.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Dtos\\RoomTypeWithCapacityDto.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Dtos\\RoomTypeWithCapacityDto.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Dtos\\RoomTypeWithCapacityDto.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Dtos\\RoomTypeWithCapacityDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:07:39.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetRoomTypeWithCapacityQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\RoomTypes\\Query\\GetRoomTypeWithCapacityQuery.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\RoomTypes\\Query\\GetRoomTypeWithCapacityQuery.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\RoomTypes\\Query\\GetRoomTypeWithCapacityQuery.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\RoomTypes\\Query\\GetRoomTypeWithCapacityQuery.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA5wCQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:05:24.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeleteRoomTypeCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\RoomTypes\\Command\\DeleteRoomTypeCommandHandler.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\RoomTypes\\Command\\DeleteRoomTypeCommandHandler.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\RoomTypes\\Command\\DeleteRoomTypeCommandHandler.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\RoomTypes\\Command\\DeleteRoomTypeCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T06:51:59.821Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

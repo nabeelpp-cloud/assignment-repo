@@ -1,0 +1,13 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\bin\Debug\net8.0\AdoDotNet.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\bin\Debug\net8.0\AdoDotNet.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\bin\Debug\net8.0\AdoDotNet.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.csproj.AssemblyReference.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\refint\AdoDotNet.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\AdoDotNet.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\WelcomeToADONET\AdoDotNet\obj\Debug\net8.0\ref\AdoDotNet.dll
