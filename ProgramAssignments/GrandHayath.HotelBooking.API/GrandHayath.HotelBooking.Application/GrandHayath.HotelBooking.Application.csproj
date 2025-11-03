@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Employee\" />
+    <Folder Include="Hotels\Query\" />
   </ItemGroup>
 
 </Project>

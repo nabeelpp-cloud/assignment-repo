@@ -21,6 +21,7 @@ namespace GrandHayath.HotelBooking.Application.Rooms.Command
             room.RoomTypeId = request.RoomTypeId;
             room.Status = request.Status;
             room.PricePerNight = request.PricePerNight;
+            await applicationDbContext.Rooms.AddAsync(room);
             var response = await applicationDbContext.SaveChangesAsync(cancellationToken);
             return response;
         }

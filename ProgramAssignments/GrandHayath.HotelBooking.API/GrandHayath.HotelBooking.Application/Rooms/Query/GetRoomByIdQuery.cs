@@ -1,10 +1,10 @@
 ﻿using GrandHayath.HotelBooking.Application.Dtos;
-using GrandHayath.HotelBooking.Domain.Entity;
 using MediatR;
 
 namespace GrandHayath.HotelBooking.Application.Rooms.Query
 {
-    public class GetAllRoomsQuery : IRequest<List<RoomDto>>
+    public class GetRoomByIdQuery : IRequest<RoomDto> 
     {
+        public int Id { get; set; }
     }
 }
