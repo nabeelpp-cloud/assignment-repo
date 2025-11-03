@@ -1,4 +1,5 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
 using HotelBookingSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,11 +15,11 @@ namespace HotelBookingSystem.Controllers
             this.roomTypeService = roomTypeService;
         }
         [HttpGet]
-        public ActionResult GettAllRoomTypes()
+        public async Task<ActionResult> GetAllRoomTypes()
         {
             try
             {
-                var resp = roomTypeService.GetAllRoomTypes();
+                var resp = await roomTypeService.GetAllRoomTypes();
                 if (resp == null)
                 {
                     return NotFound();
@@ -31,11 +32,11 @@ namespace HotelBookingSystem.Controllers
             }
         }
         [HttpGet("{id}")]
-        public IActionResult GetRoomTypeById(int id)
+        public async Task<IActionResult> GetRoomTypeById(int id)
         {
             try
             {
-                var resp = roomTypeService.GetRoomType(id);
+                var resp = await roomTypeService.GetRoomType(id);
                 if (resp == null)
                 {
                     return NotFound();
@@ -48,13 +49,13 @@ namespace HotelBookingSystem.Controllers
             }
         }
         [HttpPost]
-        public IActionResult CreateRoomType(string typeName, string description, int capacity)
+        public async Task<IActionResult> CreateRoomType(RoomTypeDto roomTypeDto)
         {
             RoomType roomType = new RoomType();
-            roomType.TypeName = typeName;
-            roomType.Description = description;
-            roomType.Capacity = capacity;
-            var resp = roomTypeService.AddRoomType(roomType);
+            roomType.TypeName = roomTypeDto.TypeName;
+            roomType.Description = roomTypeDto.Description;
+            roomType.Capacity = roomTypeDto.Capacity;
+            var resp = await roomTypeService.AddRoomType(roomType);
             if (resp.Contains("NotFound"))
                 return NotFound();
             if (resp.Contains("Error"))
@@ -62,9 +63,9 @@ namespace HotelBookingSystem.Controllers
             return Ok(resp);
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteRoomType(int id) 
+        public async Task<IActionResult> DeleteRoomType(int id) 
         {
-            var resp=roomTypeService.RemoveRoomType(id);
+            var resp=await roomTypeService.RemoveRoomType(id);
             if (resp.Contains("NotFound"))
                 return NotFound();
             if (resp.Contains("Error"))
@@ -72,9 +73,9 @@ namespace HotelBookingSystem.Controllers
             return Ok(resp);
         }
         [HttpPatch("{id}")]
-        public IActionResult UpdateRoomType(int id, string? typeName, string? description, int? capacity)
+        public async Task<IActionResult> UpdateRoomType(int id, RoomTypeDto roomTypeDto)
         {
-            var resp = roomTypeService.UpdateRoomType(id, typeName, description, capacity);
+            var resp =await roomTypeService.UpdateRoomType(id, roomTypeDto);
             if (resp.Contains("NotFound"))
                 return NotFound();
             if (resp.Contains("Error"))

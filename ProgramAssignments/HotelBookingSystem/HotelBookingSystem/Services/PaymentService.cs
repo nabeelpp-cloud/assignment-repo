@@ -48,12 +48,11 @@ namespace HotelBookingSystem.Services
             if (paymentDto.Amount > 0 && paymentDto.Amount != payment.Amount)
                 payment.Amount = paymentDto.Amount;
 
-            if (paymentDto.Method.HasValue && paymentDto.Method.Value != payment.Method)
-                payment.Method = paymentDto.Method.Value;
+            if (paymentDto.Method.HasValue && !payment.Method.Equals(paymentDto.Method.Value))
+                payment.Method = (HotelBookingSystem.Models.PaymentMethod)paymentDto.Method.Value;
 
-            
-            if (paymentDto.Method.HasValue && !paymentDto.Method.Value.Equals(payment.Method))
-                payment.Status = paymentDto.Status;
+            if (paymentDto.Status.HasValue && !paymentDto.Status.Value.Equals(payment.Status))
+                payment.Status = (HotelBookingSystem.Models.PaymentStatus)paymentDto.Status.Value;
 
             int result = await _context.SaveChangesAsync();
             if (result > 0)

@@ -1,14 +1,16 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Services
 {
     public interface IRoomTypeService
     {
-        public string AddRoomType(RoomType roomType);
-        public string RemoveRoomType(int id);
-        public RoomType GetRoomType(int id);
-        public List<RoomType> GetAllRoomTypes();
-        public string UpdateRoomType(int id, string? typeName, string? description, int? capacity);
+        public Task<string> AddRoomType(RoomType roomType);
+        public Task<string> RemoveRoomType(int id);
+        public Task<RoomType> GetRoomType(int id);
+        public Task<List<RoomType>> GetAllRoomTypes();
+        public Task<string> UpdateRoomType(int id, RoomTypeDto roomTypeDto);
     }
     public class RoomTypeService : IRoomTypeService
     {
@@ -19,54 +21,54 @@ namespace HotelBookingSystem.Services
             _context = hotelManagementDbContext;
         }
 
-        public string AddRoomType(RoomType roomType)
+        public async Task<string> AddRoomType(RoomType roomType)
         {
             _context.RoomTypes.Add(roomType);
-            var resp = _context.SaveChanges();
+            var resp = await _context.SaveChangesAsync();
             if (resp > 0)
                 return "New room added";
             return "Error creating new room";
         }
 
-        public List<RoomType> GetAllRoomTypes()
+        public async Task<List<RoomType>> GetAllRoomTypes()
         {
-            var roomTypes = _context.RoomTypes.ToList();
+            var roomTypes = await _context.RoomTypes.ToListAsync();
             return roomTypes;
         }
 
-        public RoomType GetRoomType(int id)
+        public async Task<RoomType> GetRoomType(int id)
         {
-            var roomTypes = _context.RoomTypes.FirstOrDefault(x=>x.Id==id);
+            var roomTypes = await _context.RoomTypes.FirstOrDefaultAsync(x=>x.Id==id);
             return roomTypes;
         }
 
-        public string RemoveRoomType(int id)
+        public async Task<string> RemoveRoomType(int id)
         {
-            var roomTypes = _context.RoomTypes.FirstOrDefault(x => x.Id == id);
+            var roomTypes = await _context.RoomTypes.FirstOrDefaultAsync(x => x.Id == id);
             if (roomTypes == null)
-                return "RommeType NotFound";
+                return "RoomType NotFound";
             _context.RoomTypes.Remove(roomTypes);
-            var resp = _context.SaveChanges();
+            var resp = await _context.SaveChangesAsync();
             if (resp > 0)
-                return "Rommtype removed successfully";
-            return "Error deleting roomtype";
+                return "RoomType removed successfully";
+            return "Error deleting RoomType";
         }
 
-        public string UpdateRoomType(int id,string? typeName,string? description,int? capacity)
+        public async Task<string> UpdateRoomType(int id, RoomTypeDto roomTypeDto)
         {
-            var roomTypes = _context.RoomTypes.FirstOrDefault(x => x.Id == id);
+            var roomTypes = await _context.RoomTypes.FirstOrDefaultAsync(x => x.Id == id);
             if (roomTypes == null)
-                return "RommeType NotFound";
-            if (typeName != null)
-                roomTypes.TypeName = typeName;
-            if (description != null)
-                roomTypes.Description = description;
-            if (capacity.HasValue)
-                roomTypes.Capacity = capacity.Value;
-            var resp = _context.SaveChanges();
+                return "RoomType NotFound";
+            if (roomTypeDto.TypeName != null)
+                roomTypes.TypeName = roomTypeDto.TypeName;
+            if (roomTypeDto.Description != null)
+                roomTypes.Description = roomTypeDto.Description;
+            if (roomTypeDto.Capacity != roomTypes.Capacity)
+                roomTypes.Capacity = roomTypeDto.Capacity;
+            var resp = await _context.SaveChangesAsync();
             if (resp > 0)
-                return "Romm type updated successfully";
-            return "Error updating roomtype";
+                return "Room type updated successfully";
+            return "Error updating RoomType";
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
 using HotelBookingSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,21 +17,18 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromQuery] int hotelId,
-                                 [FromQuery] int customerId,
-                                 [FromQuery] int rating,
-                                 [FromQuery] string comment)
+        public async Task<IActionResult> Add(ReviewDto reviewDto)
         {
             Review review = new Review
             {
-                HotelId = hotelId,
-                CustomerId = customerId,
-                Rating = rating,
-                Comment = comment,
-                ReviewDate = DateTime.Now
+                HotelId = reviewDto.HotelId,
+                CustomerId = reviewDto.CustomerId,
+                Rating = reviewDto.Rating,
+                Comment = reviewDto.Comment,
+                ReviewDate = reviewDto.ReviewDate
             };
 
-            var result = _reviewService.CreateReview(review);
+            var result =await _reviewService.CreateReview(review);
 
             if (result.Contains("Error"))
                 return BadRequest(result);
@@ -38,15 +36,11 @@ namespace HotelBookingSystem.Controllers
             return Ok(result);
         }
 
-        [HttpPatch]
-        public IActionResult Update([FromQuery] int id,
-                                    [FromQuery] int? hotelId,
-                                    [FromQuery] int? customerId,
-                                    [FromQuery] int? rating,
-                                    [FromQuery] string? comment,
-                                    [FromQuery] DateTime? reviewDate)
+        [HttpPatch("{id}")]
+        public async  Task<IActionResult> Update(int id , ReviewDto reviewDto)
         {
-            var result = _reviewService.UpdateReview(id, hotelId, customerId, rating, comment, reviewDate);
+
+            var result =await _reviewService.UpdateReview(id,reviewDto);
 
             if (result.Contains("not found", StringComparison.OrdinalIgnoreCase))
                 return NotFound(result);
@@ -58,9 +52,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var review = _reviewService.GetReview(id);
+            var review =await _reviewService.GetReview(id);
             if (review == null)
                 return NotFound("Review not found");
 
@@ -68,9 +62,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var result = _reviewService.RemoveReview(id);
+            var result =await _reviewService.RemoveReview(id);
 
             if (result.Contains("not found", StringComparison.OrdinalIgnoreCase))
                 return NotFound(result);
@@ -82,9 +76,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var reviews = _reviewService.GetAllReviews();
+            var reviews =await _reviewService.GetAllReviews();
 
             if (reviews == null || !reviews.Any())
                 return NotFound("No reviews found");

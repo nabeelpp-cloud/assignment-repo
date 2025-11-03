@@ -18,7 +18,7 @@ builder.Services.AddDbContext<HotelManagementDbContext>(option =>
 
 builder.Services.AddScoped<IHotelService, HotelService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
-builder.Services.AddScoped<IBoookingService,BookingService>();
+builder.Services.AddScoped<IBookingService,BookingService>();
 builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();

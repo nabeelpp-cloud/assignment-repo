@@ -1,14 +1,16 @@
-﻿using HotelBookingSystem.Models;
+﻿using HotelBookingSystem.DTOs;
+using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Services
 {
     public interface IReviewService
     {
-        string CreateReview(Review review);
-        string UpdateReview(int id, int? hotelId, int? customerId, int? rating, string? comment, DateTime? reviewDate);
-        string RemoveReview(int id);
-        Review GetReview(int id);
-        List<Review> GetAllReviews();
+        public Task<string> CreateReview(Review review);
+        public Task<string> UpdateReview(int id, ReviewDto reviewDto);
+        public Task<string> RemoveReview(int id);
+        public Task<Review> GetReview(int id);
+        public Task<List<Review>> GetAllReviews();
     }
 
     public class ReviewService : IReviewService
@@ -20,32 +22,32 @@ namespace HotelBookingSystem.Services
             _context = context;
         }
 
-        public string CreateReview(Review review)
+        public async Task<string> CreateReview(Review review)
         {
-            _context.Reviews.Add(review);
-            int result = _context.SaveChanges();
+            await _context.Reviews.AddAsync(review);
+            int result =await _context.SaveChangesAsync();
 
             return result > 0 ? "Review created successfully" : "Error creating review";
         }
 
-        public string UpdateReview(int id, int? hotelId, int? customerId, int? rating, string? comment, DateTime? reviewDate)
+        public async Task<string> UpdateReview(int id, ReviewDto reviewDto)
         {
-            var review = _context.Reviews.FirstOrDefault(r => r.Id == id);
+            var review =await _context.Reviews.FirstOrDefaultAsync(r => r.Id == id);
             if (review == null) return "Review not found";
 
-            if (hotelId.HasValue) review.HotelId = hotelId.Value;
-            if (customerId.HasValue) review.CustomerId = customerId.Value;
-            if (rating.HasValue) review.Rating = rating.Value;
-            if (!string.IsNullOrEmpty(comment)) review.Comment = comment;
-            if (reviewDate.HasValue) review.ReviewDate = reviewDate.Value;
+            if (reviewDto.HotelId != review.HotelId) review.HotelId = reviewDto.HotelId;
+            if (reviewDto.CustomerId != review.CustomerId) review.CustomerId = reviewDto.CustomerId;
+            if (reviewDto.Rating != review.Rating) review.Rating = reviewDto.Rating;
+            if (!string.IsNullOrEmpty(reviewDto.Comment)) review.Comment = reviewDto.Comment;
+            if (reviewDto.ReviewDate != review.ReviewDate) review.ReviewDate = reviewDto.ReviewDate;
 
-            int result = _context.SaveChanges();
+            int result =await _context.SaveChangesAsync();
             return result > 0 ? "Review updated successfully" : "Error updating review";
         }
 
-        public string RemoveReview(int id)
+        public async Task<string> RemoveReview(int id)
         {
-            var review = _context.Reviews.FirstOrDefault(r => r.Id == id);
+            var review =await _context.Reviews.FirstOrDefaultAsync(r => r.Id == id);
             if (review == null) return "Review not found";
 
             _context.Reviews.Remove(review);
@@ -54,14 +56,14 @@ namespace HotelBookingSystem.Services
             return result > 0 ? "Review deleted successfully" : "Error deleting review";
         }
 
-        public Review GetReview(int id)
+        public async Task<Review> GetReview(int id)
         {
-            return _context.Reviews.FirstOrDefault(r => r.Id == id);
+            return await _context.Reviews.FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public List<Review> GetAllReviews()
+        public async Task<List<Review>> GetAllReviews()
         {
-            return _context.Reviews.ToList();
+            return await _context.Reviews.ToListAsync();
         }
     }
 }

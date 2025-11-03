@@ -9,14 +9,14 @@ namespace HotelBookingSystem.Controllers
     [Route("api/[controller]")]
     public class BookingController : ControllerBase
     {
-        private readonly IBoookingService _bookingService;
-        public BookingController(IBoookingService boookingService)
+        private readonly IBookingService _bookingService;
+        public BookingController(IBookingService bookingService)
         {
-            _bookingService = boookingService;
+            _bookingService = bookingService;
         }
 
         [HttpPost("add")]
-        public IActionResult Add(BookingDto bookingDto)
+        public async Task<IActionResult> Add(BookingDto bookingDto)
         {
             Booking booking = new Booking
             {
@@ -27,7 +27,7 @@ namespace HotelBookingSystem.Controllers
                 TotalAmount = bookingDto.TotalAmount
             };
 
-            var result = _bookingService.CreateBooking(booking);
+            var result = await _bookingService.CreateBooking(booking);
 
             if (result == null)
                 return BadRequest("Failed to add booking");
@@ -36,9 +36,9 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Update(int id,BookingDto bookingDto)
+        public async Task<IActionResult> Update(int id, BookingDto bookingDto)
         {
-            string response = _bookingService.UpdateBooking(id,bookingDto);
+            string response = await _bookingService.UpdateBooking(id, bookingDto);
 
             if (response == "Not Found")
                 return NotFound("Booking not found");
@@ -50,17 +50,17 @@ namespace HotelBookingSystem.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var resp = _bookingService.GetBooking(id);
+            var resp = await _bookingService.GetBooking(id);
             if (resp == null)
                 return NotFound(resp);
             return Ok(resp);
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteById(int id)
+        public async Task<IActionResult> DeleteById(int id)
         {
-            var resp = _bookingService.RemoveBooking(id);
+            var resp = await _bookingService.RemoveBooking(id);
             if (resp.Contains("NotFound"))
                 return NotFound(resp);
             if (resp.Contains("Error"))
@@ -68,9 +68,9 @@ namespace HotelBookingSystem.Controllers
             return Ok(resp);
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var resp = _bookingService.GetAllBookings();
+            var resp = await _bookingService.GetAllBookings();
             if (resp == null)
                 return NotFound(resp);
             return Ok(resp);

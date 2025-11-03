@@ -19,7 +19,15 @@ namespace HotelBookingSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(PaymentDto paymentDto)
         {
-            var result = await _paymentService.CreatePayment(paymentDto);
+            Payment payment = new Payment
+            {
+                BookingId = paymentDto.BookingId,
+                PaymentDate = paymentDto.PaymentDate,
+                Amount = paymentDto.Amount,
+                Method = (HotelBookingSystem.Models.PaymentMethod)paymentDto.Method!,
+                Status = (HotelBookingSystem.Models.PaymentStatus)paymentDto.Status!
+            };
+            var result = await _paymentService.CreatePayment(payment);
 
             if (result == "Error creating payment")
                 return BadRequest(result);
@@ -27,7 +35,7 @@ namespace HotelBookingSystem.Controllers
             return Ok(result);
         }
 
-        [HttpPatch]
+        [HttpPatch("{id}")]
         public async Task<IActionResult> Update(int id, PaymentDto paymentDto)
         {
             var response = await _paymentService.UpdatePayment(id, paymentDto);

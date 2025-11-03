@@ -1,52 +1,53 @@
 ﻿using HotelBookingSystem.DTOs;
 using HotelBookingSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelBookingSystem.Services
 {
 
-    public interface IBoookingService
+    public interface IBookingService
     {
-        public string CreateBooking(Booking booking);
-        public string UpdateBooking(int id, BookingDto bookingDto);
-        public string RemoveBooking(int id);
-        public Booking GetBooking(int id);
-        public List<Booking> GetAllBookings();
+        public Task<string> CreateBooking(Booking booking);
+        public Task<string> UpdateBooking(int id, BookingDto bookingDto);
+        public Task<string> RemoveBooking(int id);
+        public Task<Booking> GetBooking(int id);
+        public Task<List<Booking>> GetAllBookings();
     }
-    public class BookingService : IBoookingService
+    public class BookingService : IBookingService
     {
         private readonly HotelManagementDbContext _context;
         public BookingService(HotelManagementDbContext hotelManagementDbContext)
         {
             _context = hotelManagementDbContext;
         }
-        public string CreateBooking(Booking booking)
+        public async Task<string> CreateBooking(Booking booking)
         {
             _context.Bookings.Add(booking);
-            int resp = _context.SaveChanges();
+            int resp = await _context.SaveChangesAsync();
             if (resp == 0)
                 return null;
             return "New booking created succesfully";
         }
 
-        public List<Booking> GetAllBookings()
+        public async Task<List<Booking>> GetAllBookings()
         {
-            var resp = _context.Bookings.ToList();
+            var resp = await _context.Bookings.ToListAsync();
             return resp;
         }
 
-        public Booking GetBooking(int id)
+        public async Task<Booking> GetBooking(int id)
         {
-            var booking = _context.Bookings.FirstOrDefault(x => x.Id == id);
+            var booking = await _context.Bookings.FirstOrDefaultAsync(x => x.Id == id);
             return booking;
         }
 
-        public string RemoveBooking(int id)
+        public async Task<string> RemoveBooking(int id)
         {
-            var booking = _context.Bookings.FirstOrDefault(x => x.Id == id);
+            var booking = await _context.Bookings.FirstOrDefaultAsync(x => x.Id == id);
             if (booking != null)
             {
                 _context.Remove(booking);
-                var resp = _context.SaveChanges();
+                var resp = await _context.SaveChangesAsync();
                 if (resp != null)
                 {
                     return "Booking Deleted Successfully";
@@ -56,9 +57,9 @@ namespace HotelBookingSystem.Services
             return "Booking NotFound";
         }
 
-        public string UpdateBooking(int id, BookingDto bookingDto)
+        public async Task<string> UpdateBooking(int id, BookingDto bookingDto)
         {
-            var exsistingBooking = _context.Bookings.FirstOrDefault(x => x.Id == id);
+            var exsistingBooking = await _context.Bookings.FirstOrDefaultAsync(x => x.Id == id);
             if (exsistingBooking == null)
                 return "Booking NotFound";
             if (bookingDto.CustomerId != 0 && bookingDto.CustomerId != exsistingBooking.CustomerId)
