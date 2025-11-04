@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\hotels\\command\\createhotelcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\hotels\\command\\createhotelcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\grandhayath.hotelbooking.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\grandhayath.hotelbooking.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{395FFBC2-53BC-4C30-85BD-86992FD2A26C}|GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.api\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{395FFBC2-53BC-4C30-85BD-86992FD2A26C}|GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API.csproj|solutionrelative:grandhayath.hotelbooking.api\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\rooms\\query\\getroombyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\rooms\\query\\getroombyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\rooms\\query\\getallroomsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\rooms\\query\\getallroomsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\rooms\\query\\getroombyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\rooms\\query\\getroombyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\rooms\\query\\getallroomsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\rooms\\query\\getallroomsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\grandhayath.hotelbooking.api\\grandhayath.hotelbooking.application\\rooms\\command\\createroomcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAE1500-2109-4E06-AA10-3A0BC628B805}|GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj|solutionrelative:grandhayath.hotelbooking.application\\rooms\\command\\createroomcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateHotelCommand.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Hotels\\Command\\CreateHotelCommand.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Hotels\\Command\\CreateHotelCommand.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Hotels\\Command\\CreateHotelCommand.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Hotels\\Command\\CreateHotelCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:41:14.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GrandHayath.HotelBooking.Application",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\GrandHayath.HotelBooking.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-03T09:39:54.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetRoomByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQuery.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQuery.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQuery.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:22:09.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetRoomByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQueryHandler.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetRoomByIdQueryHandler.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:16:15.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAllRoomsQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQueryHandler.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQueryHandler.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQueryHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:00:32.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.API\\Controllers\\RoomController.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.API\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.API\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T07:52:28.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetAllRoomsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQuery.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQuery.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQuery.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Rooms\\Query\\GetAllRoomsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T06:57:54.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateRoomCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Command\\CreateRoomCommandHandler.cs",
+              "RelativeDocumentMoniker": "GrandHayath.HotelBooking.Application\\Rooms\\Command\\CreateRoomCommandHandler.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\GrandHayath.HotelBooking.API\\GrandHayath.HotelBooking.Application\\Rooms\\Command\\CreateRoomCommandHandler.cs",
+              "RelativeToolTip": "GrandHayath.HotelBooking.Application\\Rooms\\Command\\CreateRoomCommandHandler.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T06:46:33.198Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
