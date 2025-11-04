@@ -1,0 +1,12 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\bin\Debug\net8.0\MathUtilities.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\bin\Debug\net8.0\MathUtilities.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\bin\Debug\net8.0\MathUtilities.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\refint\MathUtilities.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\MathUtilities.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\MathFunction\MathUtilities\obj\Debug\net8.0\ref\MathUtilities.dll

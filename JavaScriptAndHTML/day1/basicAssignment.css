@@ -1,0 +1,52 @@
+.state {
+    background-color: #adabab;
+}
+
+a:hover {
+    color: green;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+.list {
+    padding: 4px;
+    margin: 8px;
+    width: 100px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.list:nth-child(1) {
+    background-color: #ff6b6b;
+}
+
+.list:nth-child(2) {
+    background-color: #4ecdc4;
+}
+
+.list:nth-child(3) {
+    background-color: #1a535c;
+}
+
+.list:nth-child(4) {
+    background-color: #ffe66d;
+    color: black;
+}
+
+.list:nth-child(5) {
+    background-color: #6a4c93;
+}
+
+.Nestedlist {
+    background-color: grey;
+    padding: 4px;
+    margin: 8px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}

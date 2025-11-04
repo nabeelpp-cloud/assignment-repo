@@ -1,0 +1,15 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\bin\Debug\net8.0\BankingApp.exe
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\bin\Debug\net8.0\BankingApp.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\bin\Debug\net8.0\BankingApp.runtimeconfig.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\bin\Debug\net8.0\BankingApp.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\bin\Debug\net8.0\BankingApp.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\refint\BankingApp.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.genruntimeconfig.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\BankingApp\BankingApp\obj\Debug\net8.0\ref\BankingApp.dll
