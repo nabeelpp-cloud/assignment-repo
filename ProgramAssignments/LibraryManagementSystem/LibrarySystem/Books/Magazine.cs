@@ -8,24 +8,32 @@ namespace LibrarySystem.Books
 {
     public class Magazine
     {
-        public static int _id = 300;
-        public string MagazineId;
-        public string Title;
-        public string AutherName;
+        private static string _idPrefix ;
+        private static int _initialId;
+        private static int _id;
+        public string MagazineId {  get; set; }
+        public string Title {  get; set; }
+        public string AuthorName {  get; set; }
+        static Magazine()
+        {
+            _idPrefix = "Magazine_";
+            _initialId = 0;
+            _id = _initialId;
+        }
         public Magazine(string title, string authName)
         {
-            MagazineId = "Magazine " + _id;
+            MagazineId = _idPrefix + _id;
             _id = _id + 1;
             Title = title;
-            AutherName = authName;
+            AuthorName = authName;
         }
         public static int MagazineCount()
         {
-            return _id - 99;
+            return _id - ( _initialId - 1);
         }
         public void MagazineDetails()
         {
-            Console.WriteLine($"{MagazineId}\t{Title}\t\t{AutherName}");
+            Console.WriteLine($"{MagazineId}\t{Title}\t\t{AuthorName}");
         }
     }
 }

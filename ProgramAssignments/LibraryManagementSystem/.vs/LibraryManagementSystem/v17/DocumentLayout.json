@@ -11,16 +11,12 @@
       "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\transactions\\borrowtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{161D94EC-0F7B-48DE-A8DB-AB7D822B0CCE}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{161D94EC-0F7B-48DE-A8DB-AB7D822B0CCE}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\magazine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,8 +27,12 @@
       "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|solutionrelative:librarysystem\\members\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AE200FB-DB9A-4D38-9EB2-A4B5678AC621}|LibrarySystem\\LibrarySystem.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\librarymanagementsystem\\librarysystem\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,8 +46,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Journal.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
+              "RelativeDocumentMoniker": "LibrarySystem\\Books\\Journal.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
+              "RelativeToolTip": "LibrarySystem\\Books\\Journal.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T09:01:47.403Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -56,7 +70,7 @@
               "RelativeDocumentMoniker": "LibrarySystem\\Transactions\\ReturnTransaction.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\ReturnTransaction.cs",
               "RelativeToolTip": "LibrarySystem\\Transactions\\ReturnTransaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T09:04:31.736Z",
               "EditorCaption": ""
@@ -69,27 +83,27 @@
               "RelativeDocumentMoniker": "LibrarySystem\\Transactions\\BorrowTransaction.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Transactions\\BorrowTransaction.cs",
               "RelativeToolTip": "LibrarySystem\\Transactions\\BorrowTransaction.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T09:04:14.946Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Librarian.cs",
               "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Librarian.cs",
               "RelativeDocumentMoniker": "LibrarySystem\\Members\\Librarian.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Librarian.cs",
               "RelativeToolTip": "LibrarySystem\\Members\\Librarian.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T09:03:39.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Member.cs",
               "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Members\\Member.cs",
               "RelativeDocumentMoniker": "LibrarySystem\\Members\\Member.cs",
@@ -102,39 +116,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Journal.cs",
-              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
-              "RelativeDocumentMoniker": "LibrarySystem\\Books\\Journal.cs",
-              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Journal.cs",
-              "RelativeToolTip": "LibrarySystem\\Books\\Journal.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:01:47.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Magazine.cs",
               "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Magazine.cs",
               "RelativeDocumentMoniker": "LibrarySystem\\Books\\Magazine.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Magazine.cs",
               "RelativeToolTip": "LibrarySystem\\Books\\Magazine.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAqwBsAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T09:01:26.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Book.cs",
               "RelativeDocumentMoniker": "LibrarySystem\\Books\\Book.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibrarySystem\\Books\\Book.cs",
               "RelativeToolTip": "LibrarySystem\\Books\\Book.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T09:00:57.535Z",
               "EditorCaption": ""
@@ -154,20 +155,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibraryManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "LibraryManagementSystem\\Program.cs",
               "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\LibraryManagementSystem\\LibraryManagementSystem\\Program.cs",
               "RelativeToolTip": "LibraryManagementSystem\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAADQAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T08:59:30.955Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

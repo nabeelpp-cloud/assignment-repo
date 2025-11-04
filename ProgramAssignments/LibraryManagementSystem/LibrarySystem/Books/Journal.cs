@@ -8,24 +8,32 @@ namespace LibrarySystem.Books
 {
     public class Journal
     {
-        public static int _id = 200;
-        public string JournalId;
-        public string Title;
-        public string AutherName;
+        private static string _idPrefix;
+        private static int _initialId;
+        private static int _id;
+        public string JournalId {  get; set; }
+        public string Title {  get; set; }
+        public string AuthorName {  get; set; }
+        static Journal()
+        {
+            _initialId = 0;
+            _idPrefix = "Journal_";
+            _id = _initialId;
+        }
         public Journal(string title, string authName)
         {
-            JournalId = "Journal " + _id;
+            JournalId = _idPrefix + _id;
             _id = _id + 1;
             Title = title;
-            AutherName = authName;
+            AuthorName = authName;
         }
         public static int JournalCount()
         {
-            return _id - 99;
+            return _id - (_initialId-1);
         }
         public void JournalDetails()
         {
-            Console.WriteLine($"{JournalId}\t{Title}\t\t{AutherName}");
+            Console.WriteLine($"{JournalId}\t{Title}\t\t{AuthorName}");
         }
     }
 }

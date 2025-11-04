@@ -8,18 +8,18 @@ namespace LibrarySystem.Transactions
 {
     public class ReturnTransaction
     {
-        public int ID;
-        public string BookName;
-        public string Date;
+        public int Id { get; set; }
+        public string BookName {  get; set; }
+        public string Date {  get; set; }
         public ReturnTransaction(int id, string bookname, string date)
         {
-            ID = id;
+            Id = id;
             BookName = bookname;
             Date = date;
         }
         public void Transactions()
         {
-            Console.WriteLine($"Id : {ID}\nBook Name : {BookName}\nDate : {Date}");
+            Console.WriteLine($"Id : {Id}\nBook Name : {BookName}\nDate : {Date}");
         }
     }
 }

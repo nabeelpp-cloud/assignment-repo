@@ -8,24 +8,33 @@ namespace LibrarySystem.Books
 {
     public class Book
     {
-        public static int _id = 100;
-        public string BookId;
-        public string Title;
-        public string AutherName;
+        private static string _idPrefix;
+        private static int _initialId;
+        private static int _id;
+        public string BookId { get; set; }
+        public string Title {  get; set; }
+        public string AuthorName { get; set; }
+
+        static Book()
+        {
+            _idPrefix = "Book_";
+            _initialId = 0;
+            _id = _initialId;
+        }
         public Book(string title,string authName) 
         {
-            BookId = "Book " + _id;
+            BookId = _idPrefix + _id;
             _id = _id + 1;
             Title = title;
-            AutherName = authName;
+            AuthorName = authName;
         }
         public static int BookCount()
         {
-            return _id-99;
+            return _id-(_initialId-1);
         }
         public void BookDetails()
         {
-            Console.WriteLine($"{BookId}\t{Title}\t\t{AutherName}");
+            Console.WriteLine($"{BookId}\t\t{Title}\t\t{AuthorName}");
         }
     }
 }
