@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrandHayath.HotelBooking.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251031054136_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20251104125051_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Booking", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Booking", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Customer", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Employee", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -116,7 +116,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Hotel", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Hotel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -149,7 +149,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Hotels");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Payment", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Payment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -180,7 +180,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Payment");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Review", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Review", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -213,7 +213,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Room", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Room", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -246,7 +246,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("Rooms");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.RoomType", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.RoomType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -270,15 +270,15 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.ToTable("RoomTypes");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Booking", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Booking", b =>
                 {
-                    b.HasOne("HotelBookingSystem.Models.Customer", "Customer")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Customer", "Customer")
                         .WithMany("Bookings")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Models.Room", "Room")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Room", "Room")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -289,9 +289,9 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.Navigation("Room");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Employee", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Employee", b =>
                 {
-                    b.HasOne("HotelBookingSystem.Models.Hotel", "Hotel")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Hotel", "Hotel")
                         .WithMany("Employees")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -300,26 +300,26 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.Navigation("Hotel");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Payment", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Payment", b =>
                 {
-                    b.HasOne("HotelBookingSystem.Models.Booking", "Booking")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Booking", "Booking")
                         .WithOne("Payment")
-                        .HasForeignKey("HotelBookingSystem.Models.Payment", "BookingId")
+                        .HasForeignKey("GrandHayath.HotelBooking.Domain.Entity.Payment", "BookingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Booking");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Review", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Review", b =>
                 {
-                    b.HasOne("HotelBookingSystem.Models.Customer", "Customer")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Models.Hotel", "Hotel")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Hotel", "Hotel")
                         .WithMany()
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -330,15 +330,15 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.Navigation("Hotel");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Room", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Room", b =>
                 {
-                    b.HasOne("HotelBookingSystem.Models.Hotel", "Hotel")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.Hotel", "Hotel")
                         .WithMany("Rooms")
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelBookingSystem.Models.RoomType", "RoomType")
+                    b.HasOne("GrandHayath.HotelBooking.Domain.Entity.RoomType", "RoomType")
                         .WithMany("Rooms")
                         .HasForeignKey("RoomTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -349,30 +349,30 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.Navigation("RoomType");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Booking", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Booking", b =>
                 {
                     b.Navigation("Payment")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Customer", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Customer", b =>
                 {
                     b.Navigation("Bookings");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Hotel", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Hotel", b =>
                 {
                     b.Navigation("Employees");
 
                     b.Navigation("Rooms");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.Room", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Room", b =>
                 {
                     b.Navigation("Bookings");
                 });
 
-            modelBuilder.Entity("HotelBookingSystem.Models.RoomType", b =>
+            modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.RoomType", b =>
                 {
                     b.Navigation("Rooms");
                 });

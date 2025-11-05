@@ -1,27 +1,28 @@
-﻿using GrandHayath.HotelBooking.Infrastructure.Data;
-using MediatR;
+﻿using MediatR;
 using GrandHayath.HotelBooking.Domain.Entity;
+using GrandHayath.HotelBooking.Domain.Interfaces;
 
 namespace GrandHayath.HotelBooking.Application.RoomTypes.Command
 {
     public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeCommand, int>
     {
-        private readonly ApplicationDbContext context;
+        private readonly IRoomTypeRepository repository;
 
-        public CreateRoomTypeCommandHandler(ApplicationDbContext context)
+        public CreateRoomTypeCommandHandler(IRoomTypeRepository repository)
         {
-            this.context = context;
+            this.repository = repository;
         }
 
         public async Task<int> Handle(CreateRoomTypeCommand request, CancellationToken cancellationToken)
         {
-            RoomType roomType = new RoomType();
-            roomType.TypeName = request.TypeName;
-            roomType.Description = request.Description;
-            roomType.Capacity = request.Capacity;
-            await context.RoomTypes.AddAsync(roomType);
-            var resp=await context.SaveChangesAsync();
-            return resp;
+            var roomType = new RoomType
+            {
+                TypeName = request.TypeName,
+                Description = request.Description,
+                Capacity = request.Capacity
+            };
+
+            return await repository.AddAsync(roomType);
         }
     }
 }

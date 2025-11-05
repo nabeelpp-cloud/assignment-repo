@@ -1,4 +1,4 @@
-﻿using GrandHayath.HotelBooking.Infrastructure.Data;
+﻿using GrandHayath.HotelBooking.Domain.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,20 +6,15 @@ namespace GrandHayath.HotelBooking.Application.RoomTypes.Command
 {
     public class DeleteRoomTypeCommandHandler : IRequestHandler<DeleteRoomTypeCommand, int>
     {
-        private readonly ApplicationDbContext context;
+        private readonly IRoomTypeRepository repository;
 
-        public DeleteRoomTypeCommandHandler(ApplicationDbContext context)
+        public DeleteRoomTypeCommandHandler(IRoomTypeRepository repository)
         {
-            this.context = context;
+            this.repository = repository;
         }
         public async Task<int> Handle(DeleteRoomTypeCommand request, CancellationToken cancellationToken)
         {
-            var roomType=await context.RoomTypes.FirstOrDefaultAsync(x=>x.Id==request.Id);
-            if (roomType == null)
-                return 0;
-            context.RoomTypes.Remove(roomType);
-            var resp = await context.SaveChangesAsync();
-            return resp;
+            return await repository.DeleteAsync(request.Id);
         }
     }
 }

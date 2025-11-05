@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GrandHayath.HotelBooking.Application.Rooms.Query
 {
-    public class GetRoomByIdQueryHandler : IRequestHandler<GetRoomByIdQuery, RoomDto>
+    public class GetRoomByIdQueryHandler : IRequestHandler<GetRoomByIdQuery, RoomDto?>
     {
         private readonly ApplicationDbContext dbContext;
 

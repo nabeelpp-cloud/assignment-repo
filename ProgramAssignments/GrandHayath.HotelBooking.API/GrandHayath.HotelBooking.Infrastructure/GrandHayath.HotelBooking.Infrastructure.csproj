@@ -20,4 +20,8 @@
     <ProjectReference Include="..\GrandHayath.HotelBooking.Domain\GrandHayath.HotelBooking.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

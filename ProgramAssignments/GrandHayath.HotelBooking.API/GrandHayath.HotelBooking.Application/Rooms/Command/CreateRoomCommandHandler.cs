@@ -1,4 +1,5 @@
 ﻿using GrandHayath.HotelBooking.Domain.Entity;
+using GrandHayath.HotelBooking.Domain.Interfaces;
 using GrandHayath.HotelBooking.Infrastructure.Data;
 using MediatR;
 
@@ -6,24 +7,24 @@ namespace GrandHayath.HotelBooking.Application.Rooms.Command
 {
     public class CreateRoomCommandHandler  : IRequestHandler<CreateRoomCommand, int>
     {
-        private readonly ApplicationDbContext applicationDbContext;
+        private readonly IRoomRepository roomRepository;
 
-        public CreateRoomCommandHandler(ApplicationDbContext applicationDbContext)
+        public CreateRoomCommandHandler(IRoomRepository roomRepository)
         {
-            this.applicationDbContext = applicationDbContext;
+            this.roomRepository = roomRepository;
         }
 
         public async Task<int> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
         {
-            Room room = new Room();
-            room.RoomNumber = request.RoomNumber;
-            room.HotelId = request.HotelId;
-            room.RoomTypeId = request.RoomTypeId;
-            room.Status = request.Status;
-            room.PricePerNight = request.PricePerNight;
-            await applicationDbContext.Rooms.AddAsync(room);
-            var response = await applicationDbContext.SaveChangesAsync(cancellationToken);
-            return response;
+            var room = new Room
+            {
+                RoomTypeId = request.RoomTypeId,
+                RoomNumber = request.RoomNumber,
+                HotelId = request.HotelId,
+                Status = request.Status,
+                PricePerNight = request.PricePerNight,
+            };
+            return await  roomRepository.AddAsync(room);
         }
     }
 }

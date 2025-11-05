@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GrandHayath.HotelBooking.Application.RoomTypes.Query
 {
-    public class GetRoomTypeByIdQueryHandler : IRequestHandler<GetRoomTypeByIdQuery, RoomType>
+    public class GetRoomTypeByIdQueryHandler : IRequestHandler<GetRoomTypeByIdQuery, RoomType?>
     {
         private readonly ApplicationDbContext context;
 
@@ -14,7 +14,7 @@ namespace GrandHayath.HotelBooking.Application.RoomTypes.Query
             this.context = context;
         }
 
-        public async Task<RoomType> Handle(GetRoomTypeByIdQuery request, CancellationToken cancellationToken)
+        public async Task<RoomType?> Handle(GetRoomTypeByIdQuery request, CancellationToken cancellationToken)
         {
             var response =await context.RoomTypes.FirstOrDefaultAsync(x=>x.Id==request.Id);
             return response;

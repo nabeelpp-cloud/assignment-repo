@@ -174,7 +174,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Migrations
                     b.HasIndex("BookingId")
                         .IsUnique();
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("GrandHayath.HotelBooking.Domain.Entity.Review", b =>

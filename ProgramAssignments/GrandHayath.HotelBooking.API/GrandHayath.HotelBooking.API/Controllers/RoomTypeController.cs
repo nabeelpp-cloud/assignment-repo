@@ -24,9 +24,9 @@ namespace GrandHayath.HotelBooking.API.Controllers
             return resp;
         }
         [HttpPatch("{id}")]
-        public Task<int> Update(int id) 
+        public Task<int> Update(int id, UpdateRoomTypeCommand updateRoomTypeCommand) 
         {
-            UpdateRoomTypeCommand updateRoomTypeCommand = new UpdateRoomTypeCommand();
+            updateRoomTypeCommand.Id = id;
             var resp = mediator.Send(updateRoomTypeCommand);
             return resp;
         }
@@ -34,6 +34,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
         public Task<int> Delete(int id) 
         {
             DeleteRoomTypeCommand deleteRoomTypeCommand = new DeleteRoomTypeCommand();
+            deleteRoomTypeCommand.Id = id;
             var resp = mediator.Send(deleteRoomTypeCommand);
             return resp;
         }
@@ -45,7 +46,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
             return resp;
         }
         [HttpGet("{id}")]
-        public Task<RoomType> GetById(int id)
+        public Task<RoomType?> GetById(int id)
         {
             GetRoomTypeByIdQuery getRoomTypeByIdQuery = new GetRoomTypeByIdQuery();
             getRoomTypeByIdQuery.Id = id;
