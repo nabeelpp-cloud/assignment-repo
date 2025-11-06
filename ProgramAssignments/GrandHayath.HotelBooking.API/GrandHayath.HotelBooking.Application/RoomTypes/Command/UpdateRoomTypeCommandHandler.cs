@@ -6,21 +6,28 @@ namespace GrandHayath.HotelBooking.Application.RoomTypes.Command
 {
     public class UpdateRoomTypeCommandHandler : IRequestHandler<UpdateRoomTypeCommand, int>
     {
-        private readonly IRoomTypeRepository repository;
+        private readonly IRoomTypeRepository _repository;
 
         public UpdateRoomTypeCommandHandler(IRoomTypeRepository repository)
         {
-            this.repository = repository;
+            this._repository = repository;
         }
         public async Task<int> Handle(UpdateRoomTypeCommand request, CancellationToken cancellationToken)
         {
-            var roomType = new RoomType
+            var existingRoomType = await _repository.GetByIdAsync(request.Id);
+
+            if (existingRoomType == null)
             {
-                TypeName = request.TypeName,
-                Description = request.Description,
-                Capacity = request.Capacity
-            };
-            return await repository.UpdateAsync(request.Id, roomType);
+                return 0;
+            }
+
+            existingRoomType.TypeName = request.TypeName;
+            existingRoomType.Description = request.Description;
+            existingRoomType.Capacity = request.Capacity;
+   
+
+            return await _repository.UpdateAsync(existingRoomType);
+            
         }
     }
 }

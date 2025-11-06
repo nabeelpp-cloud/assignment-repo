@@ -11,52 +11,39 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class RoomTypeRepository : IRoomTypeRepository
     {
-        private readonly IApplicationDbContext dbContext;
+        private readonly IApplicationDbContext _context;
 
-        public RoomTypeRepository(IApplicationDbContext dbContext)
+        public RoomTypeRepository(IApplicationDbContext _context)
         {
-            this.dbContext = dbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(RoomType roomType)
         {
-            dbContext.RoomTypes.Add(roomType);
-            return await dbContext.SaveChangesAsync();
+            _context.RoomTypes.Add(roomType);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(RoomType roomType)
         {
-            var roomType=await dbContext.RoomTypes.FindAsync(id);
-            if (roomType != null)
-            {
-                dbContext.RoomTypes.Remove(roomType);
-                var resp = await dbContext.SaveChangesAsync();
-                return resp;
-            }
-            return 0;
+                _context.RoomTypes.Remove(roomType);
+            return await _context.SaveChangesAsync();
             
         }
 
         public async Task<List<RoomType>> GetAllAsync()
         {
-            return await dbContext.RoomTypes.ToListAsync();
+            return await _context.RoomTypes.ToListAsync();
         }
 
         public async Task<RoomType?> GetByIdAsync(int id)
         {
-            return await dbContext.RoomTypes.FindAsync(id);
+            return await _context.RoomTypes.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id,RoomType roomType)
+        public async Task<int> UpdateAsync(RoomType roomType)
         {
-            var existingRoomType = await dbContext.RoomTypes.FindAsync(id);
-            if(existingRoomType != null)
-            {
-                existingRoomType.TypeName = roomType.TypeName;
-                existingRoomType.Description = roomType.Description;
-                existingRoomType.Capacity = roomType.Capacity;
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.RoomTypes.Update(roomType);
+            return await _context.SaveChangesAsync();
         }
     }
 }

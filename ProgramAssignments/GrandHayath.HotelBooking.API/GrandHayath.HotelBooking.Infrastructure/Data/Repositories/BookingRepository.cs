@@ -1,64 +1,43 @@
 ﻿using GrandHayath.HotelBooking.Domain.Entity;
 using GrandHayath.HotelBooking.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
-    internal class BookingRepository : IBookingRepository
+    public class BookingRepository : IBookingRepository
     {
-        private readonly IApplicationDbContext applicationDbContext;
+        private readonly IApplicationDbContext _context;
 
-        public BookingRepository(IApplicationDbContext applicationDbContext)
+        public BookingRepository(IApplicationDbContext _context)
         {
-            this.applicationDbContext = applicationDbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Booking booking)
         {
-            await applicationDbContext.Bookings.AddAsync(booking);
-            return await applicationDbContext.SaveChangesAsync();
+            await _context.Bookings.AddAsync(booking);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Booking booking)
         {
-            var booking =await applicationDbContext.Bookings.FindAsync(id);
-            if(booking!=null)
-            {
-                applicationDbContext.Bookings.Remove(booking);
-                return await applicationDbContext.SaveChangesAsync();
-            }
-            return 0;
+                _context.Bookings.Remove(booking);
+                return await _context.SaveChangesAsync();
         }
 
         public async Task<List<Booking>> GetAllAsync()
         {
-            var bookings = await applicationDbContext.Bookings.ToListAsync();
-            return bookings;
+            return await _context.Bookings.ToListAsync();
         }
 
         public async Task<Booking?> GetByIdAsync(int id)
         {
-            var booking = await applicationDbContext.Bookings.FindAsync(id);
-            return booking;
+            return await _context.Bookings.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Booking booking)
+        public async Task<int> UpdateAsync( Booking booking)
         {
-            var existingBooking = await applicationDbContext.Bookings.FindAsync(id);
-            if (existingBooking != null)
-            {
-                existingBooking.CustomerId=booking.CustomerId;
-                existingBooking.RoomId=booking.RoomId;
-                existingBooking.CheckInDate=booking.CheckInDate;
-                existingBooking.CheckOutDate=booking.CheckOutDate;
-                existingBooking.TotalAmount=booking.TotalAmount;
-                return await applicationDbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Bookings.Update(booking);
+            return await _context.SaveChangesAsync();
         }
     }
 }

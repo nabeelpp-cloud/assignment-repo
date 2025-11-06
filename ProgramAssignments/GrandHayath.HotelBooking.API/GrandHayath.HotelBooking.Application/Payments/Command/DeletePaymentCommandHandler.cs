@@ -5,14 +5,20 @@ namespace GrandHayath.HotelBooking.Application.Payments.Command
 {
     public class DeletePaymentCommandHandler : IRequestHandler<DeletePaymentCommand, int>
     {
-        private readonly IPaymentRepository repository;
-        public DeletePaymentCommandHandler(IPaymentRepository repository)
+        private readonly IPaymentRepository _repository;
+        public DeletePaymentCommandHandler(IPaymentRepository _repository)
         {
-            this.repository = repository;
+            this._repository = _repository;
         }
         public async Task<int> Handle(DeletePaymentCommand request, CancellationToken cancellationToken)
         {
-            return await repository.DeleteAsync(request.Id);
+            var payment = await _repository.GetByIdAsync(request.Id);
+            if (payment == null)
+            {
+                return 0;
+            }
+
+            return await _repository.DeleteAsync(payment);
         }
     }
 }

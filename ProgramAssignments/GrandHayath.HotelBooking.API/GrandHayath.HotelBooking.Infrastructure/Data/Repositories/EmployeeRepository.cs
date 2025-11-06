@@ -11,53 +11,39 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        private readonly IApplicationDbContext dbContext;
+        private readonly IApplicationDbContext _context;
 
-        public EmployeeRepository(IApplicationDbContext dbContext)
+        public EmployeeRepository(IApplicationDbContext _context)
         {
-            this.dbContext = dbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Employee employee)
         {
-            await dbContext.Employees.AddAsync(employee);
-            return await dbContext.SaveChangesAsync();
+            await _context.Employees.AddAsync(employee);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Employee employee)
         {
-            var employee = await dbContext.Employees.FindAsync(id);
-            if(employee != null)
-            {
-                dbContext.Employees.Remove(employee);
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Employees.Remove(employee);
+            return await _context.SaveChangesAsync();
+
         }
 
         public async Task<List<Employee>> GetAllAsync()
         {
-            var employees = await dbContext.Employees.ToListAsync();
-            return employees;
+            return await _context.Employees.ToListAsync();
         }
 
         public async Task<Employee?> GetByIdAsync(int id)
         {
-            var employee =await dbContext.Employees.FindAsync(id);
-            return employee;
+            return await _context.Employees.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Employee employee)
+        public async Task<int> UpdateAsync(Employee employee)
         {
-            var existingEmployee =await dbContext.Employees.FindAsync(id);
-            if (existingEmployee != null) 
-            {
-                existingEmployee.FullName = employee.FullName;
-                existingEmployee.HotelId = employee.HotelId;
-                existingEmployee.Email = employee.Email;
-                existingEmployee.Role = employee.Role;
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Employees.Update(employee);
+            return await _context.SaveChangesAsync();
         }
     }
 }

@@ -6,21 +6,27 @@ namespace GrandHayath.HotelBooking.Application.Employees.Command
 {
     public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand, int>
     {
-        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IEmployeeRepository _repository;
         public UpdateEmployeeCommandHandler(IEmployeeRepository employeeRepository)
         {
-            _employeeRepository = employeeRepository;
+            _repository = employeeRepository;
         }
         public async Task<int> Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var employee = new Employee
+            var existingEmployee = await _repository.GetByIdAsync(request.Id);
+
+            if (existingEmployee == null)
             {
-                HotelId = request.HotelId,
-                FullName = request.FullName,
-                Role = request.Role,
-                Email = request.Email
-            };
-            return await _employeeRepository.UpdateAsync(request.Id, employee);
+                return 0;
+            }
+
+            existingEmployee.FullName = request.FullName;
+            existingEmployee.Email = request.Email;
+            existingEmployee.HotelId = request.HotelId;
+            existingEmployee.Email = request.Email;
+
+            return await _repository.UpdateAsync(existingEmployee);
+
         }
     }
 

@@ -11,49 +11,36 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
-        private readonly IApplicationDbContext context;
+        private readonly IApplicationDbContext _context;
 
-        public CustomerRepository(IApplicationDbContext context)
+        public CustomerRepository(IApplicationDbContext _context)
         {
-            this.context = context;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Customer customer)
         {
-            await context.Customers.AddAsync(customer);
-            return await context.SaveChangesAsync();
+            await _context.Customers.AddAsync(customer);
+            return await _context.SaveChangesAsync();
         }
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Customer customer)
         {
-            var customer = await context.Customers.FindAsync(id);
-            if (customer != null)
-            {
-                context.Customers.Remove(customer);
-                return await context.SaveChangesAsync();
-            }
-            return 0;
+
+            _context.Customers.Remove(customer);
+            return await _context.SaveChangesAsync();
+
         }
         public async Task<List<Customer>> GetAllAsync()
         {
-            var customers = await context.Customers.ToListAsync();
-            return customers;
+            return await _context.Customers.ToListAsync();
         }
         public async Task<Customer?> GetByIdAsync(int id)
         {
-            var customer = await context.Customers.FindAsync(id);
-            return customer;
+            return await _context.Customers.FindAsync(id);
         }
-        public async Task<int> UpdateAsync(int id, Customer customer)
+        public async Task<int> UpdateAsync(Customer customer)
         {
-            var existingCustomer = await context.Customers.FindAsync(id);
-            if (existingCustomer != null)
-            {
-                existingCustomer.FullName = customer.FullName;
-                existingCustomer.Email = customer.Email;
-                existingCustomer.PhoneNumber = customer.PhoneNumber;
-                existingCustomer.IdProofNumber = customer.IdProofNumber;
-                return await context.SaveChangesAsync();
-            }
-            return 0;
+            _context.Customers.Update(customer);
+            return await _context.SaveChangesAsync();
         }
     }
 }

@@ -5,16 +5,22 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Command
 {
     public class DeleteHotelCommandHandler : IRequestHandler<DeleteHotelCommand, int>
     {
-        private readonly IHotelRepository hotelRepository;
+        private readonly IHotelRepository _repository;
 
-        public DeleteHotelCommandHandler(IHotelRepository hotelRepository)
+        public DeleteHotelCommandHandler(IHotelRepository _repository)
         {
-            this.hotelRepository = hotelRepository;
+            this._repository = _repository;
         }
 
         public async Task<int> Handle(DeleteHotelCommand request, CancellationToken cancellationToken)
         {
-            return await hotelRepository.DeleteAsync(request.Id);
+            var hotel = await _repository.GetByIdAsync(request.Id);
+            if (hotel == null)
+            {
+                return 0;
+            }
+
+            return await _repository.DeleteAsync(hotel);
         }
     }
 }

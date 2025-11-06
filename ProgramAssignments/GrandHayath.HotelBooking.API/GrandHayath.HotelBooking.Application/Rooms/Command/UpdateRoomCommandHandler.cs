@@ -7,23 +7,28 @@ namespace GrandHayath.HotelBooking.Application.Rooms.Command
 {
     public class UpdateRoomCommandHandler : IRequestHandler<UpdateRoomCommand, int>
     {
-        private readonly IRoomRepository roomRepository;
+        private readonly IRoomRepository _repository;
 
         public UpdateRoomCommandHandler(IRoomRepository roomRepository)
         {
-            this.roomRepository = roomRepository;
+            this._repository = roomRepository;
         }
         public async Task<int> Handle(UpdateRoomCommand request, CancellationToken cancellationToken)
         {
-            var room = new Room
+            var existingRoom = await _repository.GetByIdAsync(request.Id);
+
+            if (existingRoom == null)
             {
-                RoomTypeId = request.RoomTypeId,
-                RoomNumber = request.RoomNumber,
-                HotelId = request.HotelId,
-                Status = request.Status,
-                PricePerNight = request.PricePerNight,
-            };
-            return await roomRepository.UpdateAsync(request.Id, room);
+                return 0;
+            }
+
+            existingRoom.RoomTypeId = request.RoomTypeId;
+            existingRoom.RoomNumber = request.RoomNumber;
+            existingRoom.HotelId = request.HotelId;
+            existingRoom.Status = request.Status;
+            existingRoom.PricePerNight = request.PricePerNight;
+
+            return await _repository.UpdateAsync(existingRoom);
         }
     }
 }
