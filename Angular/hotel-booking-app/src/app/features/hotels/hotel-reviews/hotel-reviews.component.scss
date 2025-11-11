@@ -1,0 +1,80 @@
+.main1 {
+  padding: 40px 60px;
+  padding-top: 0px;
+  background-color: #f9faf9;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #357960;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+
+
+.customerProfile{
+  border-radius: 50px;
+}
+.profileImage{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.customerName{
+  font-size: large;
+  font-weight: bold;
+  align-items: start;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+.reviewHeader{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+.headerLeftPart{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.commentTime{
+  font-size: small;
+  color: rgb(231, 231, 231);
+}
+.reviewBody{
+  padding: 10px 60px;
+}
+.rating{
+  margin: 20px 20px;
+  font-size: small;
+  width: 42px;
+  padding: 4px 10px ;
+  color: white;
+  background-color: #6baf92;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+}
+.comment{
+  font-size: large;
+  //font-weight: bold;
+  color: #effff8;
+}
+.reviews{
+  padding: 30px;
+  margin: 20px 0px;
+  width:80%;
+  background: linear-gradient(90deg, rgb(138, 192, 169), #4b9070);
+  border-radius: 30px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  &:hover{
+    border:2px solid #9dc6b4;
+    transform: scale(1.03);
+  }
+}

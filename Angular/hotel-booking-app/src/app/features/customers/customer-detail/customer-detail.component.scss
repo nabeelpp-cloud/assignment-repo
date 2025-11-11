@@ -1,0 +1,74 @@
+.main {
+  margin-top: 120px;
+}
+.customerdetails {
+  display: flex;
+  justify-content: center;
+}
+
+.profileDetails {
+  width: 70%;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.personalDetails {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageContainer {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.details .name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.details .email,
+.details .phone,
+.details .idProof {
+  color: #555;
+  font-size: 1rem;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+.insights{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.nav{
+    
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: #6baf92;
+    color: white;
+}
+.insightDetails{
+    width: 73%;
+}

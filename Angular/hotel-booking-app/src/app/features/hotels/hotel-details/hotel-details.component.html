@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="leftSidBar" [class.open]="isSidebarOpen">
+    <div class="list">
+      <div class="list">
+        <div
+          class="item"
+          routerLink="info"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Details
+        </div>
+        <div
+          class="item"
+          routerLink="rooms"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Rooms
+        </div>
+        
+        <div
+          class="item"
+          routerLink="employees"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Employees
+        </div>
+        <div
+          class="item"
+          routerLink="reviews"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Reviews
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="subMain">
+    
+
+    <div class="childRoutes">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

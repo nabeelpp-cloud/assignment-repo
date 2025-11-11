@@ -1,0 +1,41 @@
+import { Component } from '@angular/core';
+import { HotelService } from '../../../shared/services/hotel.service';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-hotel-employees',
+  imports: [],
+  templateUrl: './hotel-employees.component.html',
+  styleUrl: './hotel-employees.component.scss'
+})
+export class HotelEmployeesComponent {
+  hotel : any;
+  hotelId !:number;
+  constructor(private hotelService : HotelService,private route : ActivatedRoute){}
+
+  ngOnInit(){
+    this.route.parent?.paramMap.subscribe(params=>{
+      const hotelId=Number(params.get('id'));
+      console.log("hotelId",hotelId)
+      if (!isNaN(hotelId)) {
+        this.loadHotelWithEmployees(hotelId);
+      } else {
+        console.error('Invalid hotelId');
+      }
+    })
+  }
+  loadHotelWithEmployees(hotelId : number){
+      this.hotelService.getHotelWithEmployees(hotelId).subscribe({
+        next : (data) =>{
+          this.hotel = data as any
+          console.log("hotel",this.hotel)
+        },
+        error : (errors) =>{
+            console.log(errors);
+        },
+        complete : ()=>{
+          console.log("Api call compleated")
+        }
+      })
+  }
+}

@@ -1,0 +1,24 @@
+<div class="main1">
+    <h1>Customers</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Id Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (customer of customers; track customer.id) {
+          <tr class="hotelDetailLink" [routerLink]="['/customers', customer.id]">
+            <td>{{ customer.fullName }}</td>
+            <td>{{ customer. email }}</td>
+            <td>{{ customer.phoneNumber }}</td>
+            <td>{{ customer.idProofNumber }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  

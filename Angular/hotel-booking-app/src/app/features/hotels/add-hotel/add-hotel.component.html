@@ -1,0 +1,20 @@
+<div class="main">
+    <div class="formContainer">
+        <form [formGroup]="createHotelForm" (ngSubmit)="addHotel()">
+            <div class="form-elements">
+
+                <span class="label">Hotel Name</span>
+                <input type="text" name="name" id="name" formControlName="name">
+                <span class="label">Address</span>
+                <input type="text" name="address" id="address" formControlName="address">
+                <span class="label">City</span>
+                <input type="text" name="city" id="city" formControlName="city">
+                <span class="label">Country</span>
+                <input type="text" name="country" id="country" formControlName="country">
+                <span class="label">Phone Number</span>
+                <input type="text" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber">
+                <input type="submit" value="Add Hotel">
+            </div>
+        </form>
+    </div>
+</div>

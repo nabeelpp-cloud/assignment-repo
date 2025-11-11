@@ -1,0 +1,24 @@
+<div class="main1">
+    <h1>Bookings</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Room Id</th>
+          <th>Check In Date</th>
+          <th>Check Out Date</th>
+          <th>Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (booking of customerWithBookings.bookings; track booking.id) {
+          <tr class="hotelDetailLink">
+            <td>{{ booking.roomId }}</td>
+            <td>{{ booking.checkInDate }}</td>
+            <td>{{ booking.checkOutDate }}</td>
+            <td>{{ booking.totalAmount }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  

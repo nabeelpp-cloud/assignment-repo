@@ -1,0 +1,23 @@
+<div class="main1">
+    <h1>Employees</h1>
+    <table>
+      <thead>
+        <tr>
+          
+          <th>Full NAme</th>
+          <th>Role</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (employee of hotel.employees; track employee.id) {
+          <tr class="hotelDetailLink" >
+            <td>{{ employee.fullName }}</td>
+            <td>{{ employee.role }}</td>
+            <td class="email">{{ employee.email }}</td>            
+          </tr>
+        }
+      </tbody>
+    </table>
+    </div>
+

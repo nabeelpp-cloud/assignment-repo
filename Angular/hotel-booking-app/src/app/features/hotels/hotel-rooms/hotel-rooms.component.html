@@ -1,0 +1,25 @@
+<div class="main1">
+    <h1>Rooms</h1>
+    <table>
+      <thead>
+        <tr>
+          
+          <th>Room Number</th>
+          <th>Room Type Id</th>
+          <th>Price Per Night</th>
+          <th>Room Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (room of hotel.rooms; track room.id) {
+          <tr class="hotelDetailLink" >
+            <td>{{ room.roomNumber }}</td>
+            <td>{{ room.roomTypeId }}</td>
+            <td>{{ room.pricePerNight }}</td>
+            <td>{{ getRoomStatus(room.status) }}</td>
+            
+          </tr>
+        }
+      </tbody>
+    </table>
+    </div>

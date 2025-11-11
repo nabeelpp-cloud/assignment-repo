@@ -1,0 +1,44 @@
+<div class="main">
+  <div class="customerdetails">
+    <div class="profileDetails">
+      <div class="personalDetails">
+        <div class="imageContainer">
+          <img
+            src="https://i.pinimg.com/736x/b2/66/f7/b266f7c8ecb53960c5eaa19d2a40dc41.jpg"
+            alt=""
+            class="profileImage"
+          />
+        </div>
+        <div class="details">
+          <div class="name">{{ customer?.fullName | titlecase }}</div>
+          <div class="email">{{ customer?.email }}</div>
+          <div class="row">
+            <div class="phone">
+              Phone No: <b>{{ customer?.phoneNumber }}</b>
+            </div>
+            <div class="idProof">
+              Id No: <b>{{ customer?.idProofNumber }}</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="insights">
+    <div class="insightDetails">
+      <!-- <div class="nav">
+        <div class="navItem">
+          <div
+            class="item"
+            routerLink="bookings"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Bookings
+          </div>
+        </div>
+      </div> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

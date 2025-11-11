@@ -1,0 +1,35 @@
+<div class="main1">
+  <h1>Reviews</h1>
+  <div class="reviewsPart">
+    @for (review of hotel?.reviews; track review.id) {
+    <div class="reviews">
+      <div class="reviewHeader">
+        <div class="headerLeftPart">
+
+            <div class="customerProfile">
+              <img
+                src="https://i.pinimg.com/736x/b2/66/f7/b266f7c8ecb53960c5eaa19d2a40dc41.jpg"
+                alt=""
+                class="profileImage"
+              />
+            </div>
+            <div>
+              <div class="customerName">{{ review?.customerName }}</div>
+              <div class="commentTime">2 days ago</div>
+            </div>
+        </div>
+        <div class="headerRightPart">
+
+            <div class="rating">
+                {{ review?.rating | number : '1.1-1' }} ⭐
+              </div>
+        </div>
+      </div>
+      <div class="reviewBody">
+        
+        <div class="comment"> "{{ review?.comment }}" </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
