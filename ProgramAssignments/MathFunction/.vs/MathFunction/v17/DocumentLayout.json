@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\MathFunction\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C382BEC-DDB9-404B-8D52-D2EB0490A83E}|MathFunction\\MathFunction.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\mathfunction\\mathfunction\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C382BEC-DDB9-404B-8D52-D2EB0490A83E}|MathFunction\\MathFunction.csproj|solutionrelative:mathfunction\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F57829D8-4278-4F1D-9718-653F0B397F00}|MathUtilities\\MathUtilities.csproj|c:\\users\\nabeel.p\\desktop\\assignments\\assignment-repo\\programassignments\\mathfunction\\mathutilities\\mathclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F57829D8-4278-4F1D-9718-653F0B397F00}|MathUtilities\\MathUtilities.csproj|solutionrelative:mathutilities\\mathclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MathClass.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\MathFunction\\MathUtilities\\MathClass.cs",
+              "RelativeDocumentMoniker": "MathUtilities\\MathClass.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\MathFunction\\MathUtilities\\MathClass.cs",
+              "RelativeToolTip": "MathUtilities\\MathClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:24:50.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\MathFunction\\MathFunction\\Program.cs",
+              "RelativeDocumentMoniker": "MathFunction\\Program.cs",
+              "ToolTip": "C:\\Users\\nabeel.p\\Desktop\\Assignments\\assignment-repo\\ProgramAssignments\\MathFunction\\MathFunction\\Program.cs",
+              "RelativeToolTip": "MathFunction\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:12:43.805Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

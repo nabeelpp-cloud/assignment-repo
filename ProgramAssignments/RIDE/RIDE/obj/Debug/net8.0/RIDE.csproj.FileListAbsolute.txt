@@ -1,0 +1,15 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\bin\Debug\net8.0\RIDE.exe
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\bin\Debug\net8.0\RIDE.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\bin\Debug\net8.0\RIDE.runtimeconfig.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\bin\Debug\net8.0\RIDE.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\bin\Debug\net8.0\RIDE.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\refint\RIDE.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\RIDE.genruntimeconfig.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\RIDE\RIDE\obj\Debug\net8.0\ref\RIDE.dll
