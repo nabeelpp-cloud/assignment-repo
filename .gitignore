@@ -68,3 +68,9 @@ Desktop.ini
 *.bak
 *.old
 *.orig
+
+
+# Angular
+node_modules/
+.angular/
+dist/
