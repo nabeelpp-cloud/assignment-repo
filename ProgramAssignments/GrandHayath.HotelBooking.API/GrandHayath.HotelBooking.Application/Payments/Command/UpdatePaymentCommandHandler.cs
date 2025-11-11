@@ -6,23 +6,28 @@ namespace GrandHayath.HotelBooking.Application.Payments.Command
 {
     public class UpdatePaymentCommandHandler : IRequestHandler<UpdatePaymentCommand, int>
     {
-        private readonly IPaymentRepository repository;
+        private readonly IPaymentRepository _repository;
         public UpdatePaymentCommandHandler(IPaymentRepository repository)
         {
-            this.repository = repository;
+            this._repository = repository;
         }
         public async Task<int> Handle(UpdatePaymentCommand request, CancellationToken cancellationToken)
         {
-            var payment = new Payment
+            var existingPayment = await _repository.GetByIdAsync(request.Id);
+
+            if (existingPayment == null)
             {
-                Id = request.Id,
-                BookingId = request.BookingId,
-                PaymentDate = request.PaymentDate,
-                Amount = request.Amount,
-                Method = request.Method,
-                Status = request.Status
-            };
-            return await repository.UpdateAsync(request.Id,payment);
+                return 0;
+            }
+
+            existingPayment.BookingId = request.BookingId;
+            existingPayment.PaymentDate = request.PaymentDate;
+            existingPayment.Amount = request.Amount;
+            existingPayment.Method = request.Method;
+            existingPayment.Status = request.Status;
+
+            return await _repository.UpdateAsync(existingPayment);
+
         }
     }
 }

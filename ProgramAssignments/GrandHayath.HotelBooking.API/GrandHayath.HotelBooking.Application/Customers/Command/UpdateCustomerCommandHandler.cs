@@ -6,22 +6,27 @@ namespace GrandHayath.HotelBooking.Application.Customers.Command
 {
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, int>
     {
-        private readonly ICustomerRepository repository;
+        private readonly ICustomerRepository _repository;
 
         public UpdateCustomerCommandHandler(ICustomerRepository repository)
         {
-            this.repository = repository;
+            this._repository = repository;
         }
         public async Task<int> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
-            var customer = new Customer
+            var existingCustomer = await _repository.GetByIdAsync(request.Id);
+
+            if (existingCustomer == null)
             {
-                FullName = request.FullName,
-                Email = request.Email,
-                PhoneNumber = request.PhoneNumber,
-                IdProofNumber = request.IdProofNumber,
-            };
-            return await repository.UpdateAsync(request.Id,customer);
+                return 0;
+            }
+
+            existingCustomer.FullName = request.FullName;
+            existingCustomer.Email = request.Email;
+            existingCustomer.PhoneNumber = request.PhoneNumber;
+            existingCustomer.IdProofNumber = request.IdProofNumber;
+
+            return await _repository.UpdateAsync(existingCustomer);
         }
     }
 }

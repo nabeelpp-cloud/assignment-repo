@@ -9,60 +9,42 @@ using System.Threading.Tasks;
 
 namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
-    internal class ReviewRepository : IReviewRepository
+    public class ReviewRepository : IReviewRepository
     {
-        private readonly IApplicationDbContext context;
+        private readonly IApplicationDbContext _context;
 
-        public ReviewRepository(IApplicationDbContext context)
+        public ReviewRepository(IApplicationDbContext _context)
         {
-            this.context = context;
+            this._context = _context;
         }
 
 
         public async Task<int> AddAsync(Review review)
         {
-            await context.Reviews.AddAsync(review);
-            return await context.SaveChangesAsync();
+            await _context.Reviews.AddAsync(review);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Review review)
         {
-            var review = await context.Reviews.FindAsync(id);
-            if (review != null)
-            {
-                context.Reviews.Remove(review);
-                return await context.SaveChangesAsync();
-            }
-
-            return 0;
-
+            _context.Reviews.Remove(review);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<Review>> GetAllAsync()
         {
-            var reviews =await context.Reviews.ToListAsync();
-            return reviews;
+            return await _context.Reviews.ToListAsync();
         }
 
         public async Task<Review?> GetByIdAsync(int id)
         {
-            var review =await context.Reviews.FindAsync(id);
-            return review;
+            return await _context.Reviews.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Review review)
+        public async Task<int> UpdateAsync( Review review)
         {
-            var existingReview = await context.Reviews.FindAsync(id);
-            if(existingReview != null)
-            {
-                existingReview.HotelId = review.HotelId;
-                existingReview.CustomerId = review.CustomerId;
-                existingReview.Rating = review.Rating;
-                existingReview.Comment = review.Comment;
-                existingReview.ReviewDate = review.ReviewDate;
-                return await context.SaveChangesAsync();
-            }
-            return 0;
+            _context.Reviews.Update(review);
+            return await _context.SaveChangesAsync();
         }
     }
 }

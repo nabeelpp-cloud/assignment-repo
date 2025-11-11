@@ -11,17 +11,17 @@ namespace GrandHayath.HotelBooking.API.Controllers
     [ApiController]
     public class HotelController : ControllerBase
     {
-        private readonly IMediator mediator;
+        private readonly IMediator _mediator;
 
-        public HotelController(IMediator mediator)
+        public HotelController(IMediator _mediator)
         {
-            this.mediator = mediator;
+            this._mediator = _mediator;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             GetAllHotelQuery getAllHotelQuery = new GetAllHotelQuery();
-            var response =await mediator.Send(getAllHotelQuery);
+            var response =await _mediator.Send(getAllHotelQuery);
             if(response != null) 
                 return Ok(response);
             return Ok();
@@ -31,7 +31,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
         {
             GetHotelByIdQuery query = new GetHotelByIdQuery();
             query.Id = id;
-            var response =await mediator.Send(query);
+            var response =await _mediator.Send(query);
             if (response != null)
                 return Ok(response);
             return NotFound();
@@ -39,20 +39,48 @@ namespace GrandHayath.HotelBooking.API.Controllers
         [HttpPost]
         public async Task<int> Add(CreateHotelCommand command)
         {
-            return await mediator.Send(command);
+            return await _mediator.Send(command);
         }
         [HttpDelete]
         public async Task<int> Delete(int id)
         {
             DeleteHotelCommand command = new DeleteHotelCommand();
             command.Id = id;
-            return await mediator.Send(command);
+            return await _mediator.Send(command);
         }
         [HttpPatch("{id}")]
         public async Task<int> Update(int id,UpdateHotelCommand command)
         {
             command.Id = id;
-            return await mediator.Send(command);
+            return await _mediator.Send(command);
         }
+        [HttpGet("{id}/rooms")]
+        public async Task<IActionResult> GetHotelWithRoomsByID(int id)
+        {
+            GetHotelWithRoomsQuery query = new GetHotelWithRoomsQuery();
+            query.Id = id;
+            var response = await _mediator.Send(query);
+            if (response != null)
+                return Ok(response);
+            return NotFound();
+        }
+        [HttpGet("{id}/employees")]
+        public async Task<IActionResult> GetHotelWithEmployees(int id)
+        {
+            var result = await _mediator.Send(new GetHotelWithEmployeesQuery { Id = id });
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpGet("{id}/reviews")]
+        public async Task<IActionResult> GetHotelWithReviews(int id)
+        {
+            var result = await _mediator.Send(new GetHotelWithReviewsQuery { Id = id });
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
     }
 }

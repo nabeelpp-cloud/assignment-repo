@@ -15,5 +15,7 @@ namespace GrandHayath.HotelBooking.Domain.Entity
 
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
 
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+
     }
 }

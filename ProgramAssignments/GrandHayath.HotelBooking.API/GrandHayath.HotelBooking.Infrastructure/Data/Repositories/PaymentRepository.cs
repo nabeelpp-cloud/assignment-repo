@@ -11,54 +11,39 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class PaymentRepository : IPaymentRepository
     {
-        private readonly IApplicationDbContext dbContext;
+        private readonly IApplicationDbContext _context;
 
-        public PaymentRepository(IApplicationDbContext dbContext)
+        public PaymentRepository(IApplicationDbContext _context)
         {
-            this.dbContext = dbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Payment payment)
         {
-            await dbContext.Payments.AddAsync(payment);
-            return await dbContext.SaveChangesAsync();
+            await _context.Payments.AddAsync(payment);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Payment payment)
         {
-            var payment =await dbContext.Payments.FindAsync(id);
-            if(payment != null)
-            {
-                dbContext.Payments.Remove(payment);
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+
+            _context.Payments.Remove(payment);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<Payment>> GetAllAsync()
         {
-            var payments =await dbContext.Payments.ToListAsync();
-            return payments;
+            return await _context.Payments.ToListAsync();
         }
 
         public async Task<Payment?> GetByIdAsync(int id)
         {
-            var payment =await dbContext.Payments.FindAsync(id);
-            return payment;
+            return await _context.Payments.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Payment payment)
+        public async Task<int> UpdateAsync(Payment payment)
         {
-            var existingPayment =await  dbContext.Payments.FindAsync(id);
-            if (existingPayment != null) 
-            {
-                existingPayment.BookingId = payment.BookingId;
-                existingPayment.Amount = payment.Amount;
-                existingPayment.PaymentDate = payment.PaymentDate;
-                existingPayment.Method = payment.Method;
-                existingPayment.Status = payment.Status;
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Payments.Update(payment);
+            return await _context.SaveChangesAsync();
         }
     }
 }

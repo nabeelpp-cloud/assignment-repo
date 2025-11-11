@@ -20,6 +20,7 @@ namespace GrandHayath.HotelBooking.Application.Customers.Query
             {
                 var customerDto = new CustomerDto
                 {
+                    
                     FullName = customer.FullName,
                     Email = customer.Email,
                     PhoneNumber = customer.PhoneNumber,

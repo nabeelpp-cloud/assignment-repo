@@ -11,6 +11,5 @@
         public Hotel Hotel { get; set; }
         public Customer Customer { get; set; }
 
-        
     }
 }

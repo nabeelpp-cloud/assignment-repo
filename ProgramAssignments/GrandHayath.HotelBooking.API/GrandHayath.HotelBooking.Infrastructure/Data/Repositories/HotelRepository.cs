@@ -11,54 +11,40 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class HotelRepository : IHotelRepository
     {
-        private readonly IApplicationDbContext applicationDbContext;
+        private readonly IApplicationDbContext _context;
 
-        public HotelRepository(IApplicationDbContext applicationDbContext) 
+        public HotelRepository(IApplicationDbContext _context)
         {
-            this.applicationDbContext = applicationDbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Hotel hotel)
         {
-            await applicationDbContext.Hotels.AddAsync(hotel);
-            return await applicationDbContext.SaveChangesAsync();
+            await _context.Hotels.AddAsync(hotel);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Hotel hotel)
         {
-            var hotel = await applicationDbContext.Hotels.FindAsync(id);
-            if (hotel != null) 
-            {
-                applicationDbContext.Hotels.Remove(hotel);
-                return await applicationDbContext.SaveChangesAsync();
-            }
-            return 0;
+
+            _context.Hotels.Remove(hotel);
+            return await _context.SaveChangesAsync();
+
         }
 
         public async Task<List<Hotel>> GetAllAsync()
         {
-            var hotels= await applicationDbContext.Hotels.ToListAsync ();
-            return hotels;
+            return await _context.Hotels.ToListAsync();
         }
 
         public async Task<Hotel?> GetByIdAsync(int id)
         {
-            var room = await applicationDbContext.Hotels.FindAsync (id);
-            return room;
+            return await _context.Hotels.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Hotel hotel)
+        public async Task<int> UpdateAsync(Hotel hotel)
         {
-            var existingHotel = await applicationDbContext.Hotels.FindAsync(id);
-            if (existingHotel != null)
-            {
-                existingHotel.Name = hotel.Name;
-                existingHotel.Address = hotel.Address;
-                existingHotel.City = hotel.City;
-                existingHotel.Country = hotel.Country;
-                existingHotel.PhoneNumber = hotel.PhoneNumber;
-                return await applicationDbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Hotels.Update(hotel);
+            return await _context.SaveChangesAsync();
         }
     }
 }

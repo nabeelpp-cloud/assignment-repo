@@ -7,9 +7,9 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
 {
     public class GetHotelByIdQueryHandler : IRequestHandler<GetHotelByIdQuery, HotelDto?>
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly IApplicationDbContext dbContext;
 
-        public GetHotelByIdQueryHandler(ApplicationDbContext dbContext)
+        public GetHotelByIdQueryHandler(IApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

@@ -55,5 +55,15 @@ namespace GrandHayath.HotelBooking.API.Controllers
             command.Id = id;
             return await mediator.Send(command);
         }
+        [HttpGet("{id}/bookings")]
+        public async Task<IActionResult> GetCustomerBookings(int id)
+        {
+            GetCustomerWithBookingsQuery query = new GetCustomerWithBookingsQuery();
+            query.Id = id;
+            var response = await mediator.Send(query);
+            if (response != null)
+                return Ok(response);
+            return NotFound();
+        }
     }
 }

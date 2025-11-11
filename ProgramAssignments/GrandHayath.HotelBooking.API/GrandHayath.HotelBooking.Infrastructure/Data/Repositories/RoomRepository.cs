@@ -11,56 +11,41 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
 {
     public class RoomRepository : IRoomRepository
     {
-        private readonly IApplicationDbContext dbContext;
+        private readonly IApplicationDbContext _context;
 
-        public RoomRepository(IApplicationDbContext dbContext)
+        public RoomRepository(IApplicationDbContext _context)
         {
-            this.dbContext = dbContext;
+            this._context = _context;
         }
         public async Task<int> AddAsync(Room room)
         {
-            await dbContext.Rooms.AddAsync(room);
-            return await dbContext.SaveChangesAsync();
+            await _context.Rooms.AddAsync(room);
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(Room room)
         {
-            var room = await dbContext.Rooms.FindAsync(id);
-            if(room != null)
-            {
-                dbContext.Rooms.Remove(room);
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+
+            _context.Rooms.Remove(room);
+            return await _context.SaveChangesAsync();
+
         }
 
         public async Task<List<Room>> GetAllAsync()
         {
-            var rooms = await dbContext.Rooms.ToListAsync();
-            return rooms;
+            return await _context.Rooms.ToListAsync();
         }
 
         public async Task<Room?> GetByIdAsync(int id)
         {
-            var room = await dbContext.Rooms.FindAsync(id);
-            return room;
+            return await _context.Rooms.FindAsync(id);
         }
 
-        public async Task<int> UpdateAsync(int id, Room room)
+        public async Task<int> UpdateAsync( Room room)
         {
-            var existingRoom = await dbContext.Rooms.FindAsync(id);
-            if (existingRoom != null) 
-            {
-                existingRoom.RoomNumber = room.RoomNumber;
-                existingRoom.Status = room.Status;
-                existingRoom.PricePerNight = room.PricePerNight;
-                existingRoom.HotelId = room.HotelId;
-                existingRoom.RoomTypeId = room.RoomTypeId;
-                return await dbContext.SaveChangesAsync();
-            }
-            return 0;
+            _context.Rooms.Update(room);
+            return await _context.SaveChangesAsync();
         }
 
-        
     }
 }

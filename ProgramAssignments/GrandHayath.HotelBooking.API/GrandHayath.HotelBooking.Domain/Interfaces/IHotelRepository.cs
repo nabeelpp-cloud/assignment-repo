@@ -13,7 +13,7 @@ namespace GrandHayath.HotelBooking.Domain.Interfaces
         Task<List<Hotel>> GetAllAsync();
         Task<Hotel?> GetByIdAsync(int id);
 
-        Task<int> DeleteAsync(int id);
-        Task<int> UpdateAsync(int id, Hotel hotel);
+        Task<int> DeleteAsync(Hotel hotel);
+        Task<int> UpdateAsync(Hotel hotel);
     }
 }
