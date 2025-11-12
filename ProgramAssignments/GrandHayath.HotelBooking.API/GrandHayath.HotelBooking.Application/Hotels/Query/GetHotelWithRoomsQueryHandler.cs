@@ -17,6 +17,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
         {
             var hotel = await _context.Hotels
                 .Include(h => h.Rooms)
+                .ThenInclude(n=>n.RoomType)
                 .FirstOrDefaultAsync(x=>x.Id == request.Id);
             HotelWithRoomsDto hotelWithRoomsDto = new HotelWithRoomsDto();
             if (hotel != null)
@@ -29,7 +30,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
                     RoomDto roomDto = new RoomDto();
                     roomDto.RoomNumber = room.RoomNumber;
                     roomDto.HotelId = room.HotelId;
-                    roomDto.RoomTypeId = room.RoomTypeId;
+                    roomDto.RoomType = room.RoomType.TypeName;
                     roomDto.Status = room.Status;
                     roomDto.PricePerNight = room.PricePerNight;
                     roomDtos.Add(roomDto);

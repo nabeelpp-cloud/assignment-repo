@@ -23,7 +23,7 @@ namespace GrandHayath.HotelBooking.Application.Rooms.Query
             {
                 roomDto.RoomNumber = room.RoomNumber;
                 roomDto.HotelId = room.HotelId;
-                roomDto.RoomTypeId = room.RoomTypeId;
+                roomDto.RoomType = room.RoomType.TypeName;
                 roomDto.Status = room.Status;
                 roomDto.PricePerNight = room.PricePerNight;
                 return roomDto;

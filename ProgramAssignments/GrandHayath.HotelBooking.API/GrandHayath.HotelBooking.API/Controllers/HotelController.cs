@@ -82,5 +82,31 @@ namespace GrandHayath.HotelBooking.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("full")]
+        public async Task<IActionResult> GetHotelFullDetails(
+            string? searchTerm ,
+            DateTime? checkInDate , 
+            DateTime? checkOutDate,
+            string? selectedRatings,
+            int pageNumber =1,
+            int pageSize = 10,
+            int minPrice = 0,
+            int maxPrice = 1000)
+        {
+            var result = await _mediator.Send(new GetHotelFullDetailsQuery { 
+                SearchTerm = searchTerm ,
+                CheckInDate = checkInDate ,
+                CheckOutDate = checkOutDate ,
+                PageNumber = pageNumber ,
+                PageSize = pageSize,
+                MinPrice = minPrice,
+                MaxPrice = maxPrice,
+                StarRating = selectedRatings
+            });
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
     }
 }

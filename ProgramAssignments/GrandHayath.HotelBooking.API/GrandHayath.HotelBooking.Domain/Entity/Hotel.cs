@@ -11,6 +11,8 @@ namespace GrandHayath.HotelBooking.Domain.Entity
         public string Country { get; set; }
         public string PhoneNumber { get; set; }
 
+        public int StarRating { get; set; }
+        public ICollection<HotelImages> HotelImages {get;set;} = new List<HotelImages>();
         public ICollection<Room> Rooms { get; set; } = new List<Room>();
 
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
