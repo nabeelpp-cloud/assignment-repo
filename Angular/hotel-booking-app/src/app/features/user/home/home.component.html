@@ -1,0 +1,181 @@
+<div class="main">
+  <div class="sections">
+    <div class="section1">
+      <form [formGroup]="searchForm" (ngSubmit)="searchHotel()">
+        <div class="container">
+          <div class="inputContainers">
+            <div class="destinationInputContainer">
+              <div class="label">Destination</div>
+              <div class="inputContainer">
+                <div class="input-box">
+                  <!-- <i class="fa-solid fa-location-dot"></i> -->
+                  <input
+                    formControlName="searchTerm"
+                    type="text"
+                    placeholder="eg. New York"
+                  />
+                </div>
+              </div>
+
+              
+            </div>
+            <div class="dateCheckInInputContainer">
+              <div class="label">Check-in</div>
+              <div class="inputContainer">
+                <input
+                  formControlName="checkInDate"
+                  type="date"
+                  name=""
+                  id=""
+                />
+              </div>
+              @if
+              (searchForm.get('checkInDate')?.errors?.['dateCannotBeBeforeToday']
+              && searchForm.get('checkInDate')?.touched){
+              <div class="error">Date cannot be before today</div>
+              } 
+              @if (searchForm.get('checkInDate')?.hasError('required') &&
+              searchForm.get('checkInDate')?.touched) {
+              <div class="error">Date is required</div>
+              }
+            </div>
+            <div class="dateCheckInInputContainer">
+              <div class="label">Check-out</div>
+              <div class="inputContainer">
+                <input
+                  formControlName="checkOutDate"
+                  type="date"
+                  name=""
+                  id=""
+                />
+              </div>
+              @if
+              (searchForm.get('checkOutDate')?.errors?.['dateCannotBeBeforeToday']
+              && searchForm.get('checkOutDate')?.touched){
+              <div class="error">Date cannot be before today</div>
+              } 
+              @if (searchForm.get('checkOutDate')?.hasError('required') &&
+              searchForm.get('checkOutDate')?.touched) {
+              <div class="error">Date is required</div>
+              }
+            </div>
+          </div>
+          <div class="submitContainer">
+            <button class="submitButton" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Search Hotels
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="section2">
+      <div class="popularDestinationContainer">
+        <ul class="listOfDestination">
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/736x/27/d8/66/27d8660091b7c4fdcfc42e02a30cfc27.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">Paris</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/1200x/3c/e1/37/3ce13726cd35a17a0650fe095a1ff67e.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">London</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/736x/62/56/7a/62567ad90a25c17b5baa70d243137310.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">New York</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/1200x/d0/48/97/d04897d971d1c8bbeccf688cd0568a85.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">Dubai</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/1200x/07/1d/3b/071d3b4a5ebb658209e103bcb56a4fae.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">India</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/1200x/52/a5/29/52a52935d97e96dc2a9a404c85bdb3e7.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">China</div>
+            </div>
+          </li>
+          <li class="destination">
+            <div class="itemContainer">
+              <div class="imageContainer">
+                <img
+                  class="image"
+                  src="https://i.pinimg.com/1200x/da/37/ec/da37ec27327a984e0cc6ee8fd77a1816.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="destinationName">Japan</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="leftFooter">
+      <div class="copyRight">© 2025 StayHub. All rights reserved.</div>
+    </div>
+    <div class="rightfooter">
+      <ul class="itemsList">
+        <li class="items">
+          <a href="" class="about">About</a>
+        </li>
+        <li class="items">
+          <a href="" class="about">Contact</a>
+        </li>
+        <li class="items">
+          <a href="" class="about">Terms of Service</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

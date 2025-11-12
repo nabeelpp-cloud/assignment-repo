@@ -1,0 +1,239 @@
+<div class="main">
+  <div class="leftSection">
+    @if(!isChangeSearch){
+    <div class="searchContainer">
+      <div class="searchTitle">Your Search</div>
+      <div class="row">
+        <div class="col">
+          <div class="label">Destination</div>
+          <div class="destination" >
+            {{ searchTerm ? searchTerm : "Not selected" }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="label">Check-in</div>
+          <div class="destination">{{ checkInDate }}</div>
+        </div>
+        <div class="col">
+          <div class="label">Check-out</div>
+          <div class="destination">{{ checkOutDate }}</div>
+        </div>
+      </div>
+      <div class="changeSearch" (click)="openChangeSearch()">Change Search</div>
+    </div>
+    } @else{
+    <div class="searchContainer" [ngClass]="{ editable: isChangeSearch }">
+      <div class="searchTitle">Your Search</div>
+      <div class="row">
+        <div class="col">
+          <div class="label">Destination</div>
+          <input type="text" [(ngModel)]="tempSearchTerm" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="label">Check-in</div>
+          <input type="date" [(ngModel)]="tempCheckInDate" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="label">Check-out</div>
+          <input type="date" [(ngModel)]="tempCheckOutDate" />
+        </div>
+      </div>
+      <div class="buttonRow">
+        <div class="cancelButton" (click)="isChangeSearch = false">Cancel</div>
+        <button class="submitButton" type="submit" (click)="searchHotel()">
+          Search
+        </button>
+      </div>
+    </div>
+    }
+
+    <div class="filterContainer">
+      <div class="title">Filter By</div>
+      <div class="priceRange">
+        <div class="subTitle">Price Range</div>
+        <mat-slider [min]="minPrice" [max]="maxPrice" [step]="step">
+          <input matSliderStartThumb [(ngModel)]="selectedMinPrice" />
+          <input matSliderEndThumb [(ngModel)]="selectedMaxPrice" />
+        </mat-slider>
+        <div class="range">
+          <span class="prices">{{ selectedMinPrice | currency }}</span>
+          <span class="prices">{{ selectedMaxPrice | currency }}</span>
+        </div>
+      </div>
+      <div class="starRating">
+        <div class="subTitle">Star Rating</div>
+        <div class="ratingRow">
+          <input
+            type="checkbox"
+            (change)="toggleRating(5, $event)"
+            name="rating"
+            id="rating"
+            value="5"
+          />
+          5 Star
+          <input
+            type="checkbox"
+            (change)="toggleRating(4, $event)"
+            name="rating"
+            id="rating"
+            value="4"
+          />
+          4 Star
+          <input
+            type="checkbox"
+            (change)="toggleRating(3, $event)"
+            name="rating"
+            id="rating"
+            value="3"
+          />
+          3 Star
+        </div>
+        <div class="ratingRow">
+          <input
+            type="checkbox"
+            (change)="toggleRating(2, $event)"
+            name="rating"
+            id="rating"
+            value="2"
+          />
+          2 Star
+          <input
+            type="checkbox"
+            (change)="toggleRating(1, $event)"
+            name="rating"
+            id="rating"
+            value="1"
+          />
+          1 Star
+        </div>
+      </div>
+      <div class="applyFilterContainer">
+        <button (click)="applyFilter()" class="applyButton">
+          Apply Filters
+        </button>
+      </div>
+    </div>
+  </div>
+  @if(!isLoading){ @if(hotels.length>0){
+  <div class="hotelListContainer">
+    <div class="topSec">
+      <div class="count">
+        {{ searchTerm || "All destinations" }} : {{ totalItems || 0 }} hotels
+        found
+      </div>
+      <div class="sortContainer">
+        <div class="sortText">Sort:</div>
+        <div class="sortDropDown">
+          <select name="" id="">
+            <option value="">select sort</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="hotelList">
+      @for( hotel of hotels; track hotel.id){
+      <div class="hotelCard">
+        <div class="hotelImageContainer">
+          <img
+            [src]="hotel.hotelImages[0]?.imageUrl"
+            alt=""
+            class="hotelImage"
+          />
+        </div>
+        <div class="container3">
+          <div class="hotelDetails">
+            <div class="hotelName">{{ hotel?.name | titlecase }}</div>
+
+            <div class="starRating2">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                <i
+                  style="color: gold; margin-right: 2px; font-size: 1.2rem"
+                  class="fa-star"
+                  [ngClass]="{
+                    fas: i < hotel.starRating,
+                    far: i >= hotel.starRating
+                  }"
+                ></i>
+              </ng-container>
+            </div>
+
+            <div class="addressDetails">
+              <div class="detail">{{ hotel?.address | titlecase }},</div>
+              <div class="detail">{{ hotel?.city | titlecase }},</div>
+              <div class="detail">{{ hotel?.country | titlecase }},</div>
+            </div>
+
+            <div class="phoneDetails">
+              <div class="phoneLabel">
+                {{ hotel?.phoneNumber ? "Phone :" : "" }}
+              </div>
+              <div class="phone">{{ hotel?.phoneNumber }}</div>
+            </div>
+          </div>
+          <div class="container4">
+            <div class="rating">{{ hotel?.rating | number : "1.1-1" }}</div>
+            <div class="container5">
+              <div class="price">
+                {{ hotel?.minimumPrice | currency }}
+                <span *ngIf="hotel?.minimumPrice !== hotel?.maximumPrice">
+                  - {{ hotel?.maximumPrice | currency }}
+                </span>
+              </div>
+              <div class="buttonRow">
+                <div class="bookNowButtonContainer">
+                  <button class="bookNowButton">Book Now</button>
+                </div>
+                <div class="viewDetailsButtonContainer">
+                  <button class="viewDetailsButton">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+
+      <button
+        *ngFor="let p of [].constructor(totalPages); let i = index"
+        (click)="goToPage(i + 1)"
+        [class.active]="page === i + 1"
+      >
+        {{ i + 1 }}
+      </button>
+
+      <button (click)="nextPage()" [disabled]="page === totalPages">
+        Next
+      </button>
+    </div>
+  </div>
+  }
+  @else {
+    <div class="noHotelsContainer">
+      <div class="noHotelsIcon">
+        <i class="fas fa-hotel" style="font-size: 5rem; color: #ccc;"></i>
+      </div>
+      <div class="noHotelsText">
+        <h2>No Hotels Found</h2>
+        <p>We couldn't find any hotels matching your search criteria.</p>
+        <p>Try adjusting your filters or search term.</p>
+      </div>
+    </div>
+  }
+ }
+ @else {
+  <div class="loadingContainer" >
+    <mat-spinner diameter="60" strokeWidth="6" color="primary"></mat-spinner>
+    <p>Loading hotels...</p>
+  </div>
+  
+ }
+</div>

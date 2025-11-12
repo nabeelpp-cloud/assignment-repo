@@ -1,0 +1,458 @@
+.main {
+  //padding-top: 70px;
+  background-color: rgb(246, 244, 244);
+  height: 100vh;
+  display: flex;
+}
+
+.leftSection {
+  width: 280px;
+  padding: 20px;
+  padding-top: 90px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: "Poppins", sans-serif;
+  //height: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.searchContainer,
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.searchContainer {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid rgb(199, 199, 199);
+}
+
+.searchTitle,
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.col {
+  //flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.destination {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+}
+
+.priceRange,
+.starRating {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+mat-slider {
+  width: 100%;
+}
+
+.range {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.applyFilterContainer {
+  margin-top: 12px;
+}
+
+.applyButton {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.applyButton:hover {
+  background-color: #155ab6;
+  transform: translateY(-1px);
+}
+
+.applyButton:active {
+  transform: translateY(1px);
+}
+.changeSearch {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #155ab6;
+  cursor: pointer;
+}
+
+.hotelListContainer {
+  flex: 1;
+  //height: 100vh;
+  padding: 90px 60px 0px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.topSec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.count {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortText {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.sortDropDown select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.hotelList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 514px;
+}
+
+.hotelCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: #fff;
+  border-radius: 12px;
+  
+  //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.hotelCard:hover {
+  transform: translateY(-2px);
+}
+
+.hotelImageContainer {
+  height: 210px;
+}
+
+.hotelImage {
+    height: 100%;
+    width: 250px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.hotelDetails {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+}
+
+.hotelName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a73e8;
+}
+
+
+
+.addressDetails {
+  display: flex;
+  gap: 12px;
+  font-size: 1rem;
+  color: #777;
+}
+.phoneDetails {
+  display: flex;
+  gap: 8px; 
+  align-items: center; 
+  font-size: 1rem;
+  color: #777;
+  padding-top: 8px;
+}
+
+// .phoneLabel {
+//   //font-size: 0.9rem;
+//   //color: #000;
+// }
+
+.phone {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: end;
+  
+  padding: 10px 20px 0px 0px ;
+}
+
+.bookNowButton,
+.viewDetailsButton {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.bookNowButton {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.bookNowButton:hover {
+  background-color: #155ab6;
+}
+
+.viewDetailsButton {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.viewDetailsButton:hover {
+  background-color: #bdbdbd;
+}
+
+.pagination {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #155ab6;
+  background-color: white;
+  color: #155ab6;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #155ab6;
+  color: white;
+  font-weight: bold;
+}
+
+.container4{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  align-items: flex-end;
+}
+.rating{
+  background-color: #155ab6;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  width: 30px;
+  text-align: center;
+  margin-right: 20px;
+}
+.price{
+  color: black;
+  text-align: right;
+  margin-top: 40px;
+  margin-right: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+.searchContainer.editable {
+  background-color: #f9f9f9;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 0px;
+}
+
+
+
+.searchContainer.editable input[type="text"],
+.searchContainer.editable input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.searchContainer.editable .buttonRow {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.searchContainer.editable .cancelButton {
+  color: #155ab6;
+  padding: 3px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.searchContainer.editable .cancelButton:hover {
+  //background-color: #155ab6;
+  color: #073776;
+}
+
+.searchContainer.editable .submitButton {
+  background-color: #155ab6;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.searchContainer.editable .submitButton:hover {
+  background-color: #1a73e8;
+}
+
+.starRating2{
+  display: flex;
+  flex-direction: row;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.noHotelsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+  width: 78%;
+}
+
+.noHotelsIcon {
+  margin-bottom: 20px;
+}
+.noHotelsText h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #555;
+}
+.noHotelsText p {
+  margin: 5px 0;
+  color: #777;
+}
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  text-align: center;
+  width: 78%;
+}
+
+.loadingContainer p {
+  margin-top: 10px;
+  color: #555;
+  font-size: 1.2rem;
+}
