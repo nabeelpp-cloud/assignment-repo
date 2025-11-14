@@ -46,8 +46,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -71,8 +75,7 @@
               "RelativeToolTip": "LibrarySystem\\Transactions\\BorrowTransaction.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:04:14.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:04:14.946Z"
             },
             {
               "$type": "Document",
@@ -84,8 +87,7 @@
               "RelativeToolTip": "LibrarySystem\\Members\\Librarian.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:03:39.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:03:39.567Z"
             },
             {
               "$type": "Document",
@@ -97,8 +99,7 @@
               "RelativeToolTip": "LibrarySystem\\Members\\Member.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:03:22.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:03:22.499Z"
             },
             {
               "$type": "Document",
@@ -110,8 +111,7 @@
               "RelativeToolTip": "LibrarySystem\\Books\\Journal.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:01:47.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:01:47.403Z"
             },
             {
               "$type": "Document",
@@ -123,8 +123,7 @@
               "RelativeToolTip": "LibrarySystem\\Books\\Magazine.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAqwBsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:01:26.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:01:26.108Z"
             },
             {
               "$type": "Document",
@@ -136,8 +135,7 @@
               "RelativeToolTip": "LibrarySystem\\Books\\Book.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:00:57.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:00:57.535Z"
             },
             {
               "$type": "Document",
@@ -149,8 +147,7 @@
               "RelativeToolTip": "LibrarySystem\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T09:00:17.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T09:00:17.524Z"
             },
             {
               "$type": "Document",
@@ -162,12 +159,7 @@
               "RelativeToolTip": "LibraryManagementSystem\\Program.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAADQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T08:59:30.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2025-10-17T08:59:30.955Z"
             }
           ]
         }

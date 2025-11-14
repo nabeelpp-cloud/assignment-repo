@@ -1,10 +1,14 @@
 using GrandHayath.HotelBooking.Domain.Interfaces;
 using GrandHayath.HotelBooking.Infrastructure.Data;
 using GrandHayath.HotelBooking.Infrastructure.Data.Repositories;
+using GrandHayath.HotelBooking.Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +33,8 @@ builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 
 
 builder.Services.AddMediatR(x => x.RegisterServicesFromAssembly(Assembly.Load("GrandHayath.HotelBooking.Application")));
@@ -37,11 +43,36 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200") 
+            policy.WithOrigins("http://localhost:4200")
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials();
         });
 });
+
+var configuration = builder.Configuration;
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true, 
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = configuration["JwtSettings:Issuer"],
+        ValidAudience = configuration["JwtSettings:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:Key"]))
+    };
+});
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -53,7 +84,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowAngularApp");
 app.UseAuthorization();
-
+app.UseRouting();
+app.UseAuthentication(); 
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

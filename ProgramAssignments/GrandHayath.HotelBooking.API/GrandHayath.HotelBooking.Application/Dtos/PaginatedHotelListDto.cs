@@ -12,6 +12,6 @@ namespace GrandHayath.HotelBooking.Application.Dtos
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public int TotalPages { get; set; }
-        public List<HotelFullDetailsDto> Hotels { get; set; }
+        public List<HotelFullListDto> Hotels { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using GrandHayath.HotelBooking.Application.Hotels.Query;
 using GrandHayath.HotelBooking.Application.Rooms.Command;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
             return NotFound();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<int> Add(CreateHotelCommand command)
         {
             return await _mediator.Send(command);
@@ -55,6 +57,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
             return await _mediator.Send(command);
         }
         [HttpGet("{id}/rooms")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetHotelWithRoomsByID(int id)
         {
             GetHotelWithRoomsQuery query = new GetHotelWithRoomsQuery();
@@ -102,6 +105,21 @@ namespace GrandHayath.HotelBooking.API.Controllers
                 MinPrice = minPrice,
                 MaxPrice = maxPrice,
                 StarRating = selectedRatings
+            });
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+        [HttpGet("full/{id}")]
+        public async Task<IActionResult> GetHotelFullDetails(
+            int id,
+            DateTime? checkInDate , 
+            DateTime? checkOutDate)
+        {
+            var result = await _mediator.Send(new GetHotelFullDetailsByIdQuery { 
+                Id=id,
+                CheckInDate = checkInDate ,
+                CheckOutDate = checkOutDate 
             });
             if (result == null)
                 return NotFound();

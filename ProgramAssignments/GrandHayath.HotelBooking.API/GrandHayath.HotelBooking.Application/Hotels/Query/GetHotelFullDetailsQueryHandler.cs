@@ -71,7 +71,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
                 .Take(request.PageSize)
                 .ToListAsync(cancellationToken);
 
-            var hotelsDto = hotels.Select(h => new HotelFullDetailsDto
+            var hotelsDto = hotels.Select(h => new HotelFullListDto
             {
                 Id = h.Id,
                 Name = h.Name,
@@ -91,21 +91,21 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
                     Id = m.Id,
                     ImageUrl = m.ImageUrl
                 }).ToList(),
-                Reviews = h.Reviews.Select(n => new ReviewDto
-                {
-                    Id = n.Id,
-                    CustomerName = n.Customer != null ? n.Customer.FullName : "Anonymous",
-                    Rating = n.Rating,
-                    Comment = n.Comment,
-                    ReviewDate = n.ReviewDate
-                }).ToList(),
-                Rooms = h.Rooms.Select(r => new RoomDto
-                {
-                    Id = r.Id,
-                    RoomNumber = r.RoomNumber,
-                    RoomType = r.RoomType.TypeName,
-                    PricePerNight = r.PricePerNight
-                }).ToList()
+                //Reviews = h.Reviews.Select(n => new ReviewDto
+                //{
+                //    Id = n.Id,
+                //    CustomerName = n.Customer != null ? n.Customer.FullName : "Anonymous",
+                //    Rating = n.Rating,
+                //    Comment = n.Comment,
+                //    ReviewDate = n.ReviewDate
+                //}).ToList(),
+                //Rooms = h.Rooms.Select(r => new RoomDto
+                //{
+                //    Id = r.Id,
+                //    RoomNumber = r.RoomNumber,
+                //    RoomType = r.RoomType.TypeName,
+                //    PricePerNight = r.PricePerNight
+                //}).ToList()
             }).ToList();
 
             return new PaginatedHotelListDto
