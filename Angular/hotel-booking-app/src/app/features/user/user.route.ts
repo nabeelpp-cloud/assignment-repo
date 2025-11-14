@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { HomeComponent } from './home/home.component';
 import { HotelsListComponent } from './hotel/hotels-list/hotels-list.component';
+import { HotelDetailsComponent } from './hotel/hotel-details/hotel-details.component';
+import { BookHotelComponent } from './hotel/book-hotel/book-hotel.component';
 
 export const userRoutes: Routes = [
   {
@@ -9,7 +11,18 @@ export const userRoutes: Routes = [
     component: UserLayoutComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path : 'hotels' , component : HotelsListComponent},
+      {
+        path: 'hotels',
+        component: HotelsListComponent,
+      },
+      {
+        path: 'hotels/:id',
+        component: HotelDetailsComponent,
+      },
+      {
+        path: 'book-hotel/:id',
+        component: BookHotelComponent,
+      },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },

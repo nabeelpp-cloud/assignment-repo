@@ -14,11 +14,11 @@
       <div class="row">
         <div class="col">
           <div class="label">Check-in</div>
-          <div class="destination">{{ checkInDate }}</div>
+          <div class="destination">{{ checkInDate ? checkInDate : "Not selected"  }}</div>
         </div>
         <div class="col">
           <div class="label">Check-out</div>
-          <div class="destination">{{ checkOutDate }}</div>
+          <div class="destination">{{ checkOutDate ? checkOutDate: "Not selected"  }}</div>
         </div>
       </div>
       <div class="changeSearch" (click)="openChangeSearch()">Change Search</div>
@@ -138,7 +138,7 @@
     </div>
     <div class="hotelList">
       @for( hotel of hotels; track hotel.id){
-      <div class="hotelCard">
+      <div class="hotelCard" >
         <div class="hotelImageContainer">
           <img
             [src]="hotel.hotelImages[0]?.imageUrl"
@@ -187,10 +187,10 @@
               </div>
               <div class="buttonRow">
                 <div class="bookNowButtonContainer">
-                  <button class="bookNowButton">Book Now</button>
+                  <button class="bookNowButton" >Book Now</button>
                 </div>
                 <div class="viewDetailsButtonContainer">
-                  <button class="viewDetailsButton">View Details</button>
+                  <button class="viewDetailsButton" (click)="gotoHotelDetails(hotel.id)">View Details</button>
                 </div>
               </div>
             </div>

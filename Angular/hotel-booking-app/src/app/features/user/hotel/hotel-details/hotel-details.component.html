@@ -1,0 +1,130 @@
+<div class="main">
+  <div class="hotel-details">
+    <div class="hero">
+      <div class="imageContainer">
+        <img
+          class="hero-img"
+          [src]="
+            hotel?.hotelImages?.length
+              ? hotel.hotelImages[currentImageIndex].imageUrl
+              : ''
+          "
+          alt="Hotel image"
+        />
+
+        @if (hotel?.hotelImages?.length > 0) {
+        <div class="thumbnail-list">
+          @for (img of hotel.hotelImages.slice(0, 3); track $index) {
+          <img
+            class="thumb"
+            [src]="img.imageUrl"
+            alt="Thumbnail"
+            (click)="changeMainImage($index)"
+          />
+          }
+        </div>
+        }
+      </div>
+
+      <div class="hero-info">
+        <h1 class="hotel-name">{{ hotel?.name | titlecase }}</h1>
+        <div class="meta">
+          <div class="rating">
+            <div class="starRating2">
+              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                <i
+                  style="color: gold; margin-right: 2px; font-size: 1.2rem"
+                  class="fa-star"
+                  [ngClass]="{
+                    fas: i < hotel?.starRating,
+                    far: i >= hotel?.starRating
+                  }"
+                ></i>
+              </ng-container>
+            </div>
+          </div>
+          <span class="small">{{ hotel?.reviews.length }} reviews</span>
+        </div>
+        <div class="location">
+          {{ hotel?.address }},&nbsp;{{ hotel?.city }},&nbsp;{{
+            hotel?.country
+          }}
+        </div>
+        <div class="phoneNumber">{{ hotel?.phoneNumber }}</div>
+        
+
+        @if(hotel?.reviews.length){
+            <h3 class="reviewsHeding">Reviews</h3>
+            <div class="reviewContainer">
+              @for(review of hotel?.reviews ; track $index ){
+              <div class="reviewCard">
+                <div class="reviewHeader">
+                  <div class="headerLeftPart">
+                    <div class="customerProfile">
+                      <img
+                        src="https://i.pinimg.com/736x/b2/66/f7/b266f7c8ecb53960c5eaa19d2a40dc41.jpg"
+                        alt=""
+                        class="profileImage"
+                      />
+                    </div>
+                    <div>
+                      <div class="customerName">{{ review?.customerName }}</div>
+                      <div class="commentTime">{{review?.reviewDate | daysAgo}} days ago</div>
+                    </div>
+                  </div>
+                  <div class="headerRightPart">
+                    <div class="rating">
+                      {{ review?.rating | number : "1.1-1" }} ⭐
+                    </div>
+                  </div>
+                </div>
+                <div class="reviewBody">
+                  <div class="comment">"{{ review?.comment }}"</div>
+                </div>
+              </div>
+              }
+            </div>
+            }
+
+      </div>
+
+      <section class="right">
+        <div class="price-card">
+          <div class="price-row">
+            <div class="price">
+              <div class="from">From</div>
+              <div class="amount">{{hotel?.minimumPrice|currency}}<span class="per"> / night</span></div>
+            </div>
+            <div class="dates">
+              <label>Check-in</label>
+              <div class="date-val">{{ checkInDate || "Select date" }}</div>
+              <label>Check-out</label>
+              <div class="date-val">{{ checkOutDate || "Select date" }}</div>
+            </div>
+          </div>
+
+          <button class="book-btn" (click)="bookNow(hotelId)">Book Now</button>
+
+          <div class="small-note">Free cancellation </div>
+        </div>
+
+        <h3>Rooms</h3>
+        <div class="section rooms-preview">
+          @for(room of hotel?.rooms ; track $index){
+
+              <div class="room">
+                <div class="room-info">
+                  <div class="room-name">{{room.roomType}}</div>
+                  <div class="room-desc">{{room.description}}</div>
+                </div>
+                <div class="room-price">{{room.pricePerNight | currency}}</div>
+              </div>
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="section2">
+    
+  </div>
+</div>

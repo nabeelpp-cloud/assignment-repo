@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { HotelService } from '../../../../shared/services/hotel.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { SearchStateService } from '../../shared/services/search-state.service';
 
 @Component({
   selector: 'app-hotels-list',
@@ -17,7 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     TitleCasePipe,
     CommonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   templateUrl: './hotels-list.component.html',
   styleUrl: './hotels-list.component.scss',
@@ -52,7 +52,9 @@ export class HotelsListComponent {
   private destroy$ = new Subject<void>();
   constructor(
     private hotelService: HotelService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private searchState: SearchStateService
   ) {}
 
   ngOnInit() {
@@ -63,6 +65,7 @@ export class HotelsListComponent {
         this.checkInDate = params['checkIn'] || '';
         this.checkOutDate = params['checkOut'] || '';
         console.log(this.searchTerm, this.checkInDate, this.checkOutDate);
+        this.searchState.setDates(this.checkInDate, this.checkOutDate);
         this.loadHotels();
       });
   }
@@ -151,5 +154,14 @@ export class HotelsListComponent {
 
   applyFilter() {
     this.loadHotels();
+  }
+  gotoHotelDetails(id: number) {
+    console.log(id);
+    this.router.navigate([`/hotels/${id}`],{
+      queryParams : {
+        checkInDate : this.checkInDate,
+        checkOutDate  : this.checkOutDate
+      }
+    });
   }
 }

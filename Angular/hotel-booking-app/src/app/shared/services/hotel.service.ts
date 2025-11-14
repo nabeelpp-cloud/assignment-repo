@@ -30,18 +30,19 @@ export class HotelService {
     checkOutDate?: string,
     pageNumber: number = 1,
     pageSize: number = 10,
-    selectedMaxPrice : number = 0,
-    selectedMinPrice : number = 1000,
-    selectedRatings? : number []
+    selectedMaxPrice: number = 0,
+    selectedMinPrice: number = 1000,
+    selectedRatings?: number[]
   ) {
     let params = new HttpParams();
     if (searchTerm) params = params.set('searchTerm', searchTerm);
     if (checkInDate) params = params.set('checkInDate', checkInDate);
     if (checkOutDate) params = params.set('checkOutDate', checkOutDate);
-    if(selectedMaxPrice>0) params = params.set('maxPrice',selectedMaxPrice);
-    if(selectedMinPrice<1000) params = params.set('minPrice',selectedMinPrice);
-    if(selectedRatings!=null) params = params.set('selectedRatings',selectedRatings.toString());
-    console.log(`${this.baseUrl}/full`, { params });
+    if (selectedMaxPrice > 0) params = params.set('maxPrice', selectedMaxPrice);
+    if (selectedMinPrice < 1000)
+      params = params.set('minPrice', selectedMinPrice);
+    if (selectedRatings != null)
+      params = params.set('selectedRatings', selectedRatings.toString());
     params = params.set('pageNumber', pageNumber);
     params = params.set('pageSize', pageSize);
     return this.http.get(`${this.baseUrl}/full`, { params });
@@ -68,5 +69,17 @@ export class HotelService {
 
   updateHotel(hotelId: number, hotel: any) {
     return this.http.patch(this.baseUrl, hotel);
+  }
+
+  getHotelFullDetailsById(
+    hotelId: number,
+    checkInDate?: string,
+    checkOutDate?: string
+  ) {
+    if (!hotelId) return;
+    let params = new HttpParams();
+    if (checkInDate) params = params.set('checkInDate', checkInDate);
+    if (checkOutDate) params = params.set('checkOutDate', checkOutDate);
+    return this.http.get(`${this.baseUrl}/full/${hotelId}`, { params });
   }
 }

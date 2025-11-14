@@ -19,8 +19,8 @@ export class HomeComponent {
   constructor(private router: Router) {}
   searchForm: FormGroup = new FormGroup({
     searchTerm: new FormControl(''),
-    checkInDate: new FormControl('',[Validators.required,dateCannotBeBeforeTodayValidator()]),
-    checkOutDate: new FormControl('',[Validators.required,dateCannotBeBeforeTodayValidator()]),
+    checkInDate: new FormControl('',[dateCannotBeBeforeTodayValidator()]),
+    checkOutDate: new FormControl('',[dateCannotBeBeforeTodayValidator()]),
   });
 
   searchHotel() {

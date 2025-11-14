@@ -1,17 +1,45 @@
 <header>
-    <nav class="headerContainer">
-      <span class="logo">MyHotels</span>
+  <nav class="headerContainer">
+    <div class="logo">
+        <i class="fa-solid fa-hotel"></i>
+        Grand Hayath Admin
+      </div>
+
+    <ng-container *ngIf="isLoggedIn$ | async; else loggedOutTemplate">
       <ul class="list">
         <li class="listItem">
-          <span class="navButton" routerLink="home" routerLinkActive="active">Home</span>
+          <a class="navButton" routerLink="home" routerLinkActive="active">
+            Home
+          </a>
         </li>
         <li class="listItem">
-          <span class="navButton" routerLink="hotels" routerLinkActive="active">Hotels</span>
+          <a class="navButton" routerLink="hotels" routerLinkActive="active">
+            Hotels
+          </a>
         </li>
         <li class="listItem">
-          <span class="navButton" routerLink="customers" routerLinkActive="active">Customers</span>
+          <a class="navButton" routerLink="customers" routerLinkActive="active">
+            Customers
+          </a>
+        </li>
+        <li class="listItem">
+          <button class="signInButton" (click)="logOutClicked()">LogOut</button>
         </li>
       </ul>
-    </nav>
-  </header>
-  
+    </ng-container>
+
+    <ng-template #loggedOutTemplate>
+      <ul class="list">
+        <li class="listItem">
+          <a class="navButton" routerLink="home" routerLinkActive="active">
+            Home
+          </a>
+        </li>
+        <li class="listItem">
+          <a class="signInButton" routerLink="/admin/login">Login</a>
+        </li>
+      </ul>
+    </ng-template>
+
+  </nav>
+</header>

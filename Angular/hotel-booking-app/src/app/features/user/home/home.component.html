@@ -34,10 +34,6 @@
               && searchForm.get('checkInDate')?.touched){
               <div class="error">Date cannot be before today</div>
               } 
-              @if (searchForm.get('checkInDate')?.hasError('required') &&
-              searchForm.get('checkInDate')?.touched) {
-              <div class="error">Date is required</div>
-              }
             </div>
             <div class="dateCheckInInputContainer">
               <div class="label">Check-out</div>
@@ -54,10 +50,6 @@
               && searchForm.get('checkOutDate')?.touched){
               <div class="error">Date cannot be before today</div>
               } 
-              @if (searchForm.get('checkOutDate')?.hasError('required') &&
-              searchForm.get('checkOutDate')?.touched) {
-              <div class="error">Date is required</div>
-              }
             </div>
           </div>
           <div class="submitContainer">

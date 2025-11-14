@@ -1,0 +1,95 @@
+<div class="main">
+  <div class="customerDetailsContainer">
+    <h3 class="sectionTitle">Personal Information</h3>
+
+    <div class="personalDetails">
+      <div class="detail">
+        <label for="fullName" class="label">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" />
+      </div>
+
+      <div class="detail">
+        <label for="email" class="label">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+      </div>
+
+      <div class="detail">
+        <label for="phone" class="label">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter phone number" />
+      </div>
+
+      <div class="detail">
+        <label for="idNumber" class="label">ID Proof Number</label>
+        <input type="text" id="idNumber" placeholder="Enter ID number" />
+      </div>
+    </div>
+  </div>
+
+  <div class="bookingDetails">
+    <h3 class="hotelName">{{hotel.name | titlecase}}</h3>
+    <div class="selectedRooms">
+      @if(selectedRooms.length){
+      <h3>Selected Rooms</h3>
+      @for(room of selectedRooms ; track $index){
+      <div class="">
+        <div class="container">
+          <div class="room-info">
+            <div class="room-name">{{ room.roomType }}</div>
+            <div class="room-desc">{{ room.description }}</div>
+          </div>
+          <div class="room-info">
+              <div class="room-price">{{ room.pricePerNight | currency }}</div>
+              <div class="removeButton" (click)="removeRoom(room)">Remove</div>
+          </div>
+        </div>
+      </div>
+      } }
+    </div>
+    <h3 class="sectionTitle">Select Room</h3>
+    <div class="room-dropdown" (click)="toggleDropdown()">
+      <div class="selected-room">
+        {{ selectedRoom?.roomType || "Select a Room" }}
+      </div>
+
+      <div class="dropdown-list" *ngIf="isOpen">
+        @for(room of rooms; track $index) {
+        <div class="dropdown-item" (click)="selectRoom(room, $event)">
+          <div class="room-info">
+            <div class="room-name">{{ room.roomType }}</div>
+            <div class="room-desc">{{ room.description }}</div>
+          </div>
+          <div class="room-price">{{ room.pricePerNight | currency }}</div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="buttonRow">
+      <button class="add" (click)="addRoom()">Add Room</button>
+    </div>
+  </div>
+
+  <div class="amountdetails">
+    <h3 class="sectionTitle">Booking Summary</h3>
+
+    <div class="selectedRoomDetails">
+      <div class="selectedRoomType">Room Type</div>
+      <div class="selectedRoomPrice">$0.00</div>
+    </div>
+
+    <div class="selectedRoomDetails">
+      <div class="selectedRoomType">Nights</div>
+      <div class="selectedRoomPrice">0</div>
+    </div>
+
+    <div class="selectedRoomDetails">
+      <div class="selectedRoomType">Guests</div>
+      <div class="selectedRoomPrice">0</div>
+    </div>
+
+    <div class="TotalAmoutContainer">
+      <div class="totalAmount">Total: $0.00</div>
+    </div>
+
+    <div class="bookNowButton"></div>
+  </div>
+</div>
