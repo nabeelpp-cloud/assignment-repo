@@ -1,0 +1,12 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\bin\Debug\net8.0\CompanyB.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\bin\Debug\net8.0\CompanyB.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\bin\Debug\net8.0\CompanyB.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\refint\CompanyB.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\CompanyB.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\CompanyManagemenSystem\CompanyB\obj\Debug\net8.0\ref\CompanyB.dll

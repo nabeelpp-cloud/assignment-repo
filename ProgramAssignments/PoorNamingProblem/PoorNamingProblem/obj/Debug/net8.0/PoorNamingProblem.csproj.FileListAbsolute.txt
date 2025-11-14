@@ -1,0 +1,15 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\bin\Debug\net8.0\PoorNamingProblem.exe
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\bin\Debug\net8.0\PoorNamingProblem.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\bin\Debug\net8.0\PoorNamingProblem.runtimeconfig.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\bin\Debug\net8.0\PoorNamingProblem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\bin\Debug\net8.0\PoorNamingProblem.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\refint\PoorNamingProblem.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\PoorNamingProblem.genruntimeconfig.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\PoorNamingProblem\PoorNamingProblem\obj\Debug\net8.0\ref\PoorNamingProblem.dll
