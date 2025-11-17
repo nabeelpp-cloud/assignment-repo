@@ -28,7 +28,7 @@ export class AddHotelComponent {
         if(Number(response) > 0){
           console.log("Hotel Added Succesfully",response);
           alert("Hotel Added Succesfully");
-          this.router.navigate(["/hotels"])
+          this.router.navigate(["/admin/hotels"])
           this.createHotelForm.reset();
         }
       },

@@ -33,13 +33,14 @@ export class HotelsListComponent implements OnInit {
     });
   }
   goToHotelDetails(id : number){
+    
     this.router.navigate([id, 'info'], { relativeTo: this.route });
   }
   editHotel(hotelId : number){
-    this.router.navigate(['/hotels',hotelId,'update'])
+    this.router.navigate(['/admin/hotels',hotelId,'update'])
   }
   deleteHotel(hotelId : number){
-    this.router.navigate(['/hotels',hotelId,'delete'])
+    this.router.navigate(['/admin/hotels',hotelId,'delete'])
   }
 
 }

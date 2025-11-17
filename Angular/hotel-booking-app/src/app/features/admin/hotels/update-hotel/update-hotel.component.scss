@@ -51,7 +51,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
   
     &:hover {
-      background-color: #5aa886;
+      background-color: #053370;
       transform: scale(1.03);
     }
   
@@ -66,4 +66,16 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+  }
+  .cancel{
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+    padding: 8px;
+    font-weight: 500;
+    color: #1a73e8;
+    cursor: pointer;
+    &:hover{
+      color: #072250;
+    }
   }

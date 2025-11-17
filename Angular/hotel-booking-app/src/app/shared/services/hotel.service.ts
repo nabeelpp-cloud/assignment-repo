@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class HotelService {
+  
   private baseUrl = `${environment.apiBaseUrl}/api/hotel`;
   private selectedHotelSubject = new BehaviorSubject<any>(null);
   selectedHotel$ = this.selectedHotelSubject.asObservable();
@@ -68,7 +69,7 @@ export class HotelService {
   }
 
   updateHotel(hotelId: number, hotel: any) {
-    return this.http.patch(this.baseUrl, hotel);
+    return this.http.patch(`${this.baseUrl}/${hotelId}`, hotel);
   }
 
   getHotelFullDetailsById(
@@ -81,5 +82,9 @@ export class HotelService {
     if (checkInDate) params = params.set('checkInDate', checkInDate);
     if (checkOutDate) params = params.set('checkOutDate', checkOutDate);
     return this.http.get(`${this.baseUrl}/full/${hotelId}`, { params });
+  }
+
+  deleteHotel(id: any) {
+    return this.http.delete(`${this.baseUrl}/${id}`)
   }
 }

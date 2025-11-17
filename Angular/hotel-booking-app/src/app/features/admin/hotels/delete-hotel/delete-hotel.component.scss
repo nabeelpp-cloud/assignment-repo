@@ -1,0 +1,81 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    background: #f3f7f5;
+  }
+  
+  .formContainer {
+    width: 450px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5ebe8;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a73e8;
+    text-align: center;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-details {
+    background: #f9fbfa;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #dfe7e3;
+    margin-bottom: 24px;
+  
+    .detail {
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  .delete-btn {
+    width: 100%;
+    padding: 12px 18px;
+    background: #e53935;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      background-color: #b71c1c;
+      transform: scale(1.03);
+    }
+  
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  .cancel {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0 4px;
+    padding: 8px;
+    font-weight: 500;
+    color: #1a73e8;
+    cursor: pointer;
+  
+    &:hover {
+      color: #072250;
+    }
+  }
+  

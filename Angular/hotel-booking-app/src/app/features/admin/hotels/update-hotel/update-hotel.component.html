@@ -2,7 +2,6 @@
     <div class="formContainer">
         <form [formGroup]="updateHotelForm" (ngSubmit)="updateHotel()">
             <div class="form-elements">
-
                 <span class="label">Hotel Name</span>
                 <input type="text" name="name" id="name" formControlName="name">
                 <span class="label">Address</span>
@@ -13,7 +12,8 @@
                 <input type="text" name="country" id="country" formControlName="country">
                 <span class="label">Phone Number</span>
                 <input type="text" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber">
-                <input type="submit" value="Add Hotel">
+                <input type="submit" value="Update Hotel">
+                <div class="cancel" (click)="cancelClicked()">Cancel</div>
             </div>
         </form>
     </div>

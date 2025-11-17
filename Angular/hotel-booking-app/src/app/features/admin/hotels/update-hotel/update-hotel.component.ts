@@ -62,10 +62,9 @@ export class UpdateHotelComponent {
     this.hotelService.updateHotel(this.hotelId,formValues).subscribe({
       next : (response) =>{
         if(Number(response) > 0){
-          console.log("Hotel Added Succesfully",response);
-          alert("Hotel Added Succesfully");
-          this.router.navigate(["/hotels"])
-          //this.updateHotelForm.id=this.hotelId;
+          console.log("Hotel Updated Succesfully",response);
+          alert("Hotel Updated Succesfully");
+          this.router.navigate(["/admin/hotels"])
           this.updateHotelForm.reset();
         }
       },
@@ -76,5 +75,8 @@ export class UpdateHotelComponent {
         console.log("Api call completed");
       }
     })
+  }
+  cancelClicked(){
+    this.router.navigate(["/admin/hotels"]);
   }
 }

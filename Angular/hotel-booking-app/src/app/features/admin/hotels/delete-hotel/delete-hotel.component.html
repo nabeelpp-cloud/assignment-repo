@@ -1,1 +1,24 @@
-<p>delete-hotel works!</p>
+<div class="main">
+    <div class="formContainer">
+  
+      <h2 class="title">Delete Hotel</h2>
+      <p class="subtitle">Are you sure you want to delete this hotel?</p>
+  
+      <div class="hotel-details">
+        <div class="detail"><strong>Name:</strong> {{ hotel?.name }}</div>
+        <div class="detail"><strong>City:</strong> {{ hotel?.city }}</div>
+        <div class="detail"><strong>Address:</strong> {{ hotel?.address }}</div>
+        <div class="detail"><strong>Country:</strong> {{ hotel?.country }}</div>
+        <div class="detail"><strong>Phone:</strong> {{ hotel?.phoneNumber }}</div>
+      </div>
+  
+      <button class="delete-btn" (click)="confirmDelete()">
+        Delete Hotel
+      </button>
+  
+      <div class="cancel" (click)="goBack()">
+        Cancel
+      </div>
+    </div>
+  </div>
+  

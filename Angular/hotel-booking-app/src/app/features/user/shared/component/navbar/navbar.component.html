@@ -6,9 +6,18 @@
       </div>
   
       <div class="items">
-        <div class="signInButton">
-          Sign In
-        </div>
+        @if(!isCustomer){
+
+          <div class="signInButton" (click)="signInClicked()">
+            Sign In
+          </div>
+        }
+        @else {
+
+          <div class="signInButton" (click)="logOutClicked()">
+            Log Out
+          </div>
+        }
       </div>
     </nav>
   </div>

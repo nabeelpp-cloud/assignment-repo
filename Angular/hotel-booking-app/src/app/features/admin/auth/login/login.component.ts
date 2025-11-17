@@ -28,7 +28,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.invalid) return;
-    this.authService.login(this.loginForm.value).subscribe({
+    this.authService.adminLogin(this.loginForm.value).subscribe({
       next: (res) => {
         this.router.navigate(['/admin/home']); 
         alert('Login successfully')

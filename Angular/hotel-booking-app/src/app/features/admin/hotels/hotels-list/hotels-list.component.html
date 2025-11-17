@@ -2,7 +2,10 @@
   <div class="head">
     <div class="title">Hotels</div>
     <div class="buttonContainer">
-      <button class="actionButton addHotelButton" routerLink="/hotels/add">
+      <button
+        class="actionButton addHotelButton"
+        routerLink="/admin/hotels/add"
+      >
         Add Hotel
       </button>
     </div>
@@ -20,7 +23,7 @@
     </thead>
     <tbody>
       @for (hotel of hotels; track hotel.id) {
-      <tr class="hotelDetailLink" (click)="goToHotelDetails(hotel.id)">
+      <tr class="hotelDetailLink">
         <td>{{ hotel.name }}</td>
         <td>{{ hotel.address }}</td>
         <td>{{ hotel.city }}</td>
@@ -29,10 +32,18 @@
         <td class="actions">
           <div class="buttonContainer">
             <button
+              class="actionButton viewHotelButton"
+              (click)="goToHotelDetails(hotel.id)"
+            >
+              View
+            </button>
+          </div>
+          <div class="buttonContainer">
+            <button
               class="actionButton updateHotelButton"
               (click)="editHotel(hotel.id)"
             >
-              Edit Hotel
+              Edit
             </button>
           </div>
           <div class="buttonContainer">
@@ -40,10 +51,9 @@
               class="actionButton deleteHotelButton"
               (click)="deleteHotel(hotel.id)"
             >
-              Remove Hotel
+              Delete
             </button>
           </div>
-          
         </td>
       </tr>
       }

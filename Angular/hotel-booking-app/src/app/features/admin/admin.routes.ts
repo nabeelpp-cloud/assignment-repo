@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
-import { authGuard } from '../../core/guards/auth.guard';
+import { authGuard } from './auth/guard/auth.guard';
+
 
 export const adminRoutes: Routes = [
   {

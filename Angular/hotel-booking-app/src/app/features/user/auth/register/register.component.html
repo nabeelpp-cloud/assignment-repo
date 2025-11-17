@@ -1,0 +1,80 @@
+<div class="main">
+    <div class="loginContainer">
+      <h2>User Registration</h2>
+  
+      <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <input
+          type="text"
+          placeholder="Full Name"
+          formControlName="fullName"
+          required
+        />
+        @if(registerForm.get('fullName')?.hasError('required') &&
+          registerForm.get('fullName')?.touched){
+          <span class="errors">Full name is required</span>
+        }
+  
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+        @if(registerForm.get('email')?.hasError('required') &&
+          registerForm.get('email')?.touched){
+          <span class="errors">Email is required</span>
+        }
+        @if(registerForm.get('email')?.hasError('email') &&
+          registerForm.get('email')?.touched){
+          <span class="errors">Enter a valid email address</span>
+        }
+  
+        <input
+          type="text"
+          placeholder="Phone Number"
+          formControlName="phoneNumber"
+          required
+        />
+        @if(registerForm.get('phoneNumber')?.hasError('required') &&
+          registerForm.get('phoneNumber')?.touched){
+          <span class="errors">Phone number is required</span>
+        }
+  
+        <input
+          type="text"
+          placeholder="ID Proof Number"
+          formControlName="idProofNumber"
+          required
+        />
+        @if(registerForm.get('idProofNumber')?.hasError('required') &&
+          registerForm.get('idProofNumber')?.touched){
+          <span class="errors">ID proof number is required</span>
+        }
+  
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        />
+        @if(registerForm.get('password')?.hasError('required') &&
+          registerForm.get('password')?.touched){
+          <span class="errors">Password is required</span>
+        }
+  
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+        />
+        @if(registerForm.hasError('passwordMismatch') &&
+          registerForm.get('confirmPassword')?.touched){
+          <span class="errors">Passwords do not match</span>
+        }
+  
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+  

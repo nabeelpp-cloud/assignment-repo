@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core'; // Using inject
 import { CookieService } from 'ngx-cookie-service';
-import { Observable, tap, BehaviorSubject, finalize } from 'rxjs'; // Import BehaviorSubject
+import { Observable, tap, BehaviorSubject, finalize, map } from 'rxjs'; // Import BehaviorSubject
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -15,23 +16,73 @@ export class AuthService {
 
   private baseUrl = `${environment.apiBaseUrl}/api/auth`;
 
-  private authState$ = new BehaviorSubject<boolean>(
-    this.cookieService.check('accessToken')
-  );
+  private authState$ = new BehaviorSubject<boolean>(false);
+  private _currentUserRole$ = new BehaviorSubject<string | null>(null);
+  private _currentUserId$ = new BehaviorSubject<string | null>(null); 
 
   public isLoggedIn$ = this.authState$.asObservable();
+  public currentUserRole$ = this._currentUserRole$.asObservable();
+  public currentUserId$ = this._currentUserId$.asObservable(); 
+  public isAdmin$ = this.currentUserRole$.pipe(map((role) => role === 'Admin'));
+  public isCustomer$ = this.currentUserRole$.pipe(
+    map((role) => role === 'Customer')
+  );
 
-  login(credentials: { email: string; password: string }): Observable<any> {
+  constructor() {
+    const token = this.getAccessToken();
+    if (token) {
+      const claims = this.decodeToken(token); 
+      if (claims && claims.role) { 
+        this.authState$.next(true);
+        this._currentUserRole$.next(claims.role);
+        this._currentUserId$.next(claims.userId); 
+      } else {
+        this.cookieService.delete('accessToken', '/');
+      }
+    }
+  }
+
+  adminLogin(credentials: {
+    email: string;
+    password: string;
+  }): Observable<any> {
     return this.http
-      .post(`${this.baseUrl}/login`, credentials, { withCredentials: true })
+      .post(`${this.baseUrl}/admin/login`, credentials, {
+        withCredentials: true,
+      })
       .pipe(
         tap((response: any) => {
-          this.cookieService.set('accessToken', response.accessToken, {
-            path: '/',
-            sameSite: 'Lax',
-            secure: true,
-          });
-          this.authState$.next(true);
+          this.setTokenAndState(response.accessToken);
+        })
+      );
+  }
+
+  userLogin(credentials: { email: string; password: string }): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/user/login`, credentials, {
+        withCredentials: true,
+      })
+      .pipe(
+        tap((response: any) => {
+          this.setTokenAndState(response.accessToken);
+          console.log(response);
+        })
+      );
+  }
+  userRegister(credentials: {
+    fullName: string;
+    email: string;
+    phoneNumber: string;
+    password: string;
+  }): Observable<any> {
+    return this.http
+      .post(`${this.baseUrl}/user/register`, credentials, {
+        withCredentials: true,
+      })
+      .pipe(
+        tap((response: any) => {
+          this.setTokenAndState(response.accessToken);
+          console.log(response);
         })
       );
   }
@@ -41,22 +92,74 @@ export class AuthService {
   }
 
   logout(): void {
-    this.http.post(`${this.baseUrl}/logout`, {}, { withCredentials: true }) 
+    this.http
+      .post(`${this.baseUrl}/logout`, {}, { withCredentials: true })
       .pipe(
         finalize(() => {
           this.cookieService.delete('accessToken', '/');
           this.authState$.next(false);
-          this.router.navigate(['/admin/login']);
+          this._currentUserRole$.next(null);
+          this.router.navigate(['/login']);
         })
       )
       .subscribe({
         next: () => console.log('Server has invalidated the refresh token.'),
-        error: (err) => console.warn('Server logout failed, but client is cleaned up.', err)
+        error: (err) =>
+          console.warn('Server logout failed, but client is cleaned up.', err),
       });
   }
-
-
   public isLoggedInSnapshot(): boolean {
     return this.authState$.value;
+  }
+  public getRoleSnapshot(): string | null {
+    return this._currentUserRole$.value;
+  }
+
+  public getUserIdSnapshot(): string | null {
+    return this._currentUserId$.value;
+  }
+
+  private setTokenAndState(token: string) {
+    this.cookieService.set('accessToken', token, {
+      path: '/',
+      sameSite: 'Lax',
+      secure: true,
+    });
+
+    const claims = this.decodeToken(token); 
+    console.log('Role : ', claims.role);
+    console.log('User ID : ', claims.userId); 
+
+    if (claims && claims.role) { 
+      this.authState$.next(true);
+      this._currentUserRole$.next(claims.role);
+      this._currentUserId$.next(claims.userId); 
+      console.log('Auth state set to:', this.authState$.value);
+      console.log('Current role set to:', this._currentUserRole$.value);
+      console.log('Current user ID set to:', this._currentUserId$.value); 
+    }
+  }
+
+  private decodeToken(token: string): { role: string | null; userId: string | null } {
+    if (!token) {
+      console.log('no token');
+      return { role: null, userId: null };
+    }
+    try {
+      const decodedToken: any = jwtDecode(token);
+
+      const role =
+        decodedToken[
+          'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
+        ] || null;
+      
+      const userId = decodedToken.sub || null; // <-- 'sub' is the standard JWT claim for User ID
+
+      return { role, userId };
+
+    } catch (Error) {
+      console.error('Failed to decode token', Error);
+      return { role: null, userId: null };
+    }
   }
 }

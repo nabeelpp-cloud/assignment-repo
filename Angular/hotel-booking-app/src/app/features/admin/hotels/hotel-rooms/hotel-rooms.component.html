@@ -1,23 +1,52 @@
 <div class="main1">
-    <h1>Rooms</h1>
+  <div class="head">
+    <div class="title">Rooms</div>
+    <div class="buttonContainer">
+      <button
+        class="actionButton addHotelButton"
+        [routerLink]="['/admin/hotels', hotelId, 'rooms', 'create']"
+
+      >
+        Add Rooms
+      </button>
+    </div>
+  </div>
     <table>
       <thead>
         <tr>
           
           <th>Room Number</th>
-          <th>Room Type Id</th>
+          <th>Room Type</th>
           <th>Price Per Night</th>
           <th>Room Status</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        @for (room of hotel.rooms; track room.id) {
+        @for (room of hotel?.rooms; track room?.id) {
           <tr class="hotelDetailLink" >
-            <td>{{ room.roomNumber }}</td>
-            <td>{{ room.roomTypeId }}</td>
-            <td>{{ room.pricePerNight }}</td>
-            <td>{{ getRoomStatus(room.status) }}</td>
-            
+            <td>{{ room?.roomNumber }}</td>
+            <td>{{ room?.roomType }}</td>
+            <td>{{ room?.pricePerNight }}</td>
+            <td>{{ getRoomStatus(room?.status) }}</td>
+            <td class="actions">
+              <div class="buttonContainer">
+                <button
+                  class="actionButton updateHotelButton"
+                  (click)="editRoom(room?.id)"
+                >
+                  Edit
+                </button>
+              </div>
+              <div class="buttonContainer">
+                <button
+                  class="actionButton deleteHotelButton"
+                  (click)="deleteRoom(room?.id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
           </tr>
         }
       </tbody>
