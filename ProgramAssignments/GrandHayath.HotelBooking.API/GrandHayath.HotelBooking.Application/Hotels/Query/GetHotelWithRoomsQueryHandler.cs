@@ -28,6 +28,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
                 foreach (var room in hotel.Rooms)
                 {
                     RoomDto roomDto = new RoomDto();
+                    roomDto.Id = room.Id;
                     roomDto.RoomNumber = room.RoomNumber;
                     roomDto.HotelId = room.HotelId;
                     roomDto.RoomType = room.RoomType.TypeName;

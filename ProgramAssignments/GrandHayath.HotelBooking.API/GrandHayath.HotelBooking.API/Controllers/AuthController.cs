@@ -15,8 +15,8 @@ namespace GrandHayath.HotelBooking.API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginCommand command)
+        [HttpPost("admin/login")]
+        public async Task<IActionResult> AdminLogin([FromBody] LoginCommand command)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -46,6 +46,72 @@ namespace GrandHayath.HotelBooking.API.Controllers
             catch (Exception ex)
             {
                 return Unauthorized(new { message = ex.Message });
+            }
+        }
+        [HttpPost("user/login")]
+        public async Task<IActionResult> CustomerLogin([FromBody] CustomerLoginCommand command)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var result = await _mediator.Send(command);
+
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTime.UtcNow.AddDays(7)
+                };
+
+                Response.Cookies.Append("refreshToken", result.RefreshToken, cookieOptions);
+
+                return Ok(new
+                {
+                    accessToken = result.AccessToken,
+                    expiration = result.Expiration,
+                    role = result.Role,
+                    email = result.Email
+                });
+            }
+            catch (Exception ex)
+            {
+                return Unauthorized(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("user/register")]
+        public async Task<IActionResult> CustomerRegister([FromBody] CustomerRegisterCommand command)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var result = await _mediator.Send(command);
+
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTime.UtcNow.AddDays(7)
+                };
+                Response.Cookies.Append("refreshToken", result.RefreshToken, cookieOptions);
+
+                return Ok(new
+                {
+                    accessToken = result.AccessToken,
+                    expiration = result.Expiration,
+                    role = result.Role,
+                    email = result.Email
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
         }
 

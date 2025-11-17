@@ -34,6 +34,7 @@ builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<ICustomerAuthRepository, CustomerAuthRepository>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 
 

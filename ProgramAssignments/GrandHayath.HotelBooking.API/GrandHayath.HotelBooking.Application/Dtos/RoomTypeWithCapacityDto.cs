@@ -8,6 +8,7 @@ namespace GrandHayath.HotelBooking.Application.Dtos
 {
     public class RoomTypeWithCapacityDto
     {
+        public int Id { get; set; }
         public string TypeName { get; set; }
         public int Capacity { get; set; }
     }

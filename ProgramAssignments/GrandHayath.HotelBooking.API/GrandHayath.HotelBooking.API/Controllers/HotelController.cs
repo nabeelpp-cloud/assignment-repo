@@ -43,7 +43,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
         {
             return await _mediator.Send(command);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<int> Delete(int id)
         {
             DeleteHotelCommand command = new DeleteHotelCommand();

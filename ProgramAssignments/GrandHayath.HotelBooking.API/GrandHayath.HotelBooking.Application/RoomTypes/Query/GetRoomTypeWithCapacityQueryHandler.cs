@@ -20,6 +20,8 @@ namespace GrandHayath.HotelBooking.Application.RoomTypes.Query
             foreach (var roomType in roomTypes) 
             {
                 RoomTypeWithCapacityDto roomTypeDto = new RoomTypeWithCapacityDto();
+
+                roomTypeDto.Id=roomType.Id;
                 roomTypeDto.TypeName=roomType.TypeName;
                 roomTypeDto.Capacity = roomType.Capacity;
                 roomTypeDtos.Add(roomTypeDto);
