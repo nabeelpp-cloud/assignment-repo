@@ -23,7 +23,7 @@ namespace GrandHayath.HotelBooking.Application.Employees.Command
             existingEmployee.FullName = request.FullName;
             existingEmployee.Email = request.Email;
             existingEmployee.HotelId = request.HotelId;
-            existingEmployee.Email = request.Email;
+            existingEmployee.Role = request.Role;
 
             return await _repository.UpdateAsync(existingEmployee);
 

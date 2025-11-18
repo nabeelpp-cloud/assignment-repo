@@ -11,9 +11,14 @@ namespace GrandHayath.HotelBooking.Domain.Entity
         public DateTime CheckOutDate { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal TotalAmount { get; set; }
+        public BookingStatus Status { get; set; }
         public Customer Customer { get; set; }
         public Room Room { get; set; }
         public Payment Payment { get; set; }
 
+    }
+    public enum BookingStatus
+    {
+        Pending, Confirmed, Cancelled, Completed
     }
 }

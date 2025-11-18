@@ -1,4 +1,5 @@
 ﻿using GrandHayath.HotelBooking.Application.Dtos;
+using GrandHayath.HotelBooking.Domain.Entity;
 using GrandHayath.HotelBooking.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -19,9 +20,9 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
                     .Include(h => h.HotelImages)
                     .Include(h => h.Reviews)
                         .ThenInclude(r => r.Customer)
-                    .Include(h => h.Rooms)
+                    .Include(h => h.Rooms.Where(r => r.Status != RoomStatus.UnderMaintenance))
                         .ThenInclude(r => r.Bookings)
-                    .Include(h => h.Rooms)
+                    .Include(h => h.Rooms.Where(r => r.Status != RoomStatus.UnderMaintenance))
                         .ThenInclude(r => r.RoomType)
                     .AsQueryable();
 
@@ -65,6 +66,27 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
 
 
             var totalCount = await query.CountAsync(cancellationToken);
+
+            if (!string.IsNullOrWhiteSpace(request.SortBy))
+            {
+                if (request.SortBy == "priceLowToHigh")
+                {
+                    query = query.OrderBy(h => h.Rooms.Min(m => m.PricePerNight));
+                }
+                else if (request.SortBy == "priceHighToLow")
+                {
+                    query = query.OrderByDescending(h => h.Rooms.Max(m => m.PricePerNight));
+                }
+                else if (request.SortBy == "recomended")
+                {
+                    query = query.OrderByDescending(h =>
+                        h.Reviews.Any()
+                            ? Math.Round(h.Reviews.Average(m => (double)m.Rating) * 2, 1)
+                            : 0
+                    );
+                }
+            }
+            
 
             var hotels = await query
                 .Skip((request.PageNumber - 1) * request.PageSize)

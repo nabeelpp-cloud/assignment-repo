@@ -91,6 +91,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
             DateTime? checkInDate , 
             DateTime? checkOutDate,
             string? selectedRatings,
+            string? sortBy,
             int pageNumber =1,
             int pageSize = 10,
             int minPrice = 0,
@@ -104,6 +105,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
                 PageSize = pageSize,
                 MinPrice = minPrice,
                 MaxPrice = maxPrice,
+                SortBy = sortBy,
                 StarRating = selectedRatings
             });
             if (result == null)

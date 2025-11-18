@@ -15,12 +15,12 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
         }
         public async Task<Employee?> GetByEmailAsync(string email)
         {
-            return await _context.Employees.FirstOrDefaultAsync(e => e.Email == email);
+            return await _context.Employees.IgnoreQueryFilters().FirstOrDefaultAsync(e => e.Email == email);
         }
 
         public async Task<Employee?> GetByRefreshTokenAsync(string refreshToken)
         {
-            return await _context.Employees.FirstOrDefaultAsync(e => e.RefreshToken == refreshToken);
+            return await _context.Employees.IgnoreQueryFilters().FirstOrDefaultAsync(e => e.RefreshToken == refreshToken);
         }
 
         public async Task SaveRefreshTokenAsync(Employee user, string refreshToken)

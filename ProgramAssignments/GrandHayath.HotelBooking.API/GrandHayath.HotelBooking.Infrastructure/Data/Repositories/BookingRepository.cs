@@ -15,7 +15,8 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data.Repositories
         public async Task<int> AddAsync(Booking booking)
         {
             await _context.Bookings.AddAsync(booking);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return booking.Id;
         }
 
         public async Task<int> DeleteAsync(Booking booking)

@@ -11,6 +11,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 10;
         public string? StarRating { get; set; }
+        public string? SortBy { get; set; }
         public int MaxPrice { get; set; } = 1000;
         public int MinPrice { get; set; } = 0;
     }

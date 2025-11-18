@@ -47,7 +47,7 @@ namespace GrandHayath.HotelBooking.API.Controllers
         }
 
 
-        [HttpGet("admin/all")]
+        [HttpGet]
         public async Task<IActionResult> GetAllBookings()
         {
             var result = await _mediator.Send(new GetAllBookingQuery());

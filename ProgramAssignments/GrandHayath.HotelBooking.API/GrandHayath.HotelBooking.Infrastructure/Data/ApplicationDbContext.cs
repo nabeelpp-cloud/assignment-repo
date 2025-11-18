@@ -15,6 +15,14 @@ namespace GrandHayath.HotelBooking.Infrastructure.Data
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Employee>()
+                .HasQueryFilter(e => e.Role != "Admin");
+
+        }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }

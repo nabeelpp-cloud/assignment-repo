@@ -17,10 +17,12 @@ namespace GrandHayath.HotelBooking.Application.Rooms.Query
         public async Task<RoomDto?> Handle(GetRoomByIdQuery request, CancellationToken cancellationToken)
         {
 
-            var room = await dbContext.Rooms.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+            var room = await dbContext.Rooms
+                .Include(x => x.RoomType).FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
             RoomDto roomDto = new RoomDto();
             if (room != null)
             {
+                roomDto.Id = room.Id;
                 roomDto.RoomNumber = room.RoomNumber;
                 roomDto.HotelId = room.HotelId;
                 roomDto.RoomType = room.RoomType.TypeName;
