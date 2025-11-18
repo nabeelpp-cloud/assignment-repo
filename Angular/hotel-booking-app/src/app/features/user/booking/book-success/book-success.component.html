@@ -1,0 +1,79 @@
+<div class="booking-container">
+  @if(showSuccessBox){
+
+  <div class="success-header">
+    <div class="icon-circle">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h2>Booking Confirmed!</h2>
+    <p>Your reservation has been successfully created.</p>
+  </div>
+  } @else {
+
+  <div class="ticket-card" id="printable-area">
+    <div class="ticket-header">
+      <div class="hotel-info">
+        <h3>{{ bookingData.hotelName }}</h3>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          {{ bookingData.hotelAddress }}
+        </p>
+      </div>
+      <div class="booking-id">
+        <span>Booking ID</span>
+        <strong>#{{ bookingData.id }}</strong>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <div class="date-box">
+        <span class="label">Check-In</span>
+        <div class="date-value">
+          {{ bookingData.checkInDate | date : "mediumDate" }}
+        </div>
+        <span class="time-label">12:00 PM</span>
+      </div>
+
+      <div class="date-box right">
+        <span class="label">Check-Out</span>
+        <div class="date-value">
+          {{ bookingData.checkOutDate | date : "mediumDate" }}
+        </div>
+        <span class="time-label">11:00 AM</span>
+      </div>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="label">Room Type</span>
+        <span class="value">{{ bookingData.roomType }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Room No.</span>
+        <span class="value">{{ bookingData.roomId }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Customer ID</span>
+        <span class="value">{{ bookingData.customerId }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Status</span>
+        <span class="value status-paid">Paid</span>
+      </div>
+    </div>
+
+    <div class="ticket-footer">
+      <div class="total-label">Total Paid</div>
+      <div class="total-price">{{ bookingData.totalAmount | currency }}</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-print" (click)="printInvoice()">
+      <i class="fa-solid fa-print"></i> Print Receipt
+    </button>
+    <!-- <button class="btn-home" (click)="gotoHome()">Go to Home</button> -->
+    <button class="btn-home"  (click)="gotoBookings()">Go to Bookings</button>
+  </div>
+  }
+</div>

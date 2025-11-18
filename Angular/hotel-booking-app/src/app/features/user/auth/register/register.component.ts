@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../../shared/services/auth.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class RegisterComponent {
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   }, { validators: this.passwordMatchValidator });
-
-  constructor(private authService: AuthService, private router: Router) {}
+  returnUrl: string = '/hotels';
+  constructor(private authService: AuthService, private router: Router , private route : ActivatedRoute) {}
 
   passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password')?.value;
@@ -29,6 +29,9 @@ export class RegisterComponent {
       return { passwordMismatch: true };
     }
     return null;
+  }
+  ngOnInit(){
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/hotels';
   }
   
   onSubmit() {
@@ -46,6 +49,11 @@ export class RegisterComponent {
         console.error('Registration failed:', err);
         alert('Something went wrong');
       },
+    });
+  }
+  clickedRedirect(){
+    this.router.navigate(['/login'], {
+      queryParams: { returnUrl: this.returnUrl }
     });
   }
 }

@@ -5,7 +5,7 @@
         Grand Hayath Admin
       </div>
 
-    <ng-container *ngIf="isLoggedIn$ | async; else loggedOutTemplate">
+    <ng-container *ngIf="isAdmin">
       <ul class="list">
         <li class="listItem">
           <a class="navButton" routerLink="home" routerLinkActive="active">
@@ -15,6 +15,11 @@
         <li class="listItem">
           <a class="navButton" routerLink="hotels" routerLinkActive="active">
             Hotels
+          </a>
+        </li>
+        <li class="listItem">
+          <a class="navButton" routerLink="bookings" routerLinkActive="active">
+            Bookings
           </a>
         </li>
         <li class="listItem">

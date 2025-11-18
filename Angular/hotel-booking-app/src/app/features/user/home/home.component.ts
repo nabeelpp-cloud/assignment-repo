@@ -38,4 +38,10 @@ export class HomeComponent {
       }
     })
   }
+  goSearch(city : string){
+    this.searchForm.patchValue({
+      searchTerm : city
+    })
+    this.searchHotel();
+  }
 }

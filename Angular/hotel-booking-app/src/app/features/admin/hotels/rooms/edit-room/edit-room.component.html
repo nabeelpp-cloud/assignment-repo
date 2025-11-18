@@ -1,1 +1,45 @@
-<p>edit-room works!</p>
+<div class="main">
+    <div class="formContainer">
+      <form [formGroup]="updateRoomForm" (ngSubmit)="updateRoom()">
+        <div class="form-elements">
+          <span class="label">Room number</span>
+          <input type="text" name="name" id="name" formControlName="roomNumber" />
+          <span class="label">Hotel Id</span>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            formControlName="hotelId"
+            [readonly]="true"
+          />
+          <span class="label">Room type</span>
+          <select class="optionBox" formControlName="roomTypeId" id="roomTypeId">
+            <option class="optionBox" value="">-- Select Room Type --</option>
+            @for(roomType of roomTypes ; track $index){
+              <option class="optionBox" [value]="roomType.id">{{roomType.typeName}}</option>
+            }
+          </select>
+  
+          <span class="label">Status</span>
+          <select class="optionBox" formControlName="status" id="status">
+              <option class="optionBox" value="">-- Select Room Status  --</option>
+                <option class="optionBox" value="0">Available</option>
+                <option class="optionBox" value="1">Booked</option>
+                <option class="optionBox" value="2">UnderMaintenance</option>
+            </select>
+          <span class="label">Price Per Night</span>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            formControlName="pricePerNight"
+          />
+          <input type="submit" value="Update Room" />
+          <div class="cancel" (click)="goBack()">
+            Cancel
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

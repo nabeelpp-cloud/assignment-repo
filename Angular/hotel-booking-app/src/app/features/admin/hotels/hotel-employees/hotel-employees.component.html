@@ -1,20 +1,50 @@
 <div class="main1">
-    <h1>Employees</h1>
+  <div class="head">
+    <div class="title">Employees</div>
+    <div class="buttonContainer">
+      <button
+        class="actionButton addHotelButton"
+        [routerLink]="['/admin/hotels', hotelId, 'employees', 'create']"
+
+      >
+        Add Employee
+      </button>
+    </div>
+  </div>
     <table>
       <thead>
         <tr>
           
-          <th>Full NAme</th>
+          <th>Full Name</th>
           <th>Role</th>
           <th>Email</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        @for (employee of hotel.employees; track employee.id) {
+        @for (employee of hotel?.employees; track employee.id) {
           <tr class="hotelDetailLink" >
             <td>{{ employee.fullName }}</td>
             <td>{{ employee.role }}</td>
-            <td class="email">{{ employee.email }}</td>            
+            <td class="email">{{ employee.email }}</td>
+            <td class="actions">
+              <div class="buttonContainer">
+                <button
+                  class="actionButton updateHotelButton"
+                  (click)="editRoom(employee?.id)"
+                >
+                  Edit
+                </button>
+              </div>
+              <div class="buttonContainer">
+                <button
+                  class="actionButton deleteHotelButton"
+                  (click)="deleteRoom(employee?.id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>         
           </tr>
         }
       </tbody>

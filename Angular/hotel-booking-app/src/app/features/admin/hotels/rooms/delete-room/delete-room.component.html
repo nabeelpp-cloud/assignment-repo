@@ -1,1 +1,24 @@
-<p>delete-room works!</p>
+<div class="main">
+    <div class="formContainer">
+  
+      <h2 class="title">Delete room</h2>
+      <p class="subtitle">Are you sure you want to delete this room?</p>
+  
+      <div class="room-details">
+        <div class="detail"><strong>Room Number:</strong> {{ room?.roomNumber }}</div>
+        <div class="detail"><strong>Hotel Id:</strong> {{ room?.hotelId }}</div>
+        <div class="detail"><strong>Room Type:</strong> {{ room?.roomType }}</div>
+        <div class="detail"><strong>Price Per Night:</strong> {{ room?.pricePerNight }}</div>
+        <div class="detail"><strong>Status:</strong> {{ room?.status }}</div>
+      </div>
+  
+      <button class="delete-btn" (click)="confirmDelete()">
+        Delete room
+      </button>
+  
+      <div class="cancel" (click)="goBack()">
+        Cancel
+      </div>
+    </div>
+  </div>
+  

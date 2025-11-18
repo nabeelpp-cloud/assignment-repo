@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { authGuard } from './auth/guard/auth.guard';
 import { MyBookingComponent } from './booking/my-booking/my-booking.component';
+import { BookSuccessComponent } from './booking/book-success/book-success.component';
 
 export const userRoutes: Routes = [
   {
@@ -34,6 +35,11 @@ export const userRoutes: Routes = [
       {
         path: 'bookings',
         component: MyBookingComponent,
+        canActivate: [authGuard],
+      },
+      {
+        path: 'book-success/:id',
+        component: BookSuccessComponent,
         canActivate: [authGuard],
       },
       {

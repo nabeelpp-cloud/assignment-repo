@@ -33,6 +33,7 @@ export class BookHotelComponent implements OnInit, OnDestroy {
   totalAmount: number = 0;
   rooms: any[] = [];
   userId!: number;
+  bookingId!:number;
 
   constructor(
     private route: ActivatedRoute,
@@ -134,6 +135,7 @@ export class BookHotelComponent implements OnInit, OnDestroy {
   selectedRoom: any = null;
 
   toggleDropdown() {
+    
     this.isOpen = !this.isOpen;
   }
 
@@ -193,9 +195,9 @@ export class BookHotelComponent implements OnInit, OnDestroy {
     }
     this.bookingService.createBooking(this.bookingForm.value).subscribe({ 
       next: (response) => {
-        if (Number(response) > 0) {
-          console.log('Created Booking Succesffully');
-          this.router.navigate(['/bookings']);
+        if (Number(response)) {
+          this.bookingId=Number(response);
+          this.router.navigate(['/book-success',this.bookingId]);
         }
       },
       error: (err) => {

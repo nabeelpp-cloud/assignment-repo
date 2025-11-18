@@ -1,11 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core'; // Using inject
 import { CookieService } from 'ngx-cookie-service';
-import { Observable, tap, BehaviorSubject, finalize, map } from 'rxjs'; // Import BehaviorSubject
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
-
+import {
+  Observable,
+  tap,
+  BehaviorSubject,
+  finalize,
+  map,
+  Subject,
+  throwError, // <-- ADD THIS
+  of, // <-- ADD THIS
+  catchError, // <-- ADD THIS
+  switchMap, // <-- ADD THIS
+  filter, // <-- ADD THIS
+  take, // <-- ADD THIS
+} from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -18,11 +30,14 @@ export class AuthService {
 
   private authState$ = new BehaviorSubject<boolean>(false);
   private _currentUserRole$ = new BehaviorSubject<string | null>(null);
-  private _currentUserId$ = new BehaviorSubject<string | null>(null); 
+  private _currentUserId$ = new BehaviorSubject<string | null>(null);
+
+  private isRefreshing$ = new BehaviorSubject<boolean>(false);
+  private newAccessToken$ = new Subject<string | null>();
 
   public isLoggedIn$ = this.authState$.asObservable();
   public currentUserRole$ = this._currentUserRole$.asObservable();
-  public currentUserId$ = this._currentUserId$.asObservable(); 
+  public currentUserId$ = this._currentUserId$.asObservable();
   public isAdmin$ = this.currentUserRole$.pipe(map((role) => role === 'Admin'));
   public isCustomer$ = this.currentUserRole$.pipe(
     map((role) => role === 'Customer')
@@ -31,11 +46,11 @@ export class AuthService {
   constructor() {
     const token = this.getAccessToken();
     if (token) {
-      const claims = this.decodeToken(token); 
-      if (claims && claims.role) { 
+      const claims = this.decodeToken(token);
+      if (claims && claims.role) {
         this.authState$.next(true);
         this._currentUserRole$.next(claims.role);
-        this._currentUserId$.next(claims.userId); 
+        this._currentUserId$.next(claims.userId);
       } else {
         this.cookieService.delete('accessToken', '/');
       }
@@ -92,6 +107,9 @@ export class AuthService {
   }
 
   logout(): void {
+    const currentRole = this.getRoleSnapshot(); 
+    const redirectPath = (currentRole === 'Admin') ? '/admin/login' : '/login';
+    const isAlreadyOnLoginPage = this.router.url.includes(redirectPath);
     this.http
       .post(`${this.baseUrl}/logout`, {}, { withCredentials: true })
       .pipe(
@@ -99,7 +117,12 @@ export class AuthService {
           this.cookieService.delete('accessToken', '/');
           this.authState$.next(false);
           this._currentUserRole$.next(null);
-          this.router.navigate(['/login']);
+          if (!isAlreadyOnLoginPage) {
+            //this.router.navigate([redirectPath]);
+            if(currentRole === 'Admin'){
+              this.router.navigate([redirectPath])
+            }
+          }
         })
       )
       .subscribe({
@@ -126,21 +149,24 @@ export class AuthService {
       secure: true,
     });
 
-    const claims = this.decodeToken(token); 
+    const claims = this.decodeToken(token);
     console.log('Role : ', claims.role);
-    console.log('User ID : ', claims.userId); 
+    console.log('User ID : ', claims.userId);
 
-    if (claims && claims.role) { 
+    if (claims && claims.role) {
       this.authState$.next(true);
       this._currentUserRole$.next(claims.role);
-      this._currentUserId$.next(claims.userId); 
+      this._currentUserId$.next(claims.userId);
       console.log('Auth state set to:', this.authState$.value);
       console.log('Current role set to:', this._currentUserRole$.value);
-      console.log('Current user ID set to:', this._currentUserId$.value); 
+      console.log('Current user ID set to:', this._currentUserId$.value);
     }
   }
 
-  private decodeToken(token: string): { role: string | null; userId: string | null } {
+  private decodeToken(token: string): {
+    role: string | null;
+    userId: string | null;
+  } {
     if (!token) {
       console.log('no token');
       return { role: null, userId: null };
@@ -152,14 +178,49 @@ export class AuthService {
         decodedToken[
           'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
         ] || null;
-      
-      const userId = decodedToken.sub || null; // <-- 'sub' is the standard JWT claim for User ID
+
+      const userId = decodedToken.sub || null;
 
       return { role, userId };
-
     } catch (Error) {
       console.error('Failed to decode token', Error);
       return { role: null, userId: null };
     }
+  }
+
+  public handleRefresh(): Observable<any> {
+    if (this.isRefreshing$.value) {
+      return this.newAccessToken$.pipe(
+        filter((token) => token !== undefined),
+        take(1),
+        switchMap((token) => {
+          if (token) {
+            return of({ accessToken: token });
+          }
+          return throwError(() => new Error('Refresh token failed'));
+        })
+      );
+    }
+
+    this.isRefreshing$.next(true);
+    this.newAccessToken$.next(null);
+
+    return this.http
+      .post<any>(`${this.baseUrl}/refresh`, {}, { withCredentials: true })
+      .pipe(
+        tap((response) => {
+          this.setTokenAndState(response.accessToken);
+          this.newAccessToken$.next(response.accessToken);
+        }),
+        catchError((err) => {
+          console.error('Refresh token failed, logging out.', err);
+          this.newAccessToken$.next(null);
+          this.logout();
+          return throwError(() => err);
+        }),
+        finalize(() => {
+          this.isRefreshing$.next(false);
+        })
+      );
   }
 }

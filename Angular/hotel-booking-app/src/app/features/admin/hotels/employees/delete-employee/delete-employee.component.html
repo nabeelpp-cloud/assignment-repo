@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="formContainer">
+  
+      <h2 class="title">Delete room</h2>
+      <p class="subtitle">Are you sure you want to delete this room?</p>
+  
+      <div class="room-details">
+        <div class="detail"><strong>Full Name: </strong> {{ employeeDetails?.fullName }}</div>
+        <div class="detail"><strong>Email: </strong> {{ employeeDetails?.email }}</div>
+        <div class="detail"><strong>Hotel Id: </strong> {{ employeeDetails?.hotelId }}</div>
+        <div class="detail"><strong>Email: </strong> {{ employeeDetails?.role }}</div>
+        
+      </div>
+  
+      <button class="delete-btn" (click)="confirmDelete()">
+        Delete room
+      </button>
+  
+      <div class="cancel" (click)="goBack()">
+        Cancel
+      </div>
+    </div>
+  </div>
+  

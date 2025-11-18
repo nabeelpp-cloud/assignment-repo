@@ -1,0 +1,49 @@
+<div class="main1">
+  <div class="head">
+    <div class="title">Bookings</div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Customer Id</th>
+        <th>Room ID</th>
+        <th>Check In Date</th>
+        <th>Check Out Date</th>
+        <th>Total Amount</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (booking of bookings; track booking.id) {
+      <tr class="hotelDetailLink" [routerLink]="['/bookings', booking.id]">
+        <td>{{ booking.customerId }}</td>
+        <td>{{ booking.roomId }}</td>
+        <td>{{ booking.checkInDate | date : "mediumDate" }}</td>
+        <td>{{ booking.checkOutDate | date : "mediumDate" }}</td>
+        <td>{{ booking.totalAmount | currency }}</td>
+        <td>{{ getStatusText(booking.status) }}</td>
+        <td class="actions">
+          <div class="buttonContainer"></div>
+          <div class="buttonContainer">
+            <button
+              class="actionButton updateHotelButton"
+              (click)="editBooking(booking.id)"
+            >
+              Edit
+            </button>
+          </div>
+          <div class="buttonContainer">
+            <button
+              class="actionButton deleteHotelButton"
+              (click)="deleteBooking(booking.id)"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

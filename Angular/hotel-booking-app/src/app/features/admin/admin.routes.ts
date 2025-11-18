@@ -26,6 +26,11 @@ export const adminRoutes: Routes = [
         loadChildren: () =>
           import('./customers/customers.routes').then(m => m.customersRoutes),
       },
+      {
+        path: 'bookings',
+        loadChildren: () =>
+          import('./bookings/bookings.routes').then(m => m.bookingsRoutes),
+      },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home' },
     ],

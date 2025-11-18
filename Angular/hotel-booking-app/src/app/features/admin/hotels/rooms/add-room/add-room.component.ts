@@ -69,13 +69,13 @@ export class AddRoomComponent {
         if (Number(respose) > 0) {
           console.log('Room added successfully');
           alert('Room added successfully');
-          this.router.navigate(['/admin/hotel/',this.hotelId,"/rooms"]);
+          console.log(this.hotelId);
+          this.router.navigate(['/admin/hotels/',this.hotelId,'rooms']);
         }
       },
     });
   }
   changeToInt(val : any){
     return Number(val)
-
   }
 }

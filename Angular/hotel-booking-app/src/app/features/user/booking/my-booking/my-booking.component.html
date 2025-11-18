@@ -1,1 +1,64 @@
 
+<div class="booking-container">
+  
+
+    @if(bookings.length){
+        @for(booking of bookings ; track $index){
+
+            <div class="ticket-card">
+              <div class="ticket-header">
+                <div class="hotel-info">
+                  <h3>{{ booking.hotelName }}</h3>
+                  <p><i class="fa-solid fa-location-dot"></i> {{ booking.hotelAddress }}</p>
+                </div>
+                <div class="booking-id">
+                  <span>Booking ID</span>
+                  <strong>{{ booking.id }}</strong>
+                </div>
+              </div>
+          
+              <div class="timeline-section">
+                <div class="date-box">
+                  <span class="label">Check-In</span>
+                  <div class="date-value">{{ booking.checkInDate | date:'mediumDate' }}</div>
+                  <span class="time-label">12:00 PM</span>
+                </div>
+          
+                
+          
+                <div class="date-box right">
+                  <span class="label">Check-Out</span>
+                  <div class="date-value">{{ booking.checkOutDate | date:'mediumDate' }}</div>
+                  <span class="time-label">11:00 AM</span>
+                </div>
+              </div>
+          
+              <div class="divider"></div>
+          
+              <div class="details-grid">
+                <div class="detail-item">
+                  <span class="label">Room Type</span>
+                  <span class="values">{{ booking.roomType }}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Room No.</span>
+                  <span class="value">{{ booking.roomId }}</span>
+                </div>
+                <div class="detail-item" >
+                    <span class="label" style="text-align: end; padding-right: 2px;">Status</span>
+                    <span class="value" [ngClass]="getStatusClass(booking.status)">
+                      {{ getStatusText(booking.status) }}
+                    </span>
+                  
+                  </div>
+              </div>
+          
+              <div class="ticket-footer">
+                <div class="total-label">Total Paid</div>
+                <div class="total-price">{{ booking.totalAmount | currency }}</div>
+              </div>
+            </div>
+        }
+    }
+  
+  </div>

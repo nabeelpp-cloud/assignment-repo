@@ -12,6 +12,10 @@ import { AddRoomComponent } from './rooms/add-room/add-room.component';
 import { EditRoomComponent } from './rooms/edit-room/edit-room.component';
 import { DeleteRoomComponent } from './rooms/delete-room/delete-room.component';
 import { RoomsLayoutComponent } from './rooms/rooms-layout/rooms-layout.component';
+import { EmployeesLayoutComponent } from './employees/employees-layout/employees-layout.component';
+import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './employees/edit-employee/edit-employee.component';
+import { DeleteEmployeeComponent } from './employees/delete-employee/delete-employee.component';
 
 export const hotelRoutes: Routes = [
   {
@@ -36,7 +40,16 @@ export const hotelRoutes: Routes = [
           { path: ':id/delete', component: DeleteRoomComponent },
         ],
       },
-      { path: 'employees', component: HotelEmployeesComponent },
+      {
+        path: 'employees',
+        component: EmployeesLayoutComponent,
+        children: [
+          { path: '', component: HotelEmployeesComponent },
+          { path: 'create', component: AddEmployeeComponent },
+          { path: ':id/update', component: EditEmployeeComponent },
+          { path: ':id/delete', component: DeleteEmployeeComponent },
+        ],
+      },
       { path: 'reviews', component: HotelReviewsComponent },
       { path: 'info', component: HotelInfoComponent },
       { path: '', redirectTo: 'info', pathMatch: 'full' },

@@ -77,5 +77,13 @@
     cursor: not-allowed;
   }
   
-  
+  .redirect{
+    text-decoration: underline;
+    color: #1565c0;
+    font-size: small;
+    cursor: pointer;
+    &:hover{
+      color: #00346f;
+    }
+  }
   

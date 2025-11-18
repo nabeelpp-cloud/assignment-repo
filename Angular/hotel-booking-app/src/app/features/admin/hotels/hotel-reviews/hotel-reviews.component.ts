@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { HotelService } from '../../../../shared/services/hotel.service';
 import { ActivatedRoute } from '@angular/router';
-import { DecimalPipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-hotel-reviews',
-  imports: [DecimalPipe,MatProgressSpinnerModule ],
+  imports: [DecimalPipe,MatProgressSpinnerModule,DatePipe ],
   templateUrl: './hotel-reviews.component.html',
   styleUrl: './hotel-reviews.component.scss'
 })

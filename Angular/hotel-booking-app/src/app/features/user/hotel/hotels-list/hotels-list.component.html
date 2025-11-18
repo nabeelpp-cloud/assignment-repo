@@ -58,12 +58,12 @@
       <div class="priceRange">
         <div class="subTitle">Price Range</div>
         <mat-slider [min]="minPrice" [max]="maxPrice" [step]="step">
-          <input matSliderStartThumb [(ngModel)]="selectedMinPrice" />
-          <input matSliderEndThumb [(ngModel)]="selectedMaxPrice" />
+          <input matSliderStartThumb [(ngModel)]="tempMinPrice" />
+          <input matSliderEndThumb [(ngModel)]="tempMaxPrice" />
         </mat-slider>
         <div class="range">
-          <span class="prices">{{ selectedMinPrice | currency }}</span>
-          <span class="prices">{{ selectedMaxPrice | currency }}</span>
+          <span class="prices">{{ tempMinPrice | currency }}</span>
+          <span class="prices">{{ tempMaxPrice | currency }}</span>
         </div>
       </div>
       <div class="starRating">
@@ -130,8 +130,11 @@
       <div class="sortContainer">
         <div class="sortText">Sort:</div>
         <div class="sortDropDown">
-          <select name="" id="">
+          <select name="sort" id="sort" [(ngModel)]="sortBy" (change)="toggleSort()">
             <option value="">select sort</option>
+            <option value="priceLowToHigh">Price Low To High</option>
+            <option value="priceHighToLow">Price High To Low</option>
+            <option value="recomended">Recommended</option>
           </select>
         </div>
       </div>

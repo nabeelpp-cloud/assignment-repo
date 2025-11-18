@@ -1,24 +1,25 @@
 <div class="main">
-    <nav class="header">
-      <div class="logo">
-        <i class="fa-solid fa-hotel"></i>
-        Grand Hayath
-      </div>
-  
-      <div class="items">
-        @if(!isCustomer){
+  <nav class="header">
+    <div class="logo" (click)="home()">
+      <i class="fa-solid fa-hotel"></i>
+      Grand Hayath
+    </div>
 
-          <div class="signInButton" (click)="signInClicked()">
-            Sign In
-          </div>
-        }
-        @else {
+    <div class="items">
+      @if(!isCustomer){
+        <div class="signInButton" (click)="signInClicked()">
+          Sign In
+        </div>
+      }
+      @else {
+        <div class="Item" (click)="myBookings()">
+          MyBookings
+        </div>
 
-          <div class="signInButton" (click)="logOutClicked()">
-            Log Out
-          </div>
-        }
-      </div>
-    </nav>
-  </div>
-  
+        <div class="signInButton" (click)="logOutClicked()">
+          Log Out
+        </div>
+      }
+    </div>
+  </nav>
+</div>

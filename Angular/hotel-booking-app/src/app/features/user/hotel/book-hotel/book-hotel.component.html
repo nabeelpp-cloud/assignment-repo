@@ -1,212 +1,238 @@
 <form [formGroup]="bookingForm" (ngSubmit)="bookNow()">
   <div class="main">
-    <div class="customerDetailsContainer">
-      <h3 class="sectionTitles">Personal Information</h3>
+    <div class="form-section">
+      <div class="customerDetailsContainer">
+        <h3 class="sectionTitles">Personal Information</h3>
 
-      <div class="personalDetails">
-        <div class="row">
-          <div class="detail">
-            <label for="cutomerName" class="label">Name</label>
-            <div id="cutomerName">
-              {{ customerDetails?.fullName || "not available" }}
+        <div class="personalDetails">
+          <div class="row">
+            <div class="detail">
+              <label for="cutomerName" class="label">Name</label>
+              <div id="cutomerName">
+                {{ customerDetails?.fullName || "not available" }}
+              </div>
+            </div>
+
+            <div class="detail">
+              <label for="customerEmail" class="label">Email</label>
+              <div id="customerEmail">
+                {{ customerDetails?.email || "not available" }}
+              </div>
             </div>
           </div>
+          <div class="row">
+            <div class="detail">
+              <label for="phoneNumber" class="label">Phone</label>
+              <div id="phoneNumber">
+                {{ customerDetails?.phoneNumber || "not available" }}
+              </div>
+            </div>
 
-          <div class="detail">
-            <label for="customerEmail" class="label">Email</label>
-            <div id="customerEmail">
-              {{ customerDetails?.email || "not available" }}
+            <div class="detail">
+              <label for="idProofNumber" class="label">Id Number</label>
+              <div id="idProofNumber">
+                {{ customerDetails?.idProofNumber || "not available" }}
+              </div>
             </div>
           </div>
         </div>
-        <div class="row">
+      </div>
+
+      <div class="customerDetailsContainer">
+        <h3 class="sectionTitles">Hotel Details</h3>
+        <div class="personalDetails">
+          <div class="row">
+            <div class="detail">
+              <label for="hotelName" class="label">Name</label>
+              <div id="hotelName">{{ hotel?.name }}</div>
+            </div>
+
+            <div class="detail">
+              <label for="hotelAddress" class="label">Address</label>
+              <div id="hotelAddress">{{ hotel?.address }}</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="detail">
+              <label for="hotelCity" class="label">City</label>
+              <div id="hotelCity">{{ hotel?.city }}</div>
+            </div>
+            <div class="detail">
+              <label for="country" class="label">Country</label>
+              <div id="country">{{ hotel?.country }}</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="changeHotel">Change Hotel</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="customerDetailsContainer">
+        <h3 class="sectionTitles">Booking Details</h3>
+        <div class="personalDetails">
           <div class="detail">
-            <label for="phoneNumber" class="label">Phone</label>
-            <div id="phoneNumber">
-              {{ customerDetails?.phoneNumber || "not available" }}
+            <label for="checkInDate" class="label">Check In</label>
+            <input
+              type="date"
+              id="checkInDate"
+              formControlName="checkInDate"
+              (change)="calculateAmount()"
+            />
+            <div
+              *ngIf="
+                bookingForm.controls.checkInDate.invalid &&
+                bookingForm.controls.checkInDate.touched
+              "
+              style="color: red; font-size: 0.8rem"
+            >
+              Check-in date is required.
+            </div>
+            <div
+              *ngIf="
+                bookingForm.get('checkInDate')?.errors?.['dateCannotBeBeforeToday']
+                && bookingForm.get('checkInDate')?.touched
+              "
+              style="color: red; font-size: 0.8rem"
+            >
+              Date cannot be before today
+            </div>
+          </div>
+          <div class="detail">
+            <label for="checkOutDate" class="label">Check Out</label>
+            <input
+              type="date"
+              id="checkOutDate"
+              formControlName="checkOutDate"
+              (change)="calculateAmount()"
+            />
+            <div
+              *ngIf="
+                bookingForm.controls.checkOutDate.invalid &&
+                bookingForm.controls.checkOutDate.touched
+              "
+              style="color: red; font-size: 0.8rem"
+            >
+              Check-out date is required.
+            </div>
+            <div
+              *ngIf="
+                bookingForm.get('checkOutDate')?.errors?.['dateCannotBeBeforeToday']
+                && bookingForm.get('checkOutDate')?.touched
+              "
+              style="color: red; font-size: 0.8rem"
+            >
+              Date cannot be before today
             </div>
           </div>
 
-          <div class="detail">
-            <label for="idProofNumber" class="label">Id Number</label>
-            <div id="idProofNumber">
-              {{ customerDetails?.idProofNumber || "not available" }}
+          <div
+            *ngIf="
+              bookingForm.hasError('dateRangeInvalid') &&
+              (bookingForm.controls.checkInDate.touched ||
+                bookingForm.controls.checkOutDate.touched)
+            "
+          >
+            <p style="color: red; font-size: 0.8rem">
+              Check-out must be after check-in.
+            </p>
+          </div>
+
+          <div
+            *ngIf="
+              bookingForm.hasError('invalidDate') &&
+              (bookingForm.controls.checkInDate.touched ||
+                bookingForm.controls.checkOutDate.touched)
+            "
+          >
+            <p style="color: red; font-size: 0.8rem">Enter valid dates.</p>
+          </div>
+        </div>
+        <h3 class="sectionTitles">Select Your Room</h3>
+        <div class="room-dropdown" (click)="toggleDropdown()">
+          <div class="selected-room">
+            @if (selectedRoom) {
+              <div class="room-content">
+                <div class="room-text">
+                  <span class="room-title">{{ selectedRoom?.roomType }}</span>
+                  <span class="room-subtitle">{{ selectedRoom?.description }}</span>
+                </div>
+                <span class="room-price-badge">{{ selectedRoom?.pricePerNight | currency }}</span>
+              </div>
+            } 
+            @else {
+              <span class="placeholder">Select a Room</span>
+            }
+          
+            <i class="fa-solid fa-chevron-down arrow-icon" [class.rotate]="isOpen"></i>
+          </div>
+
+          <div class="dropdown-list" *ngIf="isOpen">
+            @for(room of rooms; track $index) {
+            <div class="dropdown-item" (click)="selectRoom(room, $event)">
+              <div class="room-info">
+                <div class="room-name">{{ room.roomType }}</div>
+                <div class="room-desc">{{ room.description }}</div>
+              </div>
+              <div class="room-price">{{ room.pricePerNight | currency }}</div>
             </div>
+            }
           </div>
         </div>
       </div>
     </div>
-
-    <div class="customerDetailsContainer">
-      <h3 class="sectionTitles">Hotel Details</h3>
-      <div class="personalDetails">
-        <div class="row">
-          <div class="detail">
-            <label for="hotelName" class="label">Name</label>
-            <div id="hotelName">{{ hotel?.name }}</div>
-          </div>
-
-          <div class="detail">
-            <label for="hotelAddress" class="label">Address</label>
-            <div id="hotelAddress">{{ hotel?.address }}</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="detail">
-            <label for="hotelCity" class="label">City</label>
-            <div id="hotelCity">{{ hotel?.city }}</div>
-          </div>
-          <div class="detail">
-            <label for="country" class="label">Country</label>
-            <div id="country">{{ hotel?.country }}</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="changeHotel">Change Hotel</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bookingDetails">
-      <h3 class="sectionTitles">Select Your Room</h3>
-      <div class="room-dropdown" (click)="toggleDropdown()">
-        <div class="selected-room">
-          {{ selectedRoom?.roomType || "Select a Room" }}
-        </div>
-
-        <div class="dropdown-list" *ngIf="isOpen">
-          @for(room of rooms; track $index) {
-          <div class="dropdown-item" (click)="selectRoom(room, $event)">
-            <div class="room-info">
-              <div class="room-name">{{ room.roomType }}</div>
-              <div class="room-desc">{{ room.description }}</div>
+    <div class="summary-section">
+      <div class="booking-summary-card sticky-summary">
+        <h3 class="sectionTitle">Booking Summary</h3>
+      
+        @if(selectedRoom) {
+          <div class="summary-content">
+            
+            <div class="summary-group">
+              <div class="summary-item">
+                <span class="summary-label">Room Type</span>
+                <span class="summary-value highlight">{{ selectedRoom?.roomType }}</span>
+              </div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Description</span>
+                <span class="summary-value text-muted">{{ selectedRoom?.description }}</span>
+              </div>
+      
+              <div class="summary-item">
+                <span class="summary-label">Price / Night</span>
+                <span class="summary-value">{{ selectedRoom?.pricePerNight | currency }}</span>
+              </div>
+      
+              <div class="summary-item">
+                <span class="summary-label">Duration</span>
+                <span class="summary-value">{{ totalNights }} Nights</span>
+              </div>
             </div>
-            <div class="room-price">{{ room.pricePerNight | currency }}</div>
+      
+            <div class="divider"></div>
+      
+            <div class="total-section">
+              <span class="total-label">Total Due</span>
+              <span class="total-amount">{{ totalAmount | currency }}</span>
+            </div>
+      
+            <button
+              type="submit"
+              class="book-btn"
+              [disabled]="bookingForm.invalid"
+            >
+              Confirm Booking
+            </button>
           </div>
-          }
-        </div>
+        } 
+        @else {
+          <div class="empty-state">
+            <i class="fa-solid fa-bed"></i>
+            <p>Select a room to view pricing</p>
+          </div>
+        }
       </div>
-      </div>
-
-    <div class="customerDetailsContainer">
-      <h3 class="sectionTitles">Booking Details</h3>
-      <div class="personalDetails">
-        <div class="detail">
-          <label for="checkInDate" class="label">Check In</label>
-          <input
-            type="date"
-            id="checkInDate"
-            formControlName="checkInDate"
-            (change)="calculateAmount()"
-          />
-          <div
-            *ngIf="
-              bookingForm.controls.checkInDate.invalid &&
-              bookingForm.controls.checkInDate.touched
-            "
-            style="color: red; font-size: 0.8rem"
-          >
-            Check-in date is required.
-          </div>
-          <div
-            *ngIf="
-              bookingForm.get('checkInDate')?.errors?.['dateCannotBeBeforeToday']
-              && bookingForm.get('checkInDate')?.touched
-            "
-            style="color: red; font-size: 0.8rem"
-          >
-            Date cannot be before today
-          </div>
-        </div>
-        <div class="detail">
-          <label for="checkOutDate" class="label">Check Out</label>
-          <input
-            type="date"
-            id="checkOutDate"
-            formControlName="checkOutDate"
-            (change)="calculateAmount()"
-          />
-          <div
-            *ngIf="
-              bookingForm.controls.checkOutDate.invalid &&
-              bookingForm.controls.checkOutDate.touched
-            "
-            style="color: red; font-size: 0.8rem"
-          >
-            Check-out date is required.
-          </div>
-          <div
-            *ngIf="
-              bookingForm.get('checkOutDate')?.errors?.['dateCannotBeBeforeToday']
-              && bookingForm.get('checkOutDate')?.touched
-            "
-            style="color: red; font-size: 0.8rem"
-          >
-            Date cannot be before today
-          </div>
-        </div>
-
-        <div
-          *ngIf="
-            bookingForm.hasError('dateRangeInvalid') &&
-            (bookingForm.controls.checkInDate.touched ||
-              bookingForm.controls.checkOutDate.touched)
-          "
-        >
-          <p style="color: red; font-size: 0.8rem">
-            Check-out must be after check-in.
-          </p>
-        </div>
-
-        <div
-          *ngIf="
-            bookingForm.hasError('invalidDate') &&
-            (bookingForm.controls.checkInDate.touched ||
-              bookingForm.controls.checkOutDate.touched)
-          "
-        >
-          <p style="color: red; font-size: 0.8rem">Enter valid dates.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="customerDetailsContainer">
-      <h3 class="sectionTitle">Booking Summary</h3>
-      @if(selectedRoom){
-
-        <div class="selectedRoomDetails">
-          <div class="selectedRoomType">Room Type</div>
-          <div class="selectedRoomPrice">{{ selectedRoom?.roomType }}</div>
-        </div>
-        <div class="selectedRoomDetails">
-          <div class="selectedRoomType">Description</div>
-          <div class="selectedRoomPrice">{{ selectedRoom?.description }}</div>
-        </div>
-        <div class="selectedRoomDetails">
-          <div class="selectedRoomType">Price Per Night</div>
-          <div class="selectedRoomPrice">{{ selectedRoom?.pricePerNight | currency }}</div>
-        </div>
-        <div class="selectedRoomDetails">
-          <div class="selectedRoomType">Nights</div>
-          <div class="selectedRoomPrice">{{ totalNights }}</div>
-        </div>
-        <div class="TotalAmoutContainer">
-          <div class="totalAmount">Total: {{ totalAmount | currency }}</div>
-        </div>
-        <button
-          type="submit"
-          class="bookNowButton"
-          [disabled]="bookingForm.invalid"
-        >
-          Book Now
-        </button>
-      }
-      @else {
-        <div>
-          No rooms Selected
-        </div>
-      }
-
     </div>
   </div>
 </form>

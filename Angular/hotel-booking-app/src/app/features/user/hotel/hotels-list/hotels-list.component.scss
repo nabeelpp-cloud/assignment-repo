@@ -154,11 +154,7 @@ mat-slider {
   color: #333;
 }
 
-.sortContainer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+
 
 .sortText {
   font-size: 0.9rem;
@@ -455,4 +451,36 @@ mat-slider {
   margin-top: 10px;
   color: #555;
   font-size: 1.2rem;
+}
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.sortText {
+  font-weight: 500;
+  color: #444;
+}
+
+.sortDropDown select {
+  padding: 6px 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.sortDropDown select:hover {
+  border-color: #8bb8ff;
+}
+
+.sortDropDown select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
 }

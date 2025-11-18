@@ -42,6 +42,13 @@ export class HotelsListComponent {
 
   selectedRatings: number[] = [];
 
+  sortBy: string = '';
+
+  tempMinPrice: number = 0;
+  tempMaxPrice: number = 1000;
+  tempSelectedRatings: number[] = [];
+  tempSortBy: string = '';
+
   page: number = 1;
   itemsPerPage: number = 4;
   totalItems: number = 0;
@@ -80,7 +87,8 @@ export class HotelsListComponent {
         this.itemsPerPage,
         this.selectedMaxPrice,
         this.selectedMinPrice,
-        this.selectedRatings
+        this.selectedRatings,
+        this.sortBy
       )
       .pipe(takeUntil(this.destroy$))
       .subscribe({
@@ -143,25 +151,35 @@ export class HotelsListComponent {
 
   toggleRating(rating: number, event: any) {
     if (event.target.checked) {
-      if (!this.selectedRatings.includes(rating)) {
-        this.selectedRatings.push(rating);
+      if (!this.tempSelectedRatings.includes(rating)) {
+        this.tempSelectedRatings.push(rating);
       }
     } else {
-      this.selectedRatings = this.selectedRatings.filter((r) => r !== rating);
+      this.tempSelectedRatings = this.tempSelectedRatings.filter(
+        (r) => r !== rating
+      );
     }
-    console.log(this.selectedRatings);
+    console.log(this.tempSelectedRatings);
   }
 
   applyFilter() {
+    this.selectedMaxPrice = this.tempMaxPrice;
+    this.selectedMinPrice = this.tempMinPrice;
+    this.selectedRatings = this.tempSelectedRatings;
+    console.log(this.selectedRatings);
     this.loadHotels();
   }
   gotoHotelDetails(id: number) {
     console.log(id);
-    this.router.navigate([`/hotels/${id}`],{
-      queryParams : {
-        checkInDate : this.checkInDate,
-        checkOutDate  : this.checkOutDate
-      }
+    this.router.navigate([`/hotels/${id}`], {
+      queryParams: {
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+      },
     });
+  }
+  toggleSort() {
+    console.log(this.sortBy);
+    this.loadHotels();
   }
 }

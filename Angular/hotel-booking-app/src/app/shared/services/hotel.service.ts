@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class HotelService {
-  
   private baseUrl = `${environment.apiBaseUrl}/api/hotel`;
   private selectedHotelSubject = new BehaviorSubject<any>(null);
   selectedHotel$ = this.selectedHotelSubject.asObservable();
@@ -33,7 +32,8 @@ export class HotelService {
     pageSize: number = 10,
     selectedMaxPrice: number = 0,
     selectedMinPrice: number = 1000,
-    selectedRatings?: number[]
+    selectedRatings?: number[],
+    sortBy?: string
   ) {
     let params = new HttpParams();
     if (searchTerm) params = params.set('searchTerm', searchTerm);
@@ -44,6 +44,7 @@ export class HotelService {
       params = params.set('minPrice', selectedMinPrice);
     if (selectedRatings != null)
       params = params.set('selectedRatings', selectedRatings.toString());
+    if (sortBy) params = params.set('sortBy', sortBy);
     params = params.set('pageNumber', pageNumber);
     params = params.set('pageSize', pageSize);
     return this.http.get(`${this.baseUrl}/full`, { params });
@@ -85,6 +86,6 @@ export class HotelService {
   }
 
   deleteHotel(id: any) {
-    return this.http.delete(`${this.baseUrl}/${id}`)
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
