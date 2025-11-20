@@ -25,6 +25,7 @@ namespace GrandHayath.HotelBooking.Application.Bookings.Command
             existingBooking.CheckInDate = request.CheckInDate;
             existingBooking.CheckOutDate = request.CheckOutDate;
             existingBooking.TotalAmount = request.TotalAmount;
+            existingBooking.Status = request.Status;
 
             return await _repository.UpdateAsync(existingBooking);
         }

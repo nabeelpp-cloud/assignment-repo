@@ -24,7 +24,7 @@ namespace GrandHayath.HotelBooking.Infrastructure.Services
             _issuer = _configuration["JwtSettings:Issuer"]!;
             _audience = _configuration["JwtSettings:Audience"]!;
             _accessTokenExpiryMinutes = int.Parse(_configuration["JwtSettings:AccessTokenExpiryMinutes"] ?? "30");
-            _refreshTokenExpiryDays = int.Parse(_configuration["JwtSettings:RefreshTokenExpiryDays"] ?? "15");
+            _refreshTokenExpiryDays = int.Parse(_configuration["JwtSettings:RefreshTokenExpiryDays"] ?? "7");
         }
         public string GenerateRefreshToken()
         {

@@ -6,14 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GrandHayath.HotelBooking.Application.Bookings.Query
 {
-    public class GetBookingByIdQueryHandler : IRequestHandler<GetBookingByIdQuery, BookingDto>
+    public class GetBookingByIdQueryHandler : IRequestHandler<GetBookingByIdQuery, BookingDetailsDto>
     {
         private readonly IApplicationDbContext dbContext;
         public GetBookingByIdQueryHandler(IApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-        public async Task<BookingDto> Handle(GetBookingByIdQuery request, CancellationToken cancellationToken)
+        public async Task<BookingDetailsDto> Handle(GetBookingByIdQuery request, CancellationToken cancellationToken)
         {
             var booking =await dbContext.Bookings
                 .Include(r => r.Room)
@@ -25,11 +25,12 @@ namespace GrandHayath.HotelBooking.Application.Bookings.Query
             {
                 return null;
             }
-            var bookingDto = new BookingDto
+            var bookingDto = new BookingDetailsDto
             {
                 Id = booking.Id,
                 CustomerId = booking.CustomerId,
                 RoomId = booking.RoomId,
+                HotelId = booking.Room.HotelId,
                 RoomType = booking.Room.RoomType.TypeName,
                 CheckInDate = booking.CheckInDate,
                 CheckOutDate = booking.CheckOutDate,

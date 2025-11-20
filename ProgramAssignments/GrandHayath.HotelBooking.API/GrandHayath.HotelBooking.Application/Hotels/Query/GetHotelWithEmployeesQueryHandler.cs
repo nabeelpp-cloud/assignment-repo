@@ -11,7 +11,7 @@ namespace GrandHayath.HotelBooking.Application.Hotels.Query
 
         public GetHotelWithEmployeesQueryHandler(IApplicationDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
         public async Task<HotelWithEmployeesDto?> Handle(GetHotelWithEmployeesQuery request, CancellationToken cancellationToken)
         {

@@ -1,5 +1,6 @@
 ﻿using GrandHayath.HotelBooking.Application.Bookings.Command;
 using GrandHayath.HotelBooking.Application.Bookings.Query;
+using GrandHayath.HotelBooking.Domain.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,17 @@ namespace GrandHayath.HotelBooking.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBooking([FromBody] CreateBookingCommand command)
         {
+            var result = await _mediator.Send(command);
+            return Ok(new
+            {
+                BookingId = result,
+                Amount = command.TotalAmount, 
+            });
+        }
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateBooking(int id,[FromBody] UpdateBookingCommand command)
+        {
+            command.Id = id;
             var result = await _mediator.Send(command);
             return Ok(result);
         }
@@ -55,16 +67,16 @@ namespace GrandHayath.HotelBooking.API.Controllers
         }
 
 
-        [HttpPost("cancel/{id}")]
-        public async Task<IActionResult> CancelBooking(int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBooking(int id)
         {
             var command = new DeleteBookingCommand { Id = id };
             var result = await _mediator.Send(command);
 
             if (result==0)
-                return BadRequest("Unable to cancel booking.");
+                return BadRequest("Unable to delete booking.");
 
-            return Ok("Booking cancelled successfully.");
+            return Ok(result);
         }
     }
 }

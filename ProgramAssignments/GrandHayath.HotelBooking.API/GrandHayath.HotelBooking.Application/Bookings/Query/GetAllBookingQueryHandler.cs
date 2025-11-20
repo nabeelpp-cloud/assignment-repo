@@ -26,7 +26,9 @@ namespace GrandHayath.HotelBooking.Application.Bookings.Query
                     RoomId = booking.RoomId,
                     CheckInDate = booking.CheckInDate,
                     CheckOutDate = booking.CheckOutDate,
-                    TotalAmount = booking.TotalAmount
+                    TotalAmount = booking.TotalAmount,
+                    Status=booking.Status,
+                    
                 });
             }
             return bookingDtos;
