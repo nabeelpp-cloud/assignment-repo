@@ -1,0 +1,32 @@
+<div class="main">
+  <div class="formContainer">
+    <form [formGroup]="createBookingForm" (ngSubmit)="addBooking()">
+      <div class="form-elements">
+        <span class="label">Customer ID</span>
+        <input type="text" formControlName="customerId" />
+
+        <span class="label">Room ID</span>
+        <input type="text" formControlName="roomId" />
+
+        <span class="label">Check-In Date</span>
+        <input type="date" formControlName="checkInDate" />
+
+        <span class="label">Check-Out Date</span>
+        <input type="date" formControlName="checkOutDate" />
+
+        <span class="label">Total Amount</span>
+        <input type="number" formControlName="totalAmount" />
+
+        <span class="label">Status</span>
+        <select formControlName="status">
+          <option [value]="0">Pending</option>
+          <option [value]="1">Confirmed</option>
+          <option [value]="2">Cancelled</option>
+          <option [value]="3">Completed</option>
+        </select>
+
+        <input type="submit" value="Add Booking" />
+      </div>
+    </form>
+  </div>
+</div>

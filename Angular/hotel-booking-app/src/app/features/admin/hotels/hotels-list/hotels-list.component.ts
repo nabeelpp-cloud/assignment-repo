@@ -2,15 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../../../../shared/services/hotel.service';
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 
+export interface HotelList {
+    id: number;
+    name: string;
+    address?: string;
+    city?: string;
+    country?: string;
+    phoneNumber?: string;
+    [key: string]: any;
+  }
+
 @Component({
   selector: 'app-hotels-list',
   imports: [RouterLink],
   templateUrl: './hotels-list.component.html',
   styleUrl: './hotels-list.component.scss'
 })
+
+
+
 export class HotelsListComponent implements OnInit {
 
-  hotels : any[]=[];
+  
+
+  hotels: HotelList[] = [];
+
   constructor(private hotelService : HotelService , private router : Router , private route : ActivatedRoute){
 
   }
@@ -23,6 +39,7 @@ export class HotelsListComponent implements OnInit {
     this.hotelService.getHotels().subscribe({
       next: (data) => { 
         this.hotels = data as any [];
+        console.log(this.hotels);
       },
       error: (err) => { 
         console.error('Error:', err);

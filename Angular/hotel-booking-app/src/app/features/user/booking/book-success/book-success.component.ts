@@ -60,4 +60,13 @@ export class BookSuccessComponent {
   gotoBookings(){
     this.router.navigate(["/bookings"])
   }
+  getStatusText(status: any): string {
+    const statusMap: { [key: number]: string } = {
+      0: 'Pending',
+      1: 'Confirmed',
+      2: 'Cancelled',
+      3: 'Completed'
+    };
+    return statusMap[status] || 'Unknown';    
+  }
 }

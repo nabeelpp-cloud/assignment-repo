@@ -44,10 +44,13 @@ export class BookingListComponent {
     };
     return statusMap[status] || 'Unknown';
   }
-  deleteBooking(bookingId: any) {
-    this.router.navigate(['/admin/bookings', bookingId, 'delete']);
-  }
-  editBooking(bookingId: any) {
+  editBooking(event: Event, bookingId: any) {
+    event.stopPropagation();
     this.router.navigate(['/admin/bookings', bookingId, 'update']);
   }
+  
+  deleteBooking(event: Event, bookingId: any) {
+    event.stopPropagation();
+    this.router.navigate(['/admin/bookings', bookingId, 'delete']);
+  }  
 }

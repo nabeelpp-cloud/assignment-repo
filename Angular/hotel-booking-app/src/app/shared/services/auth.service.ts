@@ -11,12 +11,12 @@ import {
   finalize,
   map,
   Subject,
-  throwError, // <-- ADD THIS
-  of, // <-- ADD THIS
-  catchError, // <-- ADD THIS
-  switchMap, // <-- ADD THIS
-  filter, // <-- ADD THIS
-  take, // <-- ADD THIS
+  throwError,
+  of,
+  catchError,
+  switchMap,
+  filter, 
+  take,
 } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -106,10 +106,18 @@ export class AuthService {
     return this.cookieService.get('accessToken');
   }
 
-  logout(): void {
+  logout(currentPath?: string): void {
     const currentRole = this.getRoleSnapshot(); 
     const redirectPath = (currentRole === 'Admin') ? '/admin/login' : '/login';
     const isAlreadyOnLoginPage = this.router.url.includes(redirectPath);
+    let requiresRedirect=false;
+    if(currentPath){
+
+      requiresRedirect = 
+          currentPath.includes('/bookings') || 
+          currentPath.includes('/book-success') || 
+          currentPath.includes('/book-hotel');
+    }
     this.http
       .post(`${this.baseUrl}/logout`, {}, { withCredentials: true })
       .pipe(
@@ -120,6 +128,9 @@ export class AuthService {
           if (!isAlreadyOnLoginPage) {
             //this.router.navigate([redirectPath]);
             if(currentRole === 'Admin'){
+              this.router.navigate([redirectPath])
+            }
+            else if(requiresRedirect){
               this.router.navigate([redirectPath])
             }
           }

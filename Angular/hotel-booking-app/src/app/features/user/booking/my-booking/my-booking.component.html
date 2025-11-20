@@ -1,8 +1,12 @@
 
 <div class="booking-container">
-  
-
     @if(bookings.length){
+      <div class="head">
+        <div class="title">My Bookings</div>
+        <div class="buttonContainer">
+          
+        </div>
+      </div>
         @for(booking of bookings ; track $index){
 
             <div class="ticket-card">
@@ -59,6 +63,20 @@
               </div>
             </div>
         }
+    }
+    @else {
+      <div class="noBookingsContainer">
+        <div class="noBookingsIcon">
+          <i class="fa-regular fa-calendar-xmark" style="font-size: 5rem; color: #ccc;"></i>
+        </div>
+      
+        <div class="noBookingsText">
+          <h2>No Bookings Made</h2>
+          <p>You haven&apos;t made any bookings yet.</p>
+          <p>Start exploring and book your first stay.</p>
+        </div>
+      </div>
+      
     }
   
   </div>

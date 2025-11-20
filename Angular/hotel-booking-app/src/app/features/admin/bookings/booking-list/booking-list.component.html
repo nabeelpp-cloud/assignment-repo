@@ -1,6 +1,14 @@
 <div class="main1">
   <div class="head">
     <div class="title">Bookings</div>
+    <div class="buttonContainer">
+      <button
+        class="actionButton addHotelButton"
+        routerLink="/admin/bookings/add"
+      >
+        Add Booking
+      </button>
+    </div>
   </div>
   <table>
     <thead>
@@ -16,7 +24,7 @@
     </thead>
     <tbody>
       @for (booking of bookings; track booking.id) {
-      <tr class="hotelDetailLink" [routerLink]="['/bookings', booking.id]">
+      <tr class="hotelDetailLink">
         <td>{{ booking.customerId }}</td>
         <td>{{ booking.roomId }}</td>
         <td>{{ booking.checkInDate | date : "mediumDate" }}</td>
@@ -28,7 +36,7 @@
           <div class="buttonContainer">
             <button
               class="actionButton updateHotelButton"
-              (click)="editBooking(booking.id)"
+              (click)="editBooking($event,booking.id)"
             >
               Edit
             </button>
@@ -36,7 +44,7 @@
           <div class="buttonContainer">
             <button
               class="actionButton deleteHotelButton"
-              (click)="deleteBooking(booking.id)"
+              (click)="deleteBooking($event,booking.id)"
             >
               Delete
             </button>

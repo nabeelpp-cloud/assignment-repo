@@ -133,7 +133,7 @@ select:focus {
 
 .dropdown-list {
   position: absolute;
-  top: 52px;
+  top: 48px;
   left: 0;
   width: 100%;
   max-height: 280px;
@@ -141,6 +141,7 @@ select:focus {
   background: white;
   border: 1px solid #1a73e8;
   border-radius: 8px;
+  
   z-index: 20;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

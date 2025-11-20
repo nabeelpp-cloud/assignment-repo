@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
 
   logOutClicked() {
     if(confirm('Are you sure you want to log out?')){
-      this.authService.logout();
+      this.authService.logout(this.router.url);
     }
   }
 

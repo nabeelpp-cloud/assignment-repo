@@ -33,7 +33,7 @@ export class BookHotelComponent implements OnInit, OnDestroy {
   totalAmount: number = 0;
   rooms: any[] = [];
   userId!: number;
-  bookingId!:number;
+  bookingId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -80,10 +80,45 @@ export class BookHotelComponent implements OnInit, OnDestroy {
       checkOutDate: this.checkOutDate,
     });
 
+    this.bookingForm
+      .get('checkInDate')
+      ?.valueChanges.pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.handleDateChange());
+
+    this.bookingForm
+      .get('checkOutDate')
+      ?.valueChanges.pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.handleDateChange());
+
+    this.bookingForm
+      .get('checkInDate')
+      ?.valueChanges.pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.handleDateChange());
+
+    this.bookingForm
+      .get('checkOutDate')
+      ?.valueChanges.pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.handleDateChange());
+
     this.userId = Number(this.authService.getUserIdSnapshot());
     this.loadCustomerDetail();
     this.loadHotelDetails();
   }
+
+  handleDateChange() {
+    const checkIn = this.bookingForm.value.checkInDate;
+    const checkOut = this.bookingForm.value.checkOutDate;
+
+    if (checkIn && checkOut) {
+      this.isToggle = true;
+      this.loadHotelDetails();
+    } else {
+      this.isToggle = false;
+    }
+
+    this.calculateAmount();
+  }
+
 
   loadCustomerDetail() {
     this.customerservice
@@ -111,12 +146,14 @@ export class BookHotelComponent implements OnInit, OnDestroy {
   }
 
   loadHotelDetails() {
+    const checkIn = this.bookingForm.get('checkInDate')?.value;
+    const checkOut = this.bookingForm.get('checkOutDate')?.value;
+    if (!checkIn || !checkOut) {
+      this.rooms = [];
+      return;
+    }
     this.hotelService
-      .getHotelFullDetailsById(
-        this.hotelId,
-        this.checkInDate,
-        this.checkOutDate
-      )
+      .getHotelFullDetailsById(this.hotelId, checkIn, checkOut)
       ?.pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (data) => {
@@ -132,11 +169,18 @@ export class BookHotelComponent implements OnInit, OnDestroy {
   }
 
   isOpen: boolean = false;
+  isToggle: boolean = false;
   selectedRoom: any = null;
 
   toggleDropdown() {
-    
-    this.isOpen = !this.isOpen;
+    const checkIn = this.bookingForm.value.checkInDate;
+    const checkOut = this.bookingForm.value.checkOutDate;
+
+    if (checkIn && checkOut) {
+      this.isToggle = true;
+      this.loadHotelDetails();
+    }
+    if (this.isToggle) this.isOpen = !this.isOpen;
   }
 
   selectRoom(room: any, event: MouseEvent) {
@@ -145,7 +189,6 @@ export class BookHotelComponent implements OnInit, OnDestroy {
     this.isOpen = false;
     this.calculateAmount();
   }
-
 
   calculateAmount() {
     if (!this.selectedRoom) {
@@ -193,11 +236,11 @@ export class BookHotelComponent implements OnInit, OnDestroy {
       console.log('Form is invalid', this.bookingForm.errors);
       return;
     }
-    this.bookingService.createBooking(this.bookingForm.value).subscribe({ 
-      next: (response) => {
-        if (Number(response)) {
-          this.bookingId=Number(response);
-          this.router.navigate(['/book-success',this.bookingId]);
+    this.bookingService.createBooking(this.bookingForm.value).subscribe({
+      next: (response : any) => {
+        if (response && response.bookingId) {
+          this.bookingId = response.bookingId;
+          this.router.navigate(['/book-success', this.bookingId]);
         }
       },
       error: (err) => {

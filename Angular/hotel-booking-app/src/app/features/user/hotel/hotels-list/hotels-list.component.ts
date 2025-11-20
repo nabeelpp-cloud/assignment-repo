@@ -29,6 +29,8 @@ export class HotelsListComponent {
   checkOutDate: string = '';
   isLoading: boolean = false;
 
+  formattedToday: string = '';
+  errormsg:string='';
   tempSearchTerm: string = '';
   tempCheckInDate: string = '';
   tempCheckOutDate: string = '';
@@ -108,6 +110,12 @@ export class HotelsListComponent {
         },
       });
     this.isLoading = false;
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    this.formattedToday = `${year}-${month}-${day}`;
   }
   ngOnDestroy() {
     this.destroy$.next();
@@ -142,10 +150,17 @@ export class HotelsListComponent {
 
   searchHotel() {
     this.searchTerm = this.tempSearchTerm;
+    if(this.tempCheckInDate && this.tempCheckOutDate){
+      if(!(this.tempCheckInDate < this.tempCheckOutDate)){
+        this.errormsg=`Check in date can't before check out`
+        return
+      }
+    }
     this.checkInDate = this.tempCheckInDate;
     this.checkOutDate = this.tempCheckOutDate;
     this.page = 1;
     this.isChangeSearch = false;
+    this.errormsg='';
     this.loadHotels();
   }
 
@@ -181,5 +196,13 @@ export class HotelsListComponent {
   toggleSort() {
     console.log(this.sortBy);
     this.loadHotels();
+  }
+  gotoBooking(hotelId: number) {
+    this.router.navigate([`/book-hotel/${hotelId}`], {
+      queryParams: {
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+      },
+    });
   }
 }

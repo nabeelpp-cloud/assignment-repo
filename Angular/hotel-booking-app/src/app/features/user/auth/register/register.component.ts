@@ -43,7 +43,7 @@ export class RegisterComponent {
     this.authService.userRegister(this.registerForm.value).subscribe({
       next: () => {
         alert('Registration successful!');
-        this.router.navigate(['/login']);
+        this.router.navigateByUrl(this.returnUrl);
       },
       error: (err) => {
         console.error('Registration failed:', err);
@@ -55,5 +55,8 @@ export class RegisterComponent {
     this.router.navigate(['/login'], {
       queryParams: { returnUrl: this.returnUrl }
     });
+  }
+  home(){
+    this.router.navigate(["/home"])
   }
 }

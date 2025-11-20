@@ -21,4 +21,10 @@ export class BookingService {
   getBookings(){
     return this.http.get(`${this.baseUrl}`);
   }
+  updateBooking(id: number, booking: any) {
+    return this.http.patch(`${this.baseUrl}/${id}`, booking);
+  }
+  deleteBooking(id: number) {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
 }

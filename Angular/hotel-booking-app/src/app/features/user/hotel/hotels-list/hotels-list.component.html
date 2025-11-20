@@ -35,15 +35,16 @@
       <div class="row">
         <div class="col">
           <div class="label">Check-in</div>
-          <input type="date" [(ngModel)]="tempCheckInDate" />
+          <input type="date" [(ngModel)]="tempCheckInDate" [min]="formattedToday" />
         </div>
       </div>
       <div class="row">
         <div class="col">
           <div class="label">Check-out</div>
-          <input type="date" [(ngModel)]="tempCheckOutDate" />
+          <input type="date" [(ngModel)]="tempCheckOutDate" [min]="tempCheckInDate" [disabled]="!tempCheckInDate"/>
         </div>
       </div>
+      <div class="error" style="color: red; font-size: 0.8rem">{{errormsg}}</div>
       <div class="buttonRow">
         <div class="cancelButton" (click)="isChangeSearch = false">Cancel</div>
         <button class="submitButton" type="submit" (click)="searchHotel()">
@@ -190,7 +191,7 @@
               </div>
               <div class="buttonRow">
                 <div class="bookNowButtonContainer">
-                  <button class="bookNowButton" >Book Now</button>
+                  <button class="bookNowButton" (click)="gotoBooking(hotel?.id)">Book Now</button>
                 </div>
                 <div class="viewDetailsButtonContainer">
                   <button class="viewDetailsButton" (click)="gotoHotelDetails(hotel.id)">View Details</button>

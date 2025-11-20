@@ -76,6 +76,28 @@
     background: #b0c4de;
     cursor: not-allowed;
   }
+  .homeButton {
+    background: linear-gradient(90deg, #003470, #124761);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .homeButton:hover {
+    background: linear-gradient(90deg, rgb(21, 86, 156), #124761);
+    transform: translateY(-2px);
+  }
+  
+  .loginContainer button:disabled {
+    background: #b0c4de;
+    cursor: not-allowed;
+  }
   
   .redirect{
     text-decoration: underline;

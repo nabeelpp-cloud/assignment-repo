@@ -9,8 +9,8 @@ $border-color: #e5e7eb;
   
   margin: 0 auto;
   padding: 40px 220px;
-  background-color: $bg-page;
-  min-height: 100vh;
+  //background-color: $bg-page;
+  //min-height: 100vh;
   font-family: 'Poppins', sans-serif;
     padding-top: 120px;
   display: grid;
@@ -215,3 +215,34 @@ $border-color: #e5e7eb;
   .btn-home { background: $primary; color: white; }
 }
 
+.noBookingsContainer {
+  text-align: center;
+  padding: 140px 20px 50px 20px;
+  color: #555;
+}
+
+.noBookingsIcon {
+  margin-bottom: 15px;
+}
+
+.noBookingsText h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.noBookingsText p {
+  font-size: 1rem;
+  color: #777;
+}
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  color: #1a73e8;
+  //margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+}

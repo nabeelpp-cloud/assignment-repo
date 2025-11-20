@@ -1,26 +1,22 @@
 import { Routes } from '@angular/router';
-import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingDetailsComponent } from './booking-details/booking-details.component';
 import { BookingLayoutComponent } from './booking-layout/booking-layout.component';
-import { EditBookingComponent } from './edit-booking/edit-booking.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
 import { DeleteBookingComponent } from './delete-booking/delete-booking.component';
+import { AddBookingComponent } from './add-booking/add-booking.component';
+import { UpdateBookingComponent } from './update-booking/update-booking.component';
 
 export const bookingsRoutes: Routes = [
-  { path: '', component: BookingListComponent },
+  { path: '', component: BookingListComponent },          
+  { path: 'add', component: AddBookingComponent },        
+
   {
     path: ':id',
-    component: BookingLayoutComponent,
+    component: BookingLayoutComponent,                    
     children: [
-      {
-        path: 'bookings',
-        component: BookingListComponent,
-        children: [
-          { path: ':id/update', component: EditBookingComponent },
-          { path: ':id/delete', component: DeleteBookingComponent },
-        ],
-      },
-
-      { path: '', redirectTo: 'bookings', pathMatch: 'full' },
-    ],
-  },
+      { path: '', component: BookingDetailsComponent },   
+      { path: 'update', component: UpdateBookingComponent },
+      { path: 'delete', component: DeleteBookingComponent }, 
+    ]
+  }
 ];

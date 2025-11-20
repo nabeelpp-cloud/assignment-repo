@@ -51,4 +51,7 @@ export class LoginComponent {
       queryParams: { returnUrl: this.returnUrl },
     });
   }
+  home(){
+    this.router.navigate(["/home"])
+  }
 }
