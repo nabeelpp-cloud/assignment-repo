@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,9 @@ namespace AssignmentDay6
     {
         public static string ToTitleCase(this string str)
         {
+            if (string.IsNullOrWhiteSpace(str))
+                return str;
+
             string titleString = "";
             if (string.IsNullOrEmpty(str))
                 return str;
@@ -27,12 +30,20 @@ namespace AssignmentDay6
             return titleString;
         }
 
-        public static float AverageExceptZero(this List<int> num)
+        public static float AverageExceptZero(this List<int> list)
         {
-            int sum = num.Sum();
-            num.RemoveAll(x=>x==0);
-            float average = sum/ num.Count();
-            return average;
+            if (list == null || list.Count == 0)
+                return 0;
+
+            var nonZeroValues = list.Where(x => x != 0).ToList();
+
+            if (nonZeroValues.Count == 0)
+                return 0;
+
+            float sum = nonZeroValues.Sum();
+            float avg = sum / nonZeroValues.Count;
+
+            return avg;
         }
     }
 }
