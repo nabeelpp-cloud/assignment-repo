@@ -1,23 +1,30 @@
 ############################
+<<<<<<< HEAD
 # .NET / Visual Studio
+=======
+# Build & IDE folders
+>>>>>>> c89eae74d35541027c4c14d6765e8e9d232de8bc
 ############################
 bin/
 obj/
 .vs/
-*.suo
+.idea/
 *.user
+*.suo
 *.userosscache
 *.sln.docstates
+*.cache
 
-# Rider
-.idea/
-
+############################
 # NuGet
+############################
 *.nupkg
 *.snupkg
 *.nuget.props
 *.nuget.targets
+packages/
 
+<<<<<<< HEAD
 # Cache
 *.cache
 
@@ -75,3 +82,53 @@ $RECYCLE.BIN/
 *.zip
 *.tar.gz
 *.rar
+=======
+############################
+# Logs & Temp files
+############################
+*.log
+logs/
+*.tmp
+*.temp
+
+############################
+# Environment & Secrets
+############################
+.env
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+############################
+# Publish & Output
+############################
+/publish/
+/out/
+/dist/
+/build/
+
+############################
+# Docker SQL Data Files
+############################
+Assignment1/docker/sqldata/data/
+*.mdf
+*.ldf
+*.ndf
+
+############################
+# Docker
+############################
+**/docker-compose.override.yml
+**/docker-compose.debug.yml
+**/Dockerfile.development
+**/Dockerfile.local
+
+############################
+# Other Common Items
+############################
+Thumbs.db
+Desktop.ini
+*.bak
+*.old
+*.orig
+>>>>>>> c89eae74d35541027c4c14d6765e8e9d232de8bc
