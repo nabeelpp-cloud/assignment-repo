@@ -1,0 +1,15 @@
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\bin\Debug\net8.0\GrandHayath.HotelBooking.Domain.deps.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\bin\Debug\net8.0\GrandHayath.HotelBooking.Domain.runtimeconfig.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\bin\Debug\net8.0\GrandHayath.HotelBooking.Domain.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\bin\Debug\net8.0\GrandHayath.HotelBooking.Domain.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.csproj.AssemblyReference.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.AssemblyInfo.cs
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.sourcelink.json
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\refint\GrandHayath.HotelBooking.Domain.dll
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.pdb
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\GrandHayath.HotelBooking.Domain.genruntimeconfig.cache
+C:\Users\nabeel.p\Desktop\Assignments\assignment-repo\ProgramAssignments\GrandHayath.HotelBooking.API\GrandHayath.HotelBooking.Domain\obj\Debug\net8.0\ref\GrandHayath.HotelBooking.Domain.dll
